@@ -21,9 +21,8 @@
 [ext_resource type="Script" path="res://entities/player/scripts/player_movement_controller.gd" id="19_7k7iy"]
 [ext_resource type="Script" path="res://entities/player/scripts/interaction_controller.gd" id="20_e6y1d"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_46rsa"]
-radius = 8.0
-height = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esa46"]
+size = Vector2(18, 22)
 
 [sub_resource type="Animation" id="Animation_lnqd1"]
 length = 0.001
@@ -409,8 +408,8 @@ _data = {
 script = ExtResource("1_e0sqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-shape = SubResource("CapsuleShape2D_46rsa")
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_esa46")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -3)
