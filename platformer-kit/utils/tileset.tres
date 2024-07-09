@@ -1,9 +1,10 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cfbo1ll6fb523"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cfbo1ll6fb523"]
 
-[ext_resource type="Texture2D" uid="uid://uqnwsry4nyue" path="res://sprites/environment/tileset.png" id="1_rcomn"]
+[ext_resource type="Texture2D" uid="uid://uqnwsry4nyue" path="res://sprites/environment/tileset.png" id="1_cd6d4"]
+[ext_resource type="PackedScene" uid="uid://clc75fmcd81kp" path="res://entities/spike/spike.tscn" id="2_o2f6e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xhfo5"]
-texture = ExtResource("1_rcomn")
+texture = ExtResource("1_cd6d4")
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
@@ -477,6 +478,11 @@ texture = ExtResource("1_rcomn")
 15:21/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:21/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_udjij"]
+resource_name = "props"
+scenes/1/scene = ExtResource("2_o2f6e")
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xhfo5")
+sources/2 = SubResource("TileSetScenesCollectionSource_udjij")

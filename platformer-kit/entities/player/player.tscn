@@ -464,3 +464,6 @@ script = ExtResource("20_e6y1d")
 
 [node name="MiddleRight" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(9, 2.08165e-12)
+
+[node name="MiddleDown" type="RayCast2D" parent="RayCasts"]
+target_position = Vector2(2.08165e-12, 17)
