@@ -4,12 +4,16 @@ extends CharacterState
 @export_group("Transitions")
 @export var idle_state: State
 @export var jump_state: State
+@export var fall_state: State
 
 func process_input(_event: InputEvent) -> State:
 	return null
 
 func process_physics(delta: float) -> State:
 	var movement = movement_controller.get_vector().x * parent.move_speed
+
+	if not parent.is_on_floor():
+		return fall_state
 
 	if movement_controller.is_jump_just_pressed():
 		return jump_state
