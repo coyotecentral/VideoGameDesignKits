@@ -20,6 +20,8 @@ func handle_left_middle(delta: float) -> void:
 			# Only push when facing
 			if(movement_controller.facing == "left"):
 				InteractionHandlers.push_object(Vector2(-100.0, 0), interaction_event, delta)
+		InteractionTypes.Damage:
+			InteractionHandlers.take_damage(player, 1)
 		_:
 			pass
 
@@ -30,6 +32,8 @@ func handle_right_middle(delta: float) -> void:
 			# Only push when facing
 			if(movement_controller.facing == "right"):
 				InteractionHandlers.push_object(Vector2(100.0, 0), interaction_event, delta)
+		InteractionTypes.Damage:
+			InteractionHandlers.take_damage(player, 1)
 		_:
 			pass
 	
