@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cgadmi3sydqjh"]
+[gd_scene load_steps=40 format=3 uid="uid://cgadmi3sydqjh"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_e0sqm"]
 [ext_resource type="Texture2D" uid="uid://bh5d5ysebmle3" path="res://entities/player/sprites/idle/player-idle-1.png" id="2_xl5kk"]
@@ -13,13 +13,19 @@
 [ext_resource type="Texture2D" uid="uid://b10nmv50wmt1x" path="res://entities/player/sprites/run/player-run-4.png" id="11_nf6xt"]
 [ext_resource type="Texture2D" uid="uid://cdt1isevdg0rw" path="res://entities/player/sprites/run/player-run-5.png" id="12_ran4g"]
 [ext_resource type="Texture2D" uid="uid://bjjonkixj84h1" path="res://entities/player/sprites/run/player-run-6.png" id="13_hrv7n"]
-[ext_resource type="Script" path="res://lib/state/character_state_machine.gd" id="14_pwvrn"]
+[ext_resource type="Texture2D" uid="uid://d1iob5umbseww" path="res://entities/player/sprites/hurt/player-hurt-1.png" id="14_08biu"]
 [ext_resource type="Script" path="res://entities/player/scripts/state/idle_state.gd" id="15_eq6ef"]
+[ext_resource type="Texture2D" uid="uid://ce05y7pn8i3p1" path="res://entities/player/sprites/hurt/player-hurt-2.png" id="15_uky66"]
 [ext_resource type="Script" path="res://entities/player/scripts/state/move_state.gd" id="16_aee82"]
+[ext_resource type="Texture2D" uid="uid://u82g0gwa340n" path="res://entities/player/sprites/crouch/player-crouch-1.png" id="16_rxs82"]
+[ext_resource type="Texture2D" uid="uid://cje6mi7gynxji" path="res://entities/player/sprites/crouch/player-crouch-2.png" id="17_ngklb"]
 [ext_resource type="Script" path="res://entities/player/scripts/state/jump_state.gd" id="17_xe8kk"]
 [ext_resource type="Script" path="res://entities/player/scripts/state/fall_state.gd" id="18_8xsas"]
+[ext_resource type="Script" path="res://entities/player/scripts/state/player_state_machine.gd" id="18_avlc4"]
 [ext_resource type="Script" path="res://entities/player/scripts/player_movement_controller.gd" id="19_7k7iy"]
-[ext_resource type="Script" path="res://entities/player/scripts/interaction_controller.gd" id="20_e6y1d"]
+[ext_resource type="Script" path="res://entities/player/scripts/state/damage_state.gd" id="19_qlga8"]
+[ext_resource type="Script" path="res://entities/player/scripts/interactions/interaction_controller.gd" id="20_hyx15"]
+[ext_resource type="Script" path="res://entities/player/scripts/interactions/interaction_raycast.gd" id="21_58gfg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esa46"]
 size = Vector2(14, 20.5)
@@ -391,9 +397,83 @@ tracks/2/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_1mctf"]
+resource_name = "damage"
+length = 0.1666
+loop_mode = 1
+step = 0.0833
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("14_08biu"), ExtResource("15_uky66")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.5, 2.08165e-12)]
+}
+
+[sub_resource type="Animation" id="Animation_xocmn"]
+resource_name = "crouch_right"
+length = 0.1666
+loop_mode = 1
+step = 0.0833
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0833),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("16_rxs82"), ExtResource("17_ngklb")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_crbdt"]
 _data = {
 "RESET": SubResource("Animation_lnqd1"),
+"crouch_right": SubResource("Animation_xocmn"),
+"damage": SubResource("Animation_1mctf"),
 "fall_left": SubResource("Animation_0yitk"),
 "fall_right": SubResource("Animation_d48hw"),
 "idle_left": SubResource("Animation_bjlsw"),
@@ -424,8 +504,9 @@ libraries = {
 }
 autoplay = "idle_left"
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("animations", "movement_controller", "starting_state")]
-script = ExtResource("14_pwvrn")
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("damage_state", "animations", "movement_controller", "starting_state")]
+script = ExtResource("18_avlc4")
+damage_state = NodePath("Damage")
 animations = NodePath("../AnimationPlayer")
 movement_controller = NodePath("../MovementController")
 starting_state = NodePath("Idle")
@@ -455,19 +536,28 @@ idle_state = NodePath("../Idle")
 move_state = NodePath("../Move")
 animation_name = "fall"
 
+[node name="Damage" type="Node" parent="StateMachine"]
+script = ExtResource("19_qlga8")
+animation_name = "damage"
+directional = false
+
 [node name="MovementController" type="Node2D" parent="."]
 position = Vector2(0, 23)
 script = ExtResource("19_7k7iy")
 
-[node name="InteractionController" type="Node2D" parent="." node_paths=PackedStringArray("movement_controller")]
-script = ExtResource("20_e6y1d")
+[node name="InteractionController" type="Node2D" parent="." node_paths=PackedStringArray("movement_controller", "player")]
+script = ExtResource("20_hyx15")
 movement_controller = NodePath("../MovementController")
+player = NodePath("..")
 
 [node name="MiddleRight" type="RayCast2D" parent="InteractionController"]
 target_position = Vector2(9, 2.08165e-12)
+script = ExtResource("21_58gfg")
 
 [node name="MiddleLeft" type="RayCast2D" parent="InteractionController"]
 target_position = Vector2(-9, 2.08165e-12)
+script = ExtResource("21_58gfg")
 
 [node name="MiddleDown" type="RayCast2D" parent="InteractionController"]
-target_position = Vector2(2.08165e-12, 17)
+target_position = Vector2(0, 14)
+script = ExtResource("21_58gfg")

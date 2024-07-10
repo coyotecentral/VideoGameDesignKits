@@ -18,6 +18,9 @@ class_name Player
 @onready var jump_gravity: float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * - 1.0
 @onready var fall_gravity: float = ((-2.0 * jump_height) / (jump_time_to_fall * jump_time_to_fall)) * - 1.0
 
+signal damage_taken(amount: int)
+signal gem_collected
+
 func _ready() -> void:
 	state_machine.init(self)
 
