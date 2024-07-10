@@ -8,7 +8,7 @@ extends CharacterState
 @export var climb_state: State
 
 func process_physics(delta: float) -> State:
-	if not parent.is_on_floor():
+	if not parent.is_on_floor() and not parent.standing_on_ladder:
 		return fall_state
 	if movement_controller.is_climb_pressed() and parent.can_climb:
 		return climb_state

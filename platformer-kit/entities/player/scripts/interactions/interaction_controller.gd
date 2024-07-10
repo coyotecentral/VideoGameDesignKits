@@ -12,9 +12,9 @@ func _physics_process(delta: float) -> void:
 	handle_left_middle(delta)
 	handle_right_middle(delta)
 	handle_down_middle(delta)
-	handle_hibox_area(delta)
+	handle_hitbox_area(delta)
 
-func handle_hibox_area(delta: float) -> void:
+func handle_hitbox_area(delta: float) -> void:
 	var interaction_event = hitbox_area.get_interaction_event()
 	var gem: Gem = interaction_event.get_collider()
 
