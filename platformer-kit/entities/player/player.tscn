@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cgadmi3sydqjh"]
+[gd_scene load_steps=47 format=3 uid="uid://cgadmi3sydqjh"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_e0sqm"]
 [ext_resource type="Texture2D" uid="uid://bh5d5ysebmle3" path="res://entities/player/sprites/idle/player-idle-1.png" id="2_xl5kk"]
@@ -22,10 +22,14 @@
 [ext_resource type="Script" path="res://entities/player/scripts/state/jump_state.gd" id="17_xe8kk"]
 [ext_resource type="Script" path="res://entities/player/scripts/state/fall_state.gd" id="18_8xsas"]
 [ext_resource type="Script" path="res://entities/player/scripts/state/player_state_machine.gd" id="18_avlc4"]
+[ext_resource type="Texture2D" uid="uid://cmlefbsu30gqc" path="res://entities/player/sprites/climb/player-climb-1.png" id="18_x52uq"]
 [ext_resource type="Script" path="res://entities/player/scripts/player_movement_controller.gd" id="19_7k7iy"]
+[ext_resource type="Texture2D" uid="uid://csia21cah0nru" path="res://entities/player/sprites/climb/player-climb-2.png" id="19_dsstp"]
 [ext_resource type="Script" path="res://entities/player/scripts/state/damage_state.gd" id="19_qlga8"]
+[ext_resource type="Texture2D" uid="uid://d4lltox8u6kvh" path="res://entities/player/sprites/climb/player-climb-3.png" id="20_gmeis"]
 [ext_resource type="Script" path="res://entities/player/scripts/interactions/interaction_controller.gd" id="20_hyx15"]
 [ext_resource type="Script" path="res://entities/player/scripts/interactions/interaction_raycast.gd" id="21_58gfg"]
+[ext_resource type="Script" path="res://entities/player/scripts/state/climb_state.gd" id="24_e5vco"]
 [ext_resource type="Script" path="res://entities/player/scripts/interactions/interaction_area.gd" id="27_avlta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esa46"]
@@ -470,9 +474,52 @@ tracks/2/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_oxi2d"]
+resource_name = "climbing"
+length = 0.2499
+loop_mode = 1
+step = 0.0833
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, 2.08165e-12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0833, 0.1666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_x52uq"), ExtResource("19_dsstp"), ExtResource("20_gmeis")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_crbdt"]
 _data = {
 "RESET": SubResource("Animation_lnqd1"),
+"climbing": SubResource("Animation_oxi2d"),
 "crouch_right": SubResource("Animation_xocmn"),
 "damage": SubResource("Animation_1mctf"),
 "fall_left": SubResource("Animation_0yitk"),
@@ -515,11 +562,12 @@ animations = NodePath("../AnimationPlayer")
 movement_controller = NodePath("../MovementController")
 starting_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("move_state", "jump_state", "fall_state")]
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("move_state", "jump_state", "fall_state", "climb_state")]
 script = ExtResource("15_eq6ef")
 move_state = NodePath("../Move")
 jump_state = NodePath("../Jump")
 fall_state = NodePath("../Fall")
+climb_state = NodePath("../Climbing")
 animation_name = "idle"
 
 [node name="Move" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "jump_state", "fall_state")]
@@ -546,6 +594,12 @@ idle_state = NodePath("../Idle")
 animation_name = "damage"
 directional = false
 
+[node name="Climbing" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state")]
+script = ExtResource("24_e5vco")
+fall_state = NodePath("../Fall")
+animation_name = "climbing"
+directional = false
+
 [node name="MovementController" type="Node2D" parent="."]
 position = Vector2(0, 23)
 script = ExtResource("19_7k7iy")
@@ -565,6 +619,7 @@ script = ExtResource("21_58gfg")
 
 [node name="MiddleDown" type="RayCast2D" parent="InteractionController"]
 target_position = Vector2(0, 14)
+collide_with_areas = true
 script = ExtResource("21_58gfg")
 
 [node name="HitboxArea" type="Area2D" parent="InteractionController"]

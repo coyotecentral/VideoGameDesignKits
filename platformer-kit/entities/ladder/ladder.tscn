@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://ri4vmipyjoq1"]
+
+[ext_resource type="Texture2D" uid="uid://ng162jaksjfx" path="res://entities/ladder/ladder.png" id="1_406v1"]
+[ext_resource type="Script" path="res://entities/ladder/ladder.gd" id="1_yycyb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nj7yh"]
+size = Vector2(16, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dldyh"]
+size = Vector2(16, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kroa8"]
+size = Vector2(16, 3)
+
+[node name="Ladder" type="Node2D"]
+script = ExtResource("1_yycyb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("1_406v1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_nj7yh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(2.08165e-12, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_dldyh")
+one_way_collision = true
+debug_color = Color(0.941176, 0, 0.615686, 0.419608)
+
+[node name="Up" type="RayCast2D" parent="."]
+target_position = Vector2(2.08165e-12, -17)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Down" type="RayCast2D" parent="."]
+target_position = Vector2(2.08165e-12, 17)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="ExitLadderArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitLadderArea"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_kroa8")
+debug_color = Color(0.976471, 0, 0.403922, 0.419608)

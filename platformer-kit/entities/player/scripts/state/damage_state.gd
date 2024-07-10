@@ -14,7 +14,6 @@ func _ready():
 	timer.one_shot = true
 	timer.wait_time = 0.5 # Respawn time
 	add_child(timer)
-	print("ready")
 
 func enter():
 	super()

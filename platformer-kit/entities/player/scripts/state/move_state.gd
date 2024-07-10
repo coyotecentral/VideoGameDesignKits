@@ -22,9 +22,6 @@ func exit():
 	reset_coyote_time()
 
 
-func process_input(_event: InputEvent) -> State:
-	return null
-
 func process_physics(delta: float) -> State:
 	var movement = movement_controller.get_vector().x * parent.move_speed
 
