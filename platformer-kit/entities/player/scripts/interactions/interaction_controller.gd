@@ -12,18 +12,8 @@ func _physics_process(delta: float) -> void:
 	handle_left_middle(delta)
 	handle_right_middle(delta)
 	handle_down_middle(delta)
-	handle_hibox_area(delta)
+	handle_hitbox_area(delta)
 
-<<<<<<< Updated upstream
-func handle_hibox_area(delta: float) -> void:
-	var interaction_event = hitbox_area.get_interaction_event()
-	var gem: Gem = interaction_event.get_collider()
-	match interaction_event.get_interaction_type():
-		InteractionTypes.Gem:
-			InteractionHandlers.collect_gem(player, gem)
-		_:
-			pass
-=======
 func handle_hitbox_area(delta: float) -> void:
 	var interaction_events := hitbox_area.get_interaction_events()
 
@@ -43,7 +33,6 @@ func handle_hitbox_area(delta: float) -> void:
 					InteractionHandlers.collect_gem(player, gem)
 			_:
 				pass
->>>>>>> Stashed changes
 	
 func handle_left_middle(delta: float) -> void:
 	var interaction_event = middle_left.get_interaction_event()
@@ -74,5 +63,7 @@ func handle_down_middle(delta: float) -> void:
 	match interaction_event.get_interaction_type():
 		InteractionTypes.Damage:
 			InteractionHandlers.take_damage(player, 1)
+		InteractionTypes.Ladder:
+			player.can_climb_down = true
 		_:
 			pass
