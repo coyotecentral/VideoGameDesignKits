@@ -17,6 +17,17 @@ func _physics_process(delta: float) -> void:
 func handle_hibox_area(delta: float) -> void:
 	var interaction_event = hitbox_area.get_interaction_event()
 	var gem: Gem = interaction_event.get_collider()
+
+	var is_on_ladder = false
+	# Try to see if we're overlapping a ladder area
+	for area in hitbox_area.get_overlapping_areas():
+		var parent = area.get_parent()
+		if parent is Ladder:
+			is_on_ladder = true
+			break
+
+	player.can_climb = is_on_ladder
+
 	match interaction_event.get_interaction_type():
 		InteractionTypes.Gem:
 			InteractionHandlers.collect_gem(player, gem)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ri4vmipyjoq1"]
+
+[ext_resource type="Texture2D" uid="uid://ng162jaksjfx" path="res://entities/ladder/ladder.png" id="1_406v1"]
+[ext_resource type="Script" path="res://entities/ladder/ladder.gd" id="1_yycyb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nj7yh"]
+size = Vector2(16, 16)
+
+[node name="Ladder" type="Node2D"]
+script = ExtResource("1_yycyb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("1_406v1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_nj7yh")

@@ -6,6 +6,7 @@ class_name Player
 @export_group("Movement")
 @export var move_speed := 250.0
 @export var float_speed := 150.0
+@export var climb_speed := 150.0
 
 @export_group("Jumping")
 @export var jump_height := 64.0
@@ -17,6 +18,9 @@ class_name Player
 @onready var jump_velocity: float = ((2.0 * jump_height) / jump_time_to_peak) * - 1
 @onready var jump_gravity: float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * - 1.0
 @onready var fall_gravity: float = ((-2.0 * jump_height) / (jump_time_to_fall * jump_time_to_fall)) * - 1.0
+
+# Supplemental state variables
+var can_climb := false
 
 signal respawn
 signal damage_taken(amount: int)
