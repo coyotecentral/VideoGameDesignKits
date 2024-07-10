@@ -6,5 +6,6 @@ class_name PlayerStateMachine
 func init(p) -> void:
 	super(p)
 	p.damage_taken.connect(func (amount: int):
-		change_state(damage_state)
+		if not damage_state.invincible:
+			change_state(damage_state)
 	)

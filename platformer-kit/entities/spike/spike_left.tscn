@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1d2a6iw3ylub" path="res://sprites/environment/props/spikes.png" id="2_u073t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enwfv"]
-size = Vector2(16, 9)
+size = Vector2(14, 9)
 
 [node name="Spike" type="StaticBody2D"]
 position = Vector2(-3, 2.08165e-12)
@@ -12,7 +12,7 @@ rotation = 1.5708
 script = ExtResource("1_v4qg0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.08165e-12, 0.5)
+position = Vector2(0, 2.98023e-08)
 shape = SubResource("RectangleShape2D_enwfv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

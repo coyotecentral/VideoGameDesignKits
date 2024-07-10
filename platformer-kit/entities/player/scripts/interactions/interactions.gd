@@ -5,5 +5,4 @@ static func push_object(force: Vector2, event: InteractionEvent, delta: float) -
 	colliding_object.position += force * delta
 
 static func take_damage(player: Player, amount: int = 1) -> void:
-	print("Dealing %d damage" % amount)
 	player.damage_taken.emit(amount)

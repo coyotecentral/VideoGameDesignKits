@@ -536,8 +536,9 @@ idle_state = NodePath("../Idle")
 move_state = NodePath("../Move")
 animation_name = "fall"
 
-[node name="Damage" type="Node" parent="StateMachine"]
+[node name="Damage" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state")]
 script = ExtResource("19_qlga8")
+idle_state = NodePath("../Idle")
 animation_name = "damage"
 directional = false
 

@@ -8,10 +8,10 @@ extends Node2D
 @onready var middle_down: InteractionRaycast = $MiddleDown
 
 func _physics_process(delta: float) -> void:
-
 	handle_left_middle(delta)
 	handle_right_middle(delta)
-	handle_down_middle(delta)
+	if(middle_down.enabled):
+		handle_down_middle(delta)
 	
 func handle_left_middle(delta: float) -> void:
 	var interaction_event = middle_left.get_interaction_event()
