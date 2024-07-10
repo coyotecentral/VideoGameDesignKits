@@ -20,6 +20,7 @@ func _ready():
 			_player = c
 	
 	_player.respawn.connect(handle_respawn)
+	_player.gem_collected.connect(handle_gem_collected)
 	
 	# Set a respawn point if none is set
 	if not respawn_marker:
@@ -31,3 +32,6 @@ func _ready():
 func handle_respawn() -> void:
 	game_ui.death_count += 1
 	_player.position = respawn_marker.position
+
+func handle_gem_collected():
+	game_ui.gem_count += 1

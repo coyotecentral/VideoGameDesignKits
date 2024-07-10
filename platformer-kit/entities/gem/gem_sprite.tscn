@@ -1,10 +1,25 @@
 [gd_scene load_steps=9 format=3 uid="uid://bgoh0f486cmmu"]
 
-[ext_resource type="Texture2D" uid="uid://uqba06xxbf6d" path="res://entities/gem/sprites/gem-2.png" id="1_ciwt2"]
-[ext_resource type="Texture2D" uid="uid://cwxtymngumtl5" path="res://entities/gem/sprites/gem-1.png" id="2_k0p56"]
-[ext_resource type="Texture2D" uid="uid://cm1smn0w66d7l" path="res://entities/gem/sprites/gem-3.png" id="3_dr55i"]
-[ext_resource type="Texture2D" uid="uid://biptxwv00h0x3" path="res://entities/gem/sprites/gem-4.png" id="4_dwcnt"]
-[ext_resource type="Texture2D" uid="uid://c086o6p1j1465" path="res://entities/gem/sprites/gem-5.png" id="5_dtj2d"]
+[ext_resource type="Texture2D" uid="uid://uqba06xxbf6d" path="res://entities/gem/sprites/gem/gem-2.png" id="1_xkku0"]
+[ext_resource type="Texture2D" uid="uid://cwxtymngumtl5" path="res://entities/gem/sprites/gem/gem-1.png" id="2_a0dwf"]
+[ext_resource type="Texture2D" uid="uid://cm1smn0w66d7l" path="res://entities/gem/sprites/gem/gem-3.png" id="3_jyyiy"]
+[ext_resource type="Texture2D" uid="uid://biptxwv00h0x3" path="res://entities/gem/sprites/gem/gem-4.png" id="4_5xg5b"]
+[ext_resource type="Texture2D" uid="uid://c086o6p1j1465" path="res://entities/gem/sprites/gem/gem-5.png" id="5_x2xwh"]
+
+[sub_resource type="Animation" id="Animation_ckehu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_xkku0")]
+}
 
 [sub_resource type="Animation" id="Animation_82w86"]
 resource_name = "default"
@@ -21,22 +36,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.0833, 0.1666, 0.2499, 0.3332),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("2_k0p56"), ExtResource("1_ciwt2"), ExtResource("3_dr55i"), ExtResource("4_dwcnt"), ExtResource("5_dtj2d")]
-}
-
-[sub_resource type="Animation" id="Animation_ckehu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_ciwt2")]
+"values": [ExtResource("2_a0dwf"), ExtResource("1_xkku0"), ExtResource("3_jyyiy"), ExtResource("4_5xg5b"), ExtResource("5_x2xwh")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bn35p"]
@@ -48,7 +48,7 @@ _data = {
 [node name="Gem" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ciwt2")
+texture = ExtResource("1_xkku0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

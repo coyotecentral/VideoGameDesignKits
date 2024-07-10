@@ -8,4 +8,6 @@ func get_interaction_event() -> InteractionEvent:
 			return InteractionEvent.new(collider, InteractionTypes.PushableObject)
 		if collider is Spike:
 			return InteractionEvent.new(collider, InteractionTypes.Damage)
+		if collider is Gem:
+			return InteractionEvent.new(collider, InteractionTypes.Gem)
 	return InteractionEvent.new(collider, InteractionTypes.NoOp)
