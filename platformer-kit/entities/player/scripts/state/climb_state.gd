@@ -10,8 +10,6 @@ func enter():
 
 func process_physics(delta: float) -> State:
 	var movement = movement_controller.get_vector().y * parent.climb_speed
-	print(movement)
-
 	if not parent.can_climb:
 		return fall_state
 

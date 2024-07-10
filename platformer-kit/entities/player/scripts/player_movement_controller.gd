@@ -17,4 +17,4 @@ func is_jump_pressed() -> bool:
 	return Input.is_action_pressed("jump")
 
 func is_climb_pressed() -> bool:
-	return Input.is_action_pressed("up")
+	return Input.is_action_pressed("up") or Input.is_action_just_pressed("down")

@@ -62,5 +62,7 @@ func handle_down_middle(delta: float) -> void:
 	match interaction_event.get_interaction_type():
 		InteractionTypes.Damage:
 			InteractionHandlers.take_damage(player, 1)
+		InteractionTypes.Ladder:
+			player.can_climb_down = true
 		_:
 			pass
