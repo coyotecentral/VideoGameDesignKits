@@ -25,7 +25,6 @@ func handle_hitbox_area(delta: float) -> void:
 		if parent is Ladder:
 			is_on_ladder = true
 			break
-
 	player.can_climb = is_on_ladder
 
 	match interaction_event.get_interaction_type():

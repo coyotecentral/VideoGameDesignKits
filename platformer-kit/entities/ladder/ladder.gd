@@ -29,3 +29,7 @@ func make_contiguous():
 	if collider is Ladder:
 		print("making ladder contigous...")
 		static_body.queue_free()
+	
+	#clean up the rays
+	up_check.queue_free()
+	down_check.queue_free()
