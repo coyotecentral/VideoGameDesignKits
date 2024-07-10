@@ -546,6 +546,13 @@ idle_state = NodePath("../Idle")
 animation_name = "damage"
 directional = false
 
+[node name="Climbing" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "idle_state")]
+script = ExtResource("24_e5vco")
+fall_state = NodePath("../Fall")
+idle_state = NodePath("../Idle")
+animation_name = "climbing"
+directional = false
+
 [node name="MovementController" type="Node2D" parent="."]
 position = Vector2(0, 23)
 script = ExtResource("19_7k7iy")
