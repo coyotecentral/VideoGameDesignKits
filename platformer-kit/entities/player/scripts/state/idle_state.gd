@@ -10,6 +10,10 @@ extends CharacterState
 func process_physics(delta: float) -> State:
 	if not parent.is_on_floor():
 		return fall_state
+
+	if movement_controller.get_vector().y < 0 and parent.can_climb_down:
+		parent.position.y += parent.climb_speed * delta
+		return climb_state
 	if movement_controller.is_climb_pressed() and parent.can_climb:
 		return climb_state
 	if movement_controller.get_vector().x:

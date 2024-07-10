@@ -4,13 +4,19 @@ extends CharacterState
 @export_group("Transitions")
 @export var fall_state: State
 
+var dismount_count = 0
+
 func enter():
 	super()
 	parent.velocity = Vector2()
 
+func exit():
+	super()
+	dismount_count = 0
+
 func process_physics(delta: float) -> State:
 	var movement = movement_controller.get_vector().y * parent.climb_speed
-	if not parent.can_climb:
+	if not parent.can_climb and not parent.can_climb_down:
 		return fall_state
 
 	if movement_controller.is_jump_just_pressed():
@@ -20,6 +26,11 @@ func process_physics(delta: float) -> State:
 		animations.pause()
 	else:
 		animations.play()
+	
+	if movement < 0 and parent.is_on_floor():
+		dismount_count += 1
+		if dismount_count > 2:
+			return fall_state
 	
 	parent.position.y -= movement * delta
 	parent.move_and_slide()
