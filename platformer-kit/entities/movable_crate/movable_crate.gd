@@ -1,7 +1,7 @@
 extends AnimatableBody2D
 class_name MovableCrate
 
-@onready var shape_cast_right: ShapeCast2D = $RightShapeCast
+@onready var shape_cast: ShapeCast2D = $ShapeCast2D
 
 var velocity := Vector2()
 
@@ -14,4 +14,4 @@ func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
 
 func is_grounded() -> bool:
-	return false
+	return shape_cast.get_collision_count() > 0
