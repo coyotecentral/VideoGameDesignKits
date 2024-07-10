@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://cfbo1ll6fb523"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://cfbo1ll6fb523"]
 
 [ext_resource type="Texture2D" uid="uid://uqnwsry4nyue" path="res://sprites/environment/tileset.png" id="1_cd6d4"]
 [ext_resource type="PackedScene" uid="uid://clc75fmcd81kp" path="res://entities/spike/spike_floor.tscn" id="2_gwdu2"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bg54iiwcnm8n" path="res://entities/movable_crate/movable_crate.tscn" id="3_2tt6s"]
 [ext_resource type="PackedScene" uid="uid://76034u6jlcm2" path="res://entities/spike/spike_left.tscn" id="4_0xee4"]
 [ext_resource type="PackedScene" uid="uid://pmv06ptdyajr" path="res://entities/spike/spike_right.tscn" id="5_0lmfj"]
+[ext_resource type="PackedScene" uid="uid://dturik0w3xp6k" path="res://entities/gem/gem.tscn" id="5_lwc2e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xhfo5"]
 texture = ExtResource("1_cd6d4")
@@ -854,6 +855,7 @@ texture = ExtResource("2_ic7pj")
 resource_name = "props"
 scenes/1/scene = ExtResource("2_gwdu2")
 scenes/2/scene = ExtResource("3_2tt6s")
+scenes/3/scene = ExtResource("5_lwc2e")
 scenes/4/scene = ExtResource("4_0xee4")
 scenes/5/scene = ExtResource("5_0lmfj")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cgadmi3sydqjh"]
+[gd_scene load_steps=42 format=3 uid="uid://cgadmi3sydqjh"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_e0sqm"]
 [ext_resource type="Texture2D" uid="uid://bh5d5ysebmle3" path="res://entities/player/sprites/idle/player-idle-1.png" id="2_xl5kk"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" path="res://entities/player/scripts/state/damage_state.gd" id="19_qlga8"]
 [ext_resource type="Script" path="res://entities/player/scripts/interactions/interaction_controller.gd" id="20_hyx15"]
 [ext_resource type="Script" path="res://entities/player/scripts/interactions/interaction_raycast.gd" id="21_58gfg"]
+[ext_resource type="Script" path="res://entities/player/scripts/interactions/interaction_area.gd" id="27_avlta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esa46"]
 size = Vector2(14, 20.5)
@@ -484,6 +485,9 @@ _data = {
 "run_right": SubResource("Animation_0qgnb")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fe8oe"]
+size = Vector2(14, 21)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_e0sqm")
 coyote_time = 0.1
@@ -562,3 +566,10 @@ script = ExtResource("21_58gfg")
 [node name="MiddleDown" type="RayCast2D" parent="InteractionController"]
 target_position = Vector2(0, 14)
 script = ExtResource("21_58gfg")
+
+[node name="HitboxArea" type="Area2D" parent="InteractionController"]
+script = ExtResource("27_avlta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionController/HitboxArea"]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_fe8oe")

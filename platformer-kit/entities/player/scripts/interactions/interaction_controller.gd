@@ -6,12 +6,22 @@ extends Node2D
 @onready var middle_right: InteractionRaycast = $MiddleRight
 @onready var middle_left: InteractionRaycast = $MiddleLeft
 @onready var middle_down: InteractionRaycast = $MiddleDown
+@onready var hitbox_area: InteractionArea = $HitboxArea
 
 func _physics_process(delta: float) -> void:
 	handle_left_middle(delta)
 	handle_right_middle(delta)
-	if(middle_down.enabled):
-		handle_down_middle(delta)
+	handle_down_middle(delta)
+	handle_hibox_area(delta)
+
+func handle_hibox_area(delta: float) -> void:
+	var interaction_event = hitbox_area.get_interaction_event()
+	var gem: Gem = interaction_event.get_collider()
+	match interaction_event.get_interaction_type():
+		InteractionTypes.Gem:
+			InteractionHandlers.collect_gem(player, gem)
+		_:
+			pass
 	
 func handle_left_middle(delta: float) -> void:
 	var interaction_event = middle_left.get_interaction_event()
