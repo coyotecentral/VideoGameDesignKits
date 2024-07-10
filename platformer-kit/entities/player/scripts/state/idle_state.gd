@@ -13,5 +13,6 @@ func process_physics(delta: float) -> State:
 		return move_state
 	if movement_controller.is_jump_pressed():
 		return jump_state
+	parent.velocity = Vector2()
 	parent.move_and_slide()
 	return null
