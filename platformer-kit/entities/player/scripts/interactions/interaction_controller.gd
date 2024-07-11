@@ -3,7 +3,7 @@ extends Node2D
 @export var movement_controller: MovementController
 @export var player: Player
 
-@onready var middle_down: InteractionRaycast = $MiddleDown
+@onready var middle_down: InteractionRaycast = $DownMiddle
 @onready var hitbox_area: InteractionArea = $HitboxArea
 # This ray checks if there are any ladders below us
 @onready var ladder_down: InteractionRaycast = $LadderDown
@@ -70,6 +70,9 @@ func handle_hitbox_area(delta: float) -> void:
 			InteractionTypes.Gem:
 				for gem in event.get_colliders():
 					InteractionHandlers.collect_gem(player, gem)
+			InteractionTypes.Checkpoint:
+				for checkpoint in event.get_colliders():
+					checkpoint.set_active()
 			_:
 				pass
 	

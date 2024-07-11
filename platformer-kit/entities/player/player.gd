@@ -31,6 +31,20 @@ signal gem_collected
 func _ready() -> void:
 	state_machine.init(self)
 
+	gem_collected.connect(func():
+		LevelController.increment_score()
+	)
+
+	damage_taken.connect(func(_amount: int):
+		LevelController.increment_death_count()
+		LevelController.respawn()
+	)
+
+	respawn.connect(func():
+		LevelController.respawn_enemies()
+		global_position = LevelController._respawn_position
+	)
+
 func _unhandled_input(event: InputEvent) -> void:
 	state_machine.process_input(event)
 
