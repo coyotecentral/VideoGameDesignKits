@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://baqls0qh2o0dt"]
+[gd_scene load_steps=5 format=3 uid="uid://baqls0qh2o0dt"]
 
 [ext_resource type="Script" path="res://lib/controllers/level_controller.gd" id="1_ad5wx"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="1_tfeib"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_7iwf8"]
+[ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://entities/mushroom/mushroom.tscn" id="4_ga1md"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ad5wx")
@@ -17,3 +18,6 @@ layer_0/tile_data = PackedInt32Array(1, 1114112, 11, 2, 1114112, 11, 3, 1114112,
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(320, -150)
+
+[node name="Mushroom" parent="." instance=ExtResource("4_ga1md")]
+position = Vector2(414, -23)

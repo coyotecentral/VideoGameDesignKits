@@ -6,9 +6,13 @@ var _handlers: Dictionary = {}
 func set_handler(name: String, handler: Callable) -> void:
 	_handlers[name] = handler
 
+# Sets the same handler for different interaction types
+func set_handlers(names: Array, handler: Callable) -> void:
+	for n in names:
+		_handlers[n] = handler
+
 func remove_handler(name: String) -> void:
 	_handlers.erase(name)
-
 
 func process_collision(delta: float) -> InteractionEvent:
 	var collider = get_collider()
@@ -26,6 +30,9 @@ func process_collision(delta: float) -> InteractionEvent:
 		if collider is StaticBody2D and collider.get_parent() is Ladder:
 			call_handler.call(InteractionTypes.Ladder)
 			return create_event.call(InteractionTypes.Ladder)
+		if collider is EnemyBody2D:
+			call_handler.call(InteractionTypes.Enemy)
+			return create_event.call(InteractionTypes.Enemy)
 		if collider is Area2D:
 			var parent = collider.get_parent()
 			if parent is Ladder:
