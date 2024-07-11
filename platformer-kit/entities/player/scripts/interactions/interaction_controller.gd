@@ -39,7 +39,7 @@ func handle_hitbox_area(delta: float) -> void:
 				pass
 	
 func handle_left_middle(delta: float) -> void:
-	var interaction_event = middle_left.get_interaction_event()
+	var interaction_event = middle_left.process_collision()
 	match interaction_event.get_interaction_type():
 		InteractionTypes.PushableObject:
 			# Only push when facing
@@ -51,7 +51,7 @@ func handle_left_middle(delta: float) -> void:
 			pass
 
 func handle_right_middle(delta: float) -> void:
-	var interaction_event = middle_right.get_interaction_event()
+	var interaction_event = middle_right.process_collision()
 	match interaction_event.get_interaction_type():
 		InteractionTypes.PushableObject:
 			# Only push when facing
@@ -63,7 +63,7 @@ func handle_right_middle(delta: float) -> void:
 			pass
 	
 func handle_down_middle(delta: float) -> void:
-	var interaction_event = middle_down.get_interaction_event()
+	var interaction_event = middle_down.process_collision()
 	var type = interaction_event.get_interaction_type()
 	match type:
 		InteractionTypes.Damage:
@@ -72,7 +72,7 @@ func handle_down_middle(delta: float) -> void:
 			pass
 
 func handle_ladder_down(delta: float) -> void:
-	var interaction_event = ladder_down.get_interaction_event()
+	var interaction_event = ladder_down.process_collision()
 	var type = interaction_event.get_interaction_type()
 	if type == InteractionTypes.Ladder:
 		# This has to be global because this returns an Area2D

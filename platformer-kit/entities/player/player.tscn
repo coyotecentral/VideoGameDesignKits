@@ -33,7 +33,7 @@
 [ext_resource type="Script" path="res://entities/player/scripts/interactions/interaction_area.gd" id="27_avlta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esa46"]
-size = Vector2(14, 20.5)
+size = Vector2(13, 21)
 
 [sub_resource type="Animation" id="Animation_lnqd1"]
 length = 0.001
@@ -533,7 +533,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fe8oe"]
-size = Vector2(14, 21)
+size = Vector2(13, 21)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_mask = 3
@@ -541,7 +541,7 @@ script = ExtResource("1_e0sqm")
 coyote_time = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 2.75)
+position = Vector2(-0.5, 2.5)
 shape = SubResource("RectangleShape2D_esa46")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -617,7 +617,17 @@ player = NodePath("..")
 target_position = Vector2(9, 2.08165e-12)
 script = ExtResource("21_58gfg")
 
+[node name="BottomRight" type="RayCast2D" parent="InteractionController"]
+position = Vector2(0, 13)
+target_position = Vector2(9, 2.08165e-12)
+script = ExtResource("21_58gfg")
+
 [node name="MiddleLeft" type="RayCast2D" parent="InteractionController"]
+target_position = Vector2(-9, 2.08165e-12)
+script = ExtResource("21_58gfg")
+
+[node name="BottomLeft" type="RayCast2D" parent="InteractionController"]
+position = Vector2(0, 13)
 target_position = Vector2(-9, 2.08165e-12)
 script = ExtResource("21_58gfg")
 
@@ -628,6 +638,18 @@ script = ExtResource("21_58gfg")
 
 [node name="LadderDown" type="RayCast2D" parent="InteractionController"]
 position = Vector2(0, 14)
+target_position = Vector2(2.08165e-12, 1)
+collide_with_areas = true
+script = ExtResource("21_58gfg")
+
+[node name="LadderLeftDown" type="RayCast2D" parent="InteractionController"]
+position = Vector2(3, 14)
+target_position = Vector2(2.08165e-12, 1)
+collide_with_areas = true
+script = ExtResource("21_58gfg")
+
+[node name="LadderRightDown" type="RayCast2D" parent="InteractionController"]
+position = Vector2(-3, 14)
 target_position = Vector2(2.08165e-12, 1)
 collide_with_areas = true
 script = ExtResource("21_58gfg")
