@@ -6,6 +6,8 @@ class_name EnemyBody2D
 @export var death_state: CharacterState
 @export var respawnable := true
 
+var _queued_for_respawn := false
+
 var initial_position: Vector2
 
 signal death
@@ -29,6 +31,7 @@ func _on_death():
 	set_collision_layer_value(1, false)
 	set_collision_layer_value(2, false)
 	set_collision_mask_value(1, false)
-	if (respawnable):
+	if (respawnable and not _queued_for_respawn):
 		LevelController.register_enemy_for_respawn(self)
+		_queued_for_respawn = true
 	state_machine.change_state(death_state)

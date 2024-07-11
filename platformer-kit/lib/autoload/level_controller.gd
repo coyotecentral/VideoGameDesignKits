@@ -3,7 +3,7 @@ extends Node
 var _respawn_position := Vector2()
 var _checkpoint_active := false
 var _gem_count := 0
-var _death_count := 0
+var _death_count := -1
 var _scene_file_path: String = ""
 
 var _enemies_to_respawn: Array[RespawnData] = []
@@ -43,20 +43,18 @@ func respawn():
 	if not _checkpoint_active:
 		# TODO
 		# Level will fully reset, gems included (for now)
-		_gem_count = 0
-		reset_level()
+		# _gem_count = 0
+		# reset_level()
 		return
 	
 func respawn_enemies():
-	if _checkpoint_active:
-		# The level will fully reset
-		_enemies_to_respawn = []
-		return
+	print(_enemies_to_respawn)
 	for e in _enemies_to_respawn:
 		var root = get_tree().get_root()
 		var scene = load(e.scene_file_path)
 		var instance = scene.instantiate()
 		root.add_child(instance)
+		instance.initial_position = e.spawn_position
 		instance.global_position = e.spawn_position
 	_enemies_to_respawn = []
 
