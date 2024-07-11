@@ -613,20 +613,20 @@ script = ExtResource("20_hyx15")
 movement_controller = NodePath("../MovementController")
 player = NodePath("..")
 
-[node name="MiddleRight" type="RayCast2D" parent="InteractionController"]
+[node name="RightMiddle" type="RayCast2D" parent="InteractionController"]
 target_position = Vector2(9, 2.08165e-12)
 script = ExtResource("21_58gfg")
 
-[node name="BottomRight" type="RayCast2D" parent="InteractionController"]
+[node name="RightLower" type="RayCast2D" parent="InteractionController"]
 position = Vector2(0, 13)
 target_position = Vector2(9, 2.08165e-12)
 script = ExtResource("21_58gfg")
 
-[node name="MiddleLeft" type="RayCast2D" parent="InteractionController"]
+[node name="LeftMiddle" type="RayCast2D" parent="InteractionController"]
 target_position = Vector2(-9, 2.08165e-12)
 script = ExtResource("21_58gfg")
 
-[node name="BottomLeft" type="RayCast2D" parent="InteractionController"]
+[node name="LeftLower" type="RayCast2D" parent="InteractionController"]
 position = Vector2(0, 13)
 target_position = Vector2(-9, 2.08165e-12)
 script = ExtResource("21_58gfg")

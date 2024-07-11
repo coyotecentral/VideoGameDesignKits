@@ -3,36 +3,45 @@ extends Node2D
 @export var movement_controller: MovementController
 @export var player: Player
 
-@onready var middle_right: InteractionRaycast = $MiddleRight
-@onready var middle_left: InteractionRaycast = $MiddleLeft
 @onready var middle_down: InteractionRaycast = $MiddleDown
 @onready var hitbox_area: InteractionArea = $HitboxArea
 # This ray checks if there are any ladders below us
 @onready var ladder_down: InteractionRaycast = $LadderDown
 
 func _ready() -> void:
-	# Middle left
-	$MiddleLeft.set_handler(InteractionTypes.PushableObject, func(collider, delta):
+	# Left-middle
+	$LeftMiddle.set_handler(InteractionTypes.PushableObject, func(collider, delta):
 		if movement_controller.facing == "left":
 			InteractionHandlers.push_object(collider, Vector2( - 75.0, 0), delta)
 	)
-	$MiddleLeft.set_handler(InteractionTypes.Damage, func(_collider, _delta):
+	$LeftMiddle.set_handler(InteractionTypes.Damage, func(_collider, _delta):
+		InteractionHandlers.take_damage(player, 1)
+	)
+
+	# Left-lower
+	$LeftLower.set_handler(InteractionTypes.Damage, func(_collider, _delta):
 		InteractionHandlers.take_damage(player, 1)
 	)
 
 
-	# Middle right
-	$MiddleRight.set_handler(InteractionTypes.PushableObject, func(collider, delta):
+	# Right-middle
+	$RightMiddle.set_handler(InteractionTypes.PushableObject, func(collider, delta):
 		if movement_controller.facing == "right":
 			InteractionHandlers.push_object(collider, Vector2(75.0, 0), delta)
 	)
-	$MiddleRight.set_handler(InteractionTypes.Damage, func(_collider, _delta):
+	$RightMiddle.set_handler(InteractionTypes.Damage, func(_collider, _delta):
+		InteractionHandlers.take_damage(player, 1)
+	)
+
+	# Right-lower
+	$RightLower.set_handler(InteractionTypes.Damage, func(_collider, _delta):
 		InteractionHandlers.take_damage(player, 1)
 	)
 
 func _physics_process(delta: float) -> void:
-	middle_left.process_collision(delta)
-	middle_right.process_collision(delta)
+	for c in get_children():
+		if c is InteractionRaycast:
+			c.process_collision(delta)
 
 	# Legacy Code
 	handle_down_middle(delta)
