@@ -18,7 +18,7 @@ func process_physics(delta: float) -> State:
 		return climb_state
 	if movement_controller.get_vector().x:
 		return move_state
-	if movement_controller.is_jump_pressed():
+	if movement_controller.is_jump_just_pressed():
 		return jump_state
 	parent.velocity = Vector2()
 	parent.move_and_slide()
