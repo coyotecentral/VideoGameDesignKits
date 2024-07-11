@@ -15,6 +15,10 @@ run/main_scene="res://levels/sandbox.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LevelController="*res://lib/autoload/level_controller.gd"
+
 [display]
 
 window/size/viewport_width=640

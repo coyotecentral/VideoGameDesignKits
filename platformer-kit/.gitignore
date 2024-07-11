@@ -1,3 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
 levels/dytrich_n/level_1.tscn
+*/*.DS_Store

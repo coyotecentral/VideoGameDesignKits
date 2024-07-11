@@ -19,19 +19,17 @@ func _ready():
 		if c is Player:
 			_player = c
 	
-	_player.respawn.connect(handle_respawn)
-	_player.gem_collected.connect(handle_gem_collected)
-	
 	# Set a respawn point if none is set
 	if not respawn_marker:
 		var marker = Marker2D.new()
 		add_child(marker)
 		marker.position = _player.position
 		respawn_marker = marker
-
-func handle_respawn() -> void:
-	game_ui.death_count += 1
-	_player.position = respawn_marker.position
-
-func handle_gem_collected():
-	game_ui.gem_count += 1
+	
+	LevelController.set_scene_path(scene_file_path)
+	
+	# Hack to see if it's the first time we're loading
+	if LevelController._death_count == 0:
+		LevelController.set_spawn_position(respawn_marker.global_position)
+	
+	_player.respawn.emit()

@@ -7,6 +7,7 @@
 size = Vector2(64, 64)
 
 [node name="CheckpointSign" type="Node2D"]
+z_index = -1
 script = ExtResource("1_g6ewb")
 
 [node name="Area2D" type="Area2D" parent="."]
