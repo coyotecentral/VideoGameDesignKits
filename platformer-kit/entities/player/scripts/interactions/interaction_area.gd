@@ -18,4 +18,6 @@ func get_interaction_events() -> Array[InteractionEvent]:
 		var parent = area.get_parent()
 		if parent is Gem:
 			result.push_back(InteractionEvent.new(parent, InteractionTypes.Gem))
+		if parent is Checkpoint:
+			result.push_back(InteractionEvent.new(parent, InteractionTypes.Checkpoint))
 	return result
