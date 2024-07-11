@@ -2,7 +2,6 @@ extends Node2D
 class_name Ladder
 
 @onready var area: Area2D = $Area2D
-@onready var exit_ladder_area: Area2D = $ExitLadderArea
 @onready var up_check: RayCast2D = $Up
 @onready var down_check: RayCast2D = $Down
 @onready var static_body: StaticBody2D = $StaticBody2D
@@ -34,9 +33,6 @@ func make_contiguous():
 	else:
 		down_collider = d
 
-	if down_collider is Ladder:
-		exit_ladder_area.queue_free()
-	
 	#clean up the rays
 	up_check.queue_free()
 	down_check.queue_free()

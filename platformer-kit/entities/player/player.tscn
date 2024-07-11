@@ -536,6 +536,7 @@ _data = {
 size = Vector2(14, 21)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_mask = 3
 script = ExtResource("1_e0sqm")
 coyote_time = 0.1
 
