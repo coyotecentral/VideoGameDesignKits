@@ -22,6 +22,7 @@ class_name Player
 # Supplemental state variables
 var can_climb := false
 var can_climb_down := false
+var climb_x_snap: float = 0
 
 signal respawn
 signal damage_taken(amount: int)

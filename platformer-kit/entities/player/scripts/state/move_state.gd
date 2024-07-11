@@ -5,6 +5,7 @@ extends CharacterState
 @export var idle_state: State
 @export var jump_state: State
 @export var fall_state: State
+@export var climb_state: State
 
 var _coyote_timer: Timer
 var _coyote_time_elapsed: bool = false
@@ -24,6 +25,9 @@ func exit():
 
 func process_physics(delta: float) -> State:
 	var movement = movement_controller.get_vector().x * parent.move_speed
+
+	if movement_controller.is_climb_pressed() and parent.can_climb:
+		return climb_state
 
 	if not parent.is_on_floor():
 		if _coyote_time_elapsed or movement == 0:
