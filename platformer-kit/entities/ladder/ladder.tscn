@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://entities/ladder/ladder.gd" id="1_yycyb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nj7yh"]
-size = Vector2(14, 16)
+size = Vector2(6, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dldyh"]
 size = Vector2(16, 1)
