@@ -3,16 +3,47 @@ extends Node2D
 @export var movement_controller: MovementController
 @export var player: Player
 
-@onready var middle_right: InteractionRaycast = $MiddleRight
-@onready var middle_left: InteractionRaycast = $MiddleLeft
 @onready var middle_down: InteractionRaycast = $MiddleDown
 @onready var hitbox_area: InteractionArea = $HitboxArea
 # This ray checks if there are any ladders below us
 @onready var ladder_down: InteractionRaycast = $LadderDown
 
+func _ready() -> void:
+	# Left-middle
+	$LeftMiddle.set_handler(InteractionTypes.PushableObject, func(collider, delta):
+		if movement_controller.facing == "left":
+			InteractionHandlers.push_object(collider, Vector2( - 75.0, 0), delta)
+	)
+	$LeftMiddle.set_handler(InteractionTypes.Damage, func(_collider, _delta):
+		InteractionHandlers.take_damage(player, 1)
+	)
+
+	# Left-lower
+	$LeftLower.set_handler(InteractionTypes.Damage, func(_collider, _delta):
+		InteractionHandlers.take_damage(player, 1)
+	)
+
+
+	# Right-middle
+	$RightMiddle.set_handler(InteractionTypes.PushableObject, func(collider, delta):
+		if movement_controller.facing == "right":
+			InteractionHandlers.push_object(collider, Vector2(75.0, 0), delta)
+	)
+	$RightMiddle.set_handler(InteractionTypes.Damage, func(_collider, _delta):
+		InteractionHandlers.take_damage(player, 1)
+	)
+
+	# Right-lower
+	$RightLower.set_handler(InteractionTypes.Damage, func(_collider, _delta):
+		InteractionHandlers.take_damage(player, 1)
+	)
+
 func _physics_process(delta: float) -> void:
-	handle_left_middle(delta)
-	handle_right_middle(delta)
+	for c in get_children():
+		if c is InteractionRaycast:
+			c.process_collision(delta)
+
+	# Legacy Code
 	handle_down_middle(delta)
 	handle_hitbox_area(delta)
 	handle_ladder_down(delta)
@@ -38,32 +69,8 @@ func handle_hitbox_area(delta: float) -> void:
 			_:
 				pass
 	
-func handle_left_middle(delta: float) -> void:
-	var interaction_event = middle_left.get_interaction_event()
-	match interaction_event.get_interaction_type():
-		InteractionTypes.PushableObject:
-			# Only push when facing
-			if(movement_controller.facing == "left"):
-				InteractionHandlers.push_object(Vector2(-100.0, 0), interaction_event, delta)
-		InteractionTypes.Damage:
-			InteractionHandlers.take_damage(player, 1)
-		_:
-			pass
-
-func handle_right_middle(delta: float) -> void:
-	var interaction_event = middle_right.get_interaction_event()
-	match interaction_event.get_interaction_type():
-		InteractionTypes.PushableObject:
-			# Only push when facing
-			if(movement_controller.facing == "right"):
-				InteractionHandlers.push_object(Vector2(100.0, 0), interaction_event, delta)
-		InteractionTypes.Damage:
-			InteractionHandlers.take_damage(player, 1)
-		_:
-			pass
-	
 func handle_down_middle(delta: float) -> void:
-	var interaction_event = middle_down.get_interaction_event()
+	var interaction_event = middle_down.process_collision(delta)
 	var type = interaction_event.get_interaction_type()
 	match type:
 		InteractionTypes.Damage:
@@ -72,7 +79,7 @@ func handle_down_middle(delta: float) -> void:
 			pass
 
 func handle_ladder_down(delta: float) -> void:
-	var interaction_event = ladder_down.get_interaction_event()
+	var interaction_event = ladder_down.process_collision(delta)
 	var type = interaction_event.get_interaction_type()
 	if type == InteractionTypes.Ladder:
 		# This has to be global because this returns an Area2D
