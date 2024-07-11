@@ -41,10 +41,17 @@ func reset_level():
 
 func respawn():
 	if not _checkpoint_active:
+		# TODO
+		# Level will fully reset, gems included (for now)
+		_gem_count = 0
 		reset_level()
 		return
 	
 func respawn_enemies():
+	if _checkpoint_active:
+		# The level will fully reset
+		_enemies_to_respawn = []
+		return
 	for e in _enemies_to_respawn:
 		var root = get_tree().get_root()
 		var scene = load(e.scene_file_path)

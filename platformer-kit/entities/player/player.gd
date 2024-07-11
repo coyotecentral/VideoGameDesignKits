@@ -36,12 +36,12 @@ func _ready() -> void:
 	)
 
 	damage_taken.connect(func(_amount: int):
-		LevelController.increment_death_count()
 		LevelController.respawn()
 	)
 
 	respawn.connect(func():
 		LevelController.respawn_enemies()
+		LevelController.increment_death_count()
 		global_position = LevelController._respawn_position
 	)
 
