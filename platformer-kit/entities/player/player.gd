@@ -42,7 +42,8 @@ func _ready() -> void:
 	respawn.connect(func():
 		LevelController.respawn_enemies()
 		LevelController.increment_death_count()
-		global_position = LevelController._respawn_position
+		if LevelController.get_death_count() > 0:
+			global_position = LevelController._respawn_position
 	)
 
 func _unhandled_input(event: InputEvent) -> void:
