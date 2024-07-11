@@ -9,6 +9,7 @@ var dismount_count = 0
 func enter():
 	super()
 	parent.velocity = Vector2()
+	parent.position.x = parent.climb_x_snap + 2
 
 func exit():
 	super()
