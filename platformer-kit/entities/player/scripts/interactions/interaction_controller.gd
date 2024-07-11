@@ -61,7 +61,7 @@ func handle_hitbox_area(delta: float) -> void:
 		var parent = area.get_parent()
 		if parent is Ladder:
 			is_on_ladder = true
-			player.climb_x_snap = parent.position.x
+			player.climb_x_snap = parent.global_position.x
 			break
 	player.can_climb = is_on_ladder
 
