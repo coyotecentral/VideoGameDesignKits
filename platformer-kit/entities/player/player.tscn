@@ -609,7 +609,6 @@ position = Vector2(0, 23)
 script = ExtResource("19_7k7iy")
 
 [node name="InteractionController" type="Node2D" parent="." node_paths=PackedStringArray("movement_controller", "player")]
-process_mode = 4
 script = ExtResource("20_hyx15")
 movement_controller = NodePath("../MovementController")
 player = NodePath("..")
