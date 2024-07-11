@@ -4,6 +4,7 @@ extends CharacterState
 @export_group("Transitions")
 @export var idle_state: State
 @export var move_state: State
+@export var climb_state: State
 
 func process_physics(delta: float) -> State:
 	# Hacky way of making sprite face the right direction
@@ -12,6 +13,9 @@ func process_physics(delta: float) -> State:
 	var movement = movement_controller.get_vector().x * parent.float_speed
 	parent.velocity.x = movement
 	parent.move_and_slide()
+
+	if movement_controller.get_vector().y and parent.can_climb:
+		return climb_state
 
 	if parent.is_on_floor():
 		if movement_controller.get_vector().x:

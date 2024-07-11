@@ -2,6 +2,7 @@
 extends CharacterState
 
 @export_group("Transitions")
+@export var idle_state: State
 @export var fall_state: State
 
 var dismount_count = 0
@@ -31,7 +32,7 @@ func process_physics(delta: float) -> State:
 	if movement < 0 and parent.is_on_floor():
 		dismount_count += 1
 		if dismount_count > 2:
-			return fall_state
+			return idle_state
 	
 	parent.position.y -= movement * delta
 	parent.move_and_slide()

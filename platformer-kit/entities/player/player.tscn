@@ -570,11 +570,12 @@ fall_state = NodePath("../Fall")
 climb_state = NodePath("../Climbing")
 animation_name = "idle"
 
-[node name="Move" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "jump_state", "fall_state")]
+[node name="Move" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "jump_state", "fall_state", "climb_state")]
 script = ExtResource("16_aee82")
 idle_state = NodePath("../Idle")
 jump_state = NodePath("../Jump")
 fall_state = NodePath("../Fall")
+climb_state = NodePath("../Climbing")
 animation_name = "run"
 
 [node name="Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state")]
@@ -582,10 +583,11 @@ script = ExtResource("17_xe8kk")
 fall_state = NodePath("../Fall")
 animation_name = "jump"
 
-[node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "move_state")]
+[node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "move_state", "climb_state")]
 script = ExtResource("18_8xsas")
 idle_state = NodePath("../Idle")
 move_state = NodePath("../Move")
+climb_state = NodePath("../Climbing")
 animation_name = "fall"
 
 [node name="Damage" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state")]
@@ -594,8 +596,9 @@ idle_state = NodePath("../Idle")
 animation_name = "damage"
 directional = false
 
-[node name="Climbing" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state")]
+[node name="Climbing" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "fall_state")]
 script = ExtResource("24_e5vco")
+idle_state = NodePath("../Idle")
 fall_state = NodePath("../Fall")
 animation_name = "climbing"
 directional = false

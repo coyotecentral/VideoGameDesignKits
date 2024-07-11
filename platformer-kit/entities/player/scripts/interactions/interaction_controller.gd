@@ -27,7 +27,6 @@ func handle_hitbox_area(delta: float) -> void:
 		if parent is Ladder:
 			is_on_ladder = true
 			player.climb_x_snap = parent.position.x
-			print(player.climb_x_snap)
 			break
 	player.can_climb = is_on_ladder
 
@@ -76,9 +75,8 @@ func handle_ladder_down(delta: float) -> void:
 	var interaction_event = ladder_down.get_interaction_event()
 	var type = interaction_event.get_interaction_type()
 	if type == InteractionTypes.Ladder:
-		player.can_climb_down = true
 		# This has to be global because this returns an Area2D
 		player.climb_x_snap = interaction_event.get_collider().global_position.x
-		print(player.climb_x_snap)
+		player.can_climb_down = true
 	else:
 		player.can_climb_down = false
