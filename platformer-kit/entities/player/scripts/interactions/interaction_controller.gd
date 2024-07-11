@@ -10,33 +10,38 @@ extends Node2D
 
 func _ready() -> void:
 	# Left-middle
-	$LeftMiddle.set_handler(InteractionTypes.PushableObject, func(collider, delta):
+	$LeftMiddle.set_handlers([InteractionTypes.PushableObject, InteractionTypes.Enemy], func(collider, delta):
 		if movement_controller.facing == "left":
 			InteractionHandlers.push_object(collider, Vector2( - 75.0, 0), delta)
 	)
-	$LeftMiddle.set_handler(InteractionTypes.Damage, func(_collider, _delta):
-		InteractionHandlers.take_damage(player, 1)
-	)
 
-	# Left-lower
-	$LeftLower.set_handler(InteractionTypes.Damage, func(_collider, _delta):
-		InteractionHandlers.take_damage(player, 1)
-	)
-
+	for ray in [$LeftMiddle, $LeftLower, $LeftUpper]:
+		ray.set_handlers([InteractionTypes.Damage, InteractionTypes.Enemy], func(_collider, _delta):
+			InteractionHandlers.take_damage(player, 1)
+		)
 
 	# Right-middle
 	$RightMiddle.set_handler(InteractionTypes.PushableObject, func(collider, delta):
 		if movement_controller.facing == "right":
 			InteractionHandlers.push_object(collider, Vector2(75.0, 0), delta)
 	)
-	$RightMiddle.set_handler(InteractionTypes.Damage, func(_collider, _delta):
+	$RightMiddle.set_handlers([InteractionTypes.Damage, InteractionTypes.Enemy], func(_collider, _delta):
 		InteractionHandlers.take_damage(player, 1)
 	)
 
-	# Right-lower
-	$RightLower.set_handler(InteractionTypes.Damage, func(_collider, _delta):
-		InteractionHandlers.take_damage(player, 1)
-	)
+	
+	for ray in [$RightMiddle, $RightLower, $RightUpper]:
+		ray.set_handlers([InteractionTypes.Damage, InteractionTypes.Enemy], func(_collider, _delta):
+			InteractionHandlers.take_damage(player, 1)
+		)
+
+	for ray in [$DownMiddle, $DownRight, $DownLeft]:
+		ray.set_handler(InteractionTypes.Damage, func(_collider, _delta):
+			InteractionHandlers.take_damage(player, 1)
+		)
+		ray.set_handler(InteractionTypes.Enemy, func(collider, _delta):
+			collider.death.emit()
+		)
 
 func _physics_process(delta: float) -> void:
 	for c in get_children():
@@ -44,7 +49,6 @@ func _physics_process(delta: float) -> void:
 			c.process_collision(delta)
 
 	# Legacy Code
-	handle_down_middle(delta)
 	handle_hitbox_area(delta)
 	handle_ladder_down(delta)
 
@@ -69,15 +73,6 @@ func handle_hitbox_area(delta: float) -> void:
 			_:
 				pass
 	
-func handle_down_middle(delta: float) -> void:
-	var interaction_event = middle_down.process_collision(delta)
-	var type = interaction_event.get_interaction_type()
-	match type:
-		InteractionTypes.Damage:
-			InteractionHandlers.take_damage(player, 1)
-		_:
-			pass
-
 func handle_ladder_down(delta: float) -> void:
 	var interaction_event = ladder_down.process_collision(delta)
 	var type = interaction_event.get_interaction_type()

@@ -609,6 +609,7 @@ position = Vector2(0, 23)
 script = ExtResource("19_7k7iy")
 
 [node name="InteractionController" type="Node2D" parent="." node_paths=PackedStringArray("movement_controller", "player")]
+process_mode = 4
 script = ExtResource("20_hyx15")
 movement_controller = NodePath("../MovementController")
 player = NodePath("..")
@@ -617,8 +618,13 @@ player = NodePath("..")
 target_position = Vector2(9, 2.08165e-12)
 script = ExtResource("21_58gfg")
 
+[node name="RightUpper" type="RayCast2D" parent="InteractionController"]
+position = Vector2(0, -6)
+target_position = Vector2(9, 2.08165e-12)
+script = ExtResource("21_58gfg")
+
 [node name="RightLower" type="RayCast2D" parent="InteractionController"]
-position = Vector2(0, 13)
+position = Vector2(0, 12)
 target_position = Vector2(9, 2.08165e-12)
 script = ExtResource("21_58gfg")
 
@@ -626,30 +632,35 @@ script = ExtResource("21_58gfg")
 target_position = Vector2(-9, 2.08165e-12)
 script = ExtResource("21_58gfg")
 
-[node name="LeftLower" type="RayCast2D" parent="InteractionController"]
-position = Vector2(0, 13)
+[node name="LeftUpper" type="RayCast2D" parent="InteractionController"]
+position = Vector2(0, -6)
 target_position = Vector2(-9, 2.08165e-12)
 script = ExtResource("21_58gfg")
 
-[node name="MiddleDown" type="RayCast2D" parent="InteractionController"]
+[node name="LeftLower" type="RayCast2D" parent="InteractionController"]
+position = Vector2(0, 12)
+target_position = Vector2(-9, 2.08165e-12)
+script = ExtResource("21_58gfg")
+
+[node name="DownMiddle" type="RayCast2D" parent="InteractionController"]
+target_position = Vector2(0, 14)
+collide_with_areas = true
+script = ExtResource("21_58gfg")
+
+[node name="DownRight" type="RayCast2D" parent="InteractionController"]
+position = Vector2(5, 0)
+target_position = Vector2(0, 14)
+collide_with_areas = true
+script = ExtResource("21_58gfg")
+
+[node name="DownLeft" type="RayCast2D" parent="InteractionController"]
+position = Vector2(-6, 1)
 target_position = Vector2(0, 14)
 collide_with_areas = true
 script = ExtResource("21_58gfg")
 
 [node name="LadderDown" type="RayCast2D" parent="InteractionController"]
 position = Vector2(0, 14)
-target_position = Vector2(2.08165e-12, 1)
-collide_with_areas = true
-script = ExtResource("21_58gfg")
-
-[node name="LadderLeftDown" type="RayCast2D" parent="InteractionController"]
-position = Vector2(3, 14)
-target_position = Vector2(2.08165e-12, 1)
-collide_with_areas = true
-script = ExtResource("21_58gfg")
-
-[node name="LadderRightDown" type="RayCast2D" parent="InteractionController"]
-position = Vector2(-3, 14)
 target_position = Vector2(2.08165e-12, 1)
 collide_with_areas = true
 script = ExtResource("21_58gfg")

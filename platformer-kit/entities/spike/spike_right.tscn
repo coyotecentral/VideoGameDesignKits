@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1d2a6iw3ylub" path="res://sprites/environment/props/spikes.png" id="2_vdfgo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enwfv"]
-size = Vector2(14, 9)
+size = Vector2(12, 9)
 
 [node name="Spike" type="StaticBody2D"]
 position = Vector2(3, 2.08165e-12)
