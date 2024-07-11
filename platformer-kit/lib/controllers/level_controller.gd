@@ -29,7 +29,7 @@ func _ready():
 	LevelController.set_scene_path(scene_file_path)
 	
 	# Hack to see if it's the first time we're loading
-	if LevelController._death_count == 0:
+	if LevelController._death_count <= 0:
 		LevelController.set_spawn_position(respawn_marker.global_position)
 	
 	_player.respawn.emit()
