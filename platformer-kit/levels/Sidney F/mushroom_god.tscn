@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://jypkwrfmvoyh"]
+
+[ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://entities/spike/mushroom.tscn" id="1_fd8ny"]
+
+[node name="Mushroom" instance=ExtResource("1_fd8ny")]
+
+[node name="Sprite2D" parent="." index="3"]
+modulate = Color(0.14902, 1, 0.278431, 1)
