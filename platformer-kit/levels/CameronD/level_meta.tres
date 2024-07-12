@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelMeta" load_steps=2 format=3 uid="uid://dwge2mlw6fghu"]
+
+[ext_resource type="Script" path="res://ui/main_menu/level_meta.gd" id="1_43ru6"]
+
+[resource]
+script = ExtResource("1_43ru6")
+level_name = "The Grass Hills"
+author = "Cameron D"
+file = "res://levels/CameronD/level.tscn"
