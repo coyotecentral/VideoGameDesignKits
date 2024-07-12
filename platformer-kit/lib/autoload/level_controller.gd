@@ -4,15 +4,33 @@ var _respawn_position := Vector2()
 var _checkpoint_active := false
 var _gem_count := 0
 var _death_count := -1
+var _final_death_count := 0
+
 var _scene_file_path: String = ""
 
 var _enemies_to_respawn: Array[RespawnData] = []
+var _total_gems := 0
+var _seconds_elapsed := 0
+var _final_time := 0
+var _is_completed := false
 
 func increment_score(amount: int = 1):
 	_gem_count += amount
 
+func increment_time(amount: int = 1):
+	_seconds_elapsed += amount
+
+func get_seconds_elapsed():
+	return _seconds_elapsed
+
+func get_final_time():
+	return _final_time
+
 func increment_death_count(amount: int = 1):
 	_death_count += amount
+
+func get_final_death_count():
+	return _final_death_count
 
 func set_spawn_position(position: Vector2) -> void:
 	_respawn_position = position
@@ -22,6 +40,9 @@ func get_spawn_position() -> Vector2:
 
 func get_gem_count():
 	return _gem_count
+
+func get_total_gem_count():
+	return _total_gems
 
 func get_death_count():
 	return _death_count
@@ -60,3 +81,15 @@ func respawn_enemies():
 
 func register_enemy_for_respawn(enemy: EnemyBody2D):
 	_enemies_to_respawn.push_back(RespawnData.new(enemy.scene_file_path, enemy.initial_position))
+
+func register_gem(gem: Gem):
+	_total_gems += 1
+
+func is_gems_completed():
+	return _gem_count == _total_gems
+
+func complete_level():
+	if not _is_completed:
+		_final_time = _seconds_elapsed
+		_final_death_count = _death_count
+		_is_completed = true

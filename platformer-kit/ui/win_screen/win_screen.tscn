@@ -1,0 +1,110 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpvtuixqq7f0d"]
+
+[ext_resource type="Script" path="res://ui/win_screen/win_screen.gd" id="1_467w8"]
+[ext_resource type="Texture2D" uid="uid://mqvrkww463qe" path="res://ui/game_ui/sprites/skull.png" id="1_vmw45"]
+
+[node name="WinScreen" type="CanvasLayer" node_paths=PackedStringArray("time_label", "deaths_label", "continue_exploring_btn", "quit_to_menu_btn")]
+script = ExtResource("1_467w8")
+time_label = NodePath("Control/ColorRect/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/TimeValue")
+deaths_label = NodePath("Control/ColorRect/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2/DeathValue")
+continue_exploring_btn = NodePath("Control/ColorRect/MarginContainer/VBoxContainer/KeepExploring")
+quit_to_menu_btn = NodePath("Control/ColorRect/MarginContainer/VBoxContainer/Quit")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 200.0
+offset_top = 60.0
+offset_right = 400.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.133333, 0.133333, 0.133333, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level Completed!"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ColorRect/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Time" type="Label" parent="Control/ColorRect/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(48, 2.08165e-12)
+layout_mode = 2
+text = "Time"
+
+[node name="TimeValue" type="Label" parent="Control/ColorRect/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(48, 2.08165e-12)
+layout_mode = 2
+text = "00:00"
+horizontal_alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/ColorRect/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/ColorRect/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(48, 2.08165e-12)
+layout_mode = 2
+texture = ExtResource("1_vmw45")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="DeathValue" type="Label" parent="Control/ColorRect/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(48, 2.08165e-12)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="Spacer" type="Control" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="KeepExploring" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Keep Exploring"
+
+[node name="Quit" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back to Menu"

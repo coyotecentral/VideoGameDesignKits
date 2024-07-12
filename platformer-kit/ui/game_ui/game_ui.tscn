@@ -8,6 +8,7 @@
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_ilsv6")
 metadata/_edit_vertical_guides_ = [15.0]
+metadata/_edit_horizontal_guides_ = [31.0, 57.0]
 
 [node name="UI" type="MarginContainer" parent="."]
 offset_right = 640.0
@@ -61,7 +62,7 @@ custom_minimum_size = Vector2(20, 2.08165e-12)
 layout_mode = 2
 
 [node name="Gem" parent="UI/Container/GemCount/HBoxContainer/Control" instance=ExtResource("4_lm5mw")]
-position = Vector2(10, 11)
+position = Vector2(10, 14)
 scale = Vector2(1.5, 1.5)
 
 [node name="Label" type="Label" parent="UI/Container/GemCount/HBoxContainer"]
@@ -89,7 +90,7 @@ custom_minimum_size = Vector2(20, 2.08165e-12)
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="UI/Container/DeathCount/HBoxContainer/Control"]
-position = Vector2(9, 11)
+position = Vector2(9, 15)
 texture = ExtResource("4_y1fvh")
 
 [node name="Label" type="Label" parent="UI/Container/DeathCount/HBoxContainer"]
