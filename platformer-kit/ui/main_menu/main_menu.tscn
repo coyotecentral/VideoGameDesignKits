@@ -1,16 +1,21 @@
-[gd_scene load_steps=15 format=3 uid="uid://qxcngbvra7so"]
+[gd_scene load_steps=20 format=3 uid="uid://qxcngbvra7so"]
 
 [ext_resource type="Theme" uid="uid://cnabdh0mv7ar0" path="res://utils/ui_theme.tres" id="1_bccpn"]
 [ext_resource type="Texture2D" uid="uid://b7fink1osmqcm" path="res://sprites/environment/background/back.png" id="1_mwo27"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_r4rn8"]
 [ext_resource type="Script" path="res://ui/main_menu/main_menu.gd" id="2_xw3g8"]
 [ext_resource type="Texture2D" uid="uid://d2yp0i7odi44i" path="res://sprites/environment/props/rock.png" id="3_0jsj1"]
-[ext_resource type="Resource" uid="uid://yhovwie4cowj" path="res://levels/dytrich_n/level_1_meta.tres" id="3_efmop"]
-[ext_resource type="Resource" uid="uid://bayxpttg7bisd" path="res://levels/dytrich_n/sandbox.tres" id="4_1oqo1"]
+[ext_resource type="Resource" uid="uid://bmg25x7okvsdw" path="res://levels/Cameron S/cameron.tres" id="3_6qtov"]
+[ext_resource type="Resource" uid="uid://b8xtlkphyg0vl" path="res://levels/Sidney F/sidney_f.tres" id="4_6ah8s"]
 [ext_resource type="Texture2D" uid="uid://doh2vwvbhli3l" path="res://sprites/environment/props/rock-1.png" id="4_s4byf"]
 [ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://entities/mushroom/mushroom.tscn" id="5_ni0u8"]
+[ext_resource type="Resource" uid="uid://dg85ksyt1av3j" path="res://levels/Ben_Schumacher/level_meta.tres" id="5_ykv7d"]
+[ext_resource type="Resource" uid="uid://sjfcbl5xvcxq" path="res://levels/Asher k-A/level_meta.tres" id="6_kt8d5"]
 [ext_resource type="Texture2D" uid="uid://bh5d5ysebmle3" path="res://entities/player/sprites/idle/player-idle-1.png" id="6_qng77"]
 [ext_resource type="Texture2D" uid="uid://cw2gxiai8utdu" path="res://entities/player/sprites/idle/player-idle-2.png" id="7_0mgsr"]
+[ext_resource type="Resource" uid="uid://vhd2tirbtoas" path="res://levels/H4rr150n/level_meta.tres" id="7_nw7td"]
+[ext_resource type="Resource" uid="uid://534ga4i1tq0" path="res://levels/jack r/level_meta.tres" id="7_usa8b"]
+[ext_resource type="Resource" uid="uid://dwge2mlw6fghu" path="res://levels/CameronD/level_meta.tres" id="8_i6v35"]
 [ext_resource type="Texture2D" uid="uid://rs5i755fle8i" path="res://entities/player/sprites/idle/player-idle-3.png" id="8_nvtlu"]
 [ext_resource type="Texture2D" uid="uid://dbtgx35fsldyp" path="res://entities/player/sprites/idle/player-idle-4.png" id="9_l3rnp"]
 
@@ -48,7 +53,7 @@ grow_vertical = 2
 theme = ExtResource("1_bccpn")
 script = ExtResource("2_xw3g8")
 quit_button = NodePath("ColorRect/MarginContainer/VBoxContainer/Quit")
-levels = Array[Resource("res://ui/main_menu/level_meta.gd")]([ExtResource("3_efmop"), ExtResource("4_1oqo1")])
+levels = Array[Resource("res://ui/main_menu/level_meta.gd")]([ExtResource("3_6qtov"), ExtResource("4_6ah8s"), ExtResource("5_ykv7d"), ExtResource("6_kt8d5"), ExtResource("7_nw7td"), ExtResource("7_usa8b"), ExtResource("8_i6v35")])
 level_button_container = NodePath("ColorRect/MarginContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
