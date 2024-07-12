@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://baqls0qh2o0dt"]
+[gd_scene load_steps=6 format=3 uid="uid://baqls0qh2o0dt"]
 
 [ext_resource type="Script" path="res://lib/level.gd" id="1_ad5wx"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="1_tfeib"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_7iwf8"]
 [ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://entities/mushroom/mushroom.tscn" id="4_ga1md"]
+[ext_resource type="PackedScene" uid="uid://c6k57q3kiat1f" path="res://entities/kill_floor/kill_floor.tscn" id="5_24x2s"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ad5wx")
@@ -24,3 +25,7 @@ position = Vector2(595, -26)
 
 [node name="Mushroom" parent="." instance=ExtResource("4_ga1md")]
 position = Vector2(452, -26)
+
+[node name="KillFloor" parent="." instance=ExtResource("5_24x2s")]
+position = Vector2(506, -185)
+scale = Vector2(20, 20)

@@ -73,6 +73,8 @@ func handle_hitbox_area(delta: float) -> void:
 			InteractionTypes.Checkpoint:
 				for checkpoint in event.get_colliders():
 					checkpoint.set_active()
+			InteractionTypes.Damage:
+				InteractionHandlers.take_damage(player, 1)
 			_:
 				pass
 	
