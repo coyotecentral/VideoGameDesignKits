@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://csscvsppbmwo7"]
+
+[ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="1_hl71x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jj4xa"]
+size = Vector2(117, 58)
+
+[node name="GravityTookADayOff" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_hl71x")
+format = 2
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(48.5, 19)
+shape = SubResource("RectangleShape2D_jj4xa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
