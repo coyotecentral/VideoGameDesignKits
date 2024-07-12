@@ -3,5 +3,6 @@
 [ext_resource type="FontFile" uid="uid://dg06sryjhbdcw" path="res://utils/m5x7.ttf" id="1_1k5wh"]
 
 [resource]
+Button/fonts/font = ExtResource("1_1k5wh")
 Label/font_sizes/font_size = 16
 Label/fonts/font = ExtResource("1_1k5wh")
