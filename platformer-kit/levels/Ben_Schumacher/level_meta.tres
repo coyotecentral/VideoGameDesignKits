@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelMeta" load_steps=2 format=3 uid="uid://dg85ksyt1av3j"]
+
+[ext_resource type="Script" path="res://ui/main_menu/level_meta.gd" id="1_a7qot"]
+
+[resource]
+script = ExtResource("1_a7qot")
+level_name = ""
+author = ""
+file = ""

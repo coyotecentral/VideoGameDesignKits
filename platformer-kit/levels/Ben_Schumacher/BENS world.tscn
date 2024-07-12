@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxe1q62gia4k2"]
+
+[ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://entities/mushroom/mushroom.tscn" id="1_ore6c"]
+
+[node name="Mushroom" instance=ExtResource("1_ore6c")]
+scale = Vector2(2, 2)
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="5"]
+position = Vector2(0, 1)
