@@ -5,8 +5,10 @@ var timer: Timer
 
 var game_ui_scene = preload("res://ui/game_ui/game_ui.tscn")
 var win_ui_scene = preload("res://ui/win_screen/win_screen.tscn")
+var pause_ui_scene = preload("res://ui/pause_screen/pause_screen.tscn")
 
 var game_ui: GameUI
+var pause_screen: CanvasLayer
 var win_screen: CanvasLayer
 var _player: Player
 
@@ -16,6 +18,10 @@ func _ready():
 	# Instantiate and add game ui
 	game_ui = game_ui_scene.instantiate()
 	add_child(game_ui)
+
+	pause_screen = pause_ui_scene.instantiate()
+	add_child(pause_screen)
+	pause_screen.hide()
 
 	# Find the player and set it
 	for c in get_children():
@@ -50,14 +56,17 @@ func _process(delta: float):
 		win_screen = win_ui_scene.instantiate()
 		add_child(win_screen)
 	
-	if win_screen and win_screen.visible:
-		game_ui.visible = false
-	else:
-		game_ui.visible = true
+	# if pause_screen and pause_screen.visible:
+	# 	game_ui.visible = false
+	# else:
+	# 	game_ui.visible = true
 	
 	if Input.is_action_just_pressed("open_menu"):
 		if win_screen:
-			if not win_screen.visible:
-				win_screen.show()
+			win_screen.show()
+			pause_screen.hide()
+		if pause_screen:
+			if not pause_screen.visible:
+				pause_screen.show()
 			else:
-				win_screen.hide()
+				pause_screen.hide()

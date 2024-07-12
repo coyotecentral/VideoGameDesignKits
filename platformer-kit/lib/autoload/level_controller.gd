@@ -86,10 +86,21 @@ func register_gem(gem: Gem):
 	_total_gems += 1
 
 func is_gems_completed():
-	return _gem_count == _total_gems
+	return _gem_count >= _total_gems
 
 func complete_level():
 	if not _is_completed:
 		_final_time = _seconds_elapsed
 		_final_death_count = _death_count
 		_is_completed = true
+
+func reset_variables():
+	# Reset variables
+	_is_completed = false
+	_enemies_to_respawn = []
+	_gem_count = 0
+	_death_count = -1
+	_checkpoint_active = false
+	_respawn_position = Vector2()
+	_total_gems = 0
+	_seconds_elapsed = 0

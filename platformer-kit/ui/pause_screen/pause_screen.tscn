@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8nvs2emucspy"]
+
+[ext_resource type="Script" path="res://ui/pause_screen/pause_screen.gd" id="1_4krlg"]
+[ext_resource type="Theme" uid="uid://cnabdh0mv7ar0" path="res://utils/ui_theme.tres" id="2_8rbyg"]
+
+[node name="PauseScreen" type="CanvasLayer" node_paths=PackedStringArray("resume_btn", "quit_to_menu_btn")]
+script = ExtResource("1_4krlg")
+resume_btn = NodePath("Control/ColorRect/MarginContainer/VBoxContainer/Resume")
+quit_to_menu_btn = NodePath("Control/ColorRect/MarginContainer/VBoxContainer/Quit")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+theme = ExtResource("2_8rbyg")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 200.0
+offset_top = 60.0
+offset_right = 400.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.133333, 0.133333, 0.133333, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 2.08165e-12)
+layout_mode = 2
+text = "Collect all the gems to complete the level!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Resume" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume
+"
+
+[node name="Quit" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back to Menu"
