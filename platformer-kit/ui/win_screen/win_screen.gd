@@ -13,6 +13,9 @@ func _ready():
 	deaths_label.text = "%d" % LevelController.get_final_death_count()
 
 	continue_exploring_btn.pressed.connect(handle_continue_exploring)
+	quit_to_menu_btn.pressed.connect(func():
+		get_tree().change_scene_to_file("res://ui/main_menu/main_menu.tscn")
+	)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
