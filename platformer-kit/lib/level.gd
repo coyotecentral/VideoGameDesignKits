@@ -54,3 +54,10 @@ func _process(delta: float):
 		game_ui.visible = false
 	else:
 		game_ui.visible = true
+	
+	if Input.is_action_just_pressed("open_menu"):
+		if win_screen:
+			if not win_screen.visible:
+				win_screen.show()
+			else:
+				win_screen.hide()
