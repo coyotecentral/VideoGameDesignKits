@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelMeta" load_steps=2 format=3 uid="uid://vhd2tirbtoas"]
+
+[ext_resource type="Script" path="res://ui/main_menu/level_meta.gd" id="1_c4c4v"]
+
+[resource]
+script = ExtResource("1_c4c4v")
+level_name = "Foxlands"
+author = "Harrison K"
+file = "res://levels/H4rr150n/node_2d.tscn"
