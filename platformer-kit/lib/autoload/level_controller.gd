@@ -86,7 +86,7 @@ func register_gem(gem: Gem):
 	_total_gems += 1
 
 func is_gems_completed():
-	return _gem_count >= _total_gems
+	return (_gem_count >= _total_gems) and _total_gems > 0
 
 func complete_level():
 	if not _is_completed:

@@ -1,12 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://qxcngbvra7so"]
+[gd_scene load_steps=14 format=3 uid="uid://qxcngbvra7so"]
 
 [ext_resource type="Theme" uid="uid://cnabdh0mv7ar0" path="res://utils/ui_theme.tres" id="1_bccpn"]
 [ext_resource type="Texture2D" uid="uid://b7fink1osmqcm" path="res://sprites/environment/background/back.png" id="1_mwo27"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_r4rn8"]
 [ext_resource type="Script" path="res://ui/main_menu/main_menu.gd" id="2_xw3g8"]
 [ext_resource type="Texture2D" uid="uid://d2yp0i7odi44i" path="res://sprites/environment/props/rock.png" id="3_0jsj1"]
-[ext_resource type="Resource" uid="uid://yhovwie4cowj" path="res://levels/dytrich_n/level_1_meta.tres" id="3_efmop"]
-[ext_resource type="Resource" uid="uid://bayxpttg7bisd" path="res://levels/dytrich_n/sandbox.tres" id="4_1oqo1"]
+[ext_resource type="Resource" uid="uid://bayxpttg7bisd" path="res://levels/sandbox.tres" id="4_1oqo1"]
 [ext_resource type="Texture2D" uid="uid://doh2vwvbhli3l" path="res://sprites/environment/props/rock-1.png" id="4_s4byf"]
 [ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://entities/mushroom/mushroom.tscn" id="5_ni0u8"]
 [ext_resource type="Texture2D" uid="uid://bh5d5ysebmle3" path="res://entities/player/sprites/idle/player-idle-1.png" id="6_qng77"]
@@ -48,7 +47,7 @@ grow_vertical = 2
 theme = ExtResource("1_bccpn")
 script = ExtResource("2_xw3g8")
 quit_button = NodePath("ColorRect/MarginContainer/VBoxContainer/Quit")
-levels = Array[Resource("res://ui/main_menu/level_meta.gd")]([ExtResource("3_efmop"), ExtResource("4_1oqo1")])
+levels = Array[Resource("res://ui/main_menu/level_meta.gd")]([ExtResource("4_1oqo1")])
 level_button_container = NodePath("ColorRect/MarginContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
