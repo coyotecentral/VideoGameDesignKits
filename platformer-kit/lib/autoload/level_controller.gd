@@ -3,6 +3,7 @@ extends Node
 var _respawn_position := Vector2()
 var _checkpoint_active := false
 var _gem_count := 0
+var _key_count := 0
 var _death_count := -1
 var _final_death_count := 0
 
@@ -19,6 +20,13 @@ func increment_score(amount: int = 1):
 
 func increment_time(amount: int = 1):
 	_seconds_elapsed += amount
+
+func increment_key_count():
+	_key_count += 1
+
+func decrement_key_count():
+	if _key_count > 0:
+		_key_count -= 1
 
 func get_seconds_elapsed():
 	return _seconds_elapsed
@@ -46,6 +54,9 @@ func get_total_gem_count():
 
 func get_death_count():
 	return _death_count
+
+func get_key_count():
+	return _key_count
 
 func has_checkpoint() -> bool:
 	return _checkpoint_active

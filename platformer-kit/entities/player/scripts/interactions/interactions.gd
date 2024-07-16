@@ -10,3 +10,8 @@ static func collect_gem(player: Player, gem: Gem) -> void:
 	if not gem.is_collected:
 		gem.collect()
 		player.gem_collected.emit()
+
+static func collect_key(player: Player, key: Key) -> void:
+	if not key.is_collected:
+		key.collect()
+		player.key_collected.emit()

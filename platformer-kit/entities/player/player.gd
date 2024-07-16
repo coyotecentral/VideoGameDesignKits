@@ -27,12 +27,17 @@ var climb_x_snap: float = 0
 signal respawn
 signal damage_taken(amount: int)
 signal gem_collected
+signal key_collected
 
 func _ready() -> void:
 	state_machine.init(self)
 
 	gem_collected.connect(func():
 		LevelController.increment_score()
+	)
+
+	key_collected.connect(func():
+		LevelController.increment_key_count()
 	)
 
 	damage_taken.connect(func(_amount: int):
