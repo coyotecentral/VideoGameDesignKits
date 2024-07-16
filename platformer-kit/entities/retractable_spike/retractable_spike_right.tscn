@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjqy11rppwwsx"]
+
+[ext_resource type="PackedScene" uid="uid://blghjdurqmxv" path="res://entities/retractable_spike/retractable_spike_floor.tscn" id="1_gl7sm"]
+
+[node name="RetractableSpike" instance=ExtResource("1_gl7sm")]
+position = Vector2(3, 2.08165e-12)
+rotation = -1.5708
