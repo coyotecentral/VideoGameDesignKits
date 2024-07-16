@@ -10,13 +10,17 @@ var direction = 1
 
 func get_vector() -> Vector2:
 
+	var dl_collider = down_left.get_collider()
+	var dr_collider = down_right.get_collider()
+
 	if body.is_on_wall():
 		direction *= -1
 	else:
-		if not down_left.is_colliding():
+		if not dl_collider or dl_collider is Spike:
 			direction = 1
-		if not down_right.is_colliding():
+		if not dr_collider or dr_collider is Spike :
 			direction = -1
+	
 	
 	sprite.flip_h = direction < 0
 	return Vector2(direction, 0)
