@@ -69,7 +69,6 @@ func respawn():
 		return
 	
 func respawn_enemies():
-	print(_enemies_to_respawn)
 	for e in _enemies_to_respawn:
 		var root = get_tree().get_root()
 		var scene = load(e.scene_file_path)
