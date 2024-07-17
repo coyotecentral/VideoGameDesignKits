@@ -542,7 +542,7 @@ script = ExtResource("1_e0sqm")
 coyote_time = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(2.08165e-12, 4)
 shape = SubResource("CapsuleShape2D_3ejhy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -610,7 +610,6 @@ position = Vector2(0, 23)
 script = ExtResource("19_7k7iy")
 
 [node name="InteractionController" type="Node2D" parent="." node_paths=PackedStringArray("movement_controller", "player")]
-visible = false
 script = ExtResource("20_hyx15")
 movement_controller = NodePath("../MovementController")
 player = NodePath("..")
@@ -644,25 +643,25 @@ target_position = Vector2(-9, 2.08165e-12)
 script = ExtResource("21_58gfg")
 
 [node name="DownMiddle" type="RayCast2D" parent="InteractionController"]
-target_position = Vector2(0, 14)
+target_position = Vector2(2.08165e-12, 15)
 collide_with_areas = true
 script = ExtResource("21_58gfg")
 
 [node name="DownRight" type="RayCast2D" parent="InteractionController"]
 position = Vector2(5, 0)
-target_position = Vector2(0, 14)
+target_position = Vector2(2.08165e-12, 15)
 collide_with_areas = true
 script = ExtResource("21_58gfg")
 
 [node name="DownLeft" type="RayCast2D" parent="InteractionController"]
 position = Vector2(-6, 1)
-target_position = Vector2(0, 14)
+target_position = Vector2(2.08165e-12, 15)
 collide_with_areas = true
 script = ExtResource("21_58gfg")
 
 [node name="LadderDown" type="RayCast2D" parent="InteractionController"]
 position = Vector2(0, 14)
-target_position = Vector2(2.08165e-12, 1)
+target_position = Vector2(2.08165e-12, 5)
 collide_with_areas = true
 script = ExtResource("21_58gfg")
 
