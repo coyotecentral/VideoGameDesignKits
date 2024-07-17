@@ -347,6 +347,7 @@ _data = {
 [node name="Mushroom" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "animations", "death_state")]
 scale = Vector2(0.75, 0.75)
 collision_layer = 3
+floor_stop_on_slope = false
 script = ExtResource("1_wc4m8")
 state_machine = NodePath("StateMachine")
 animations = NodePath("AnimationPlayer")
@@ -393,11 +394,11 @@ sprite = NodePath("../Sprite2D")
 [node name="Rays" type="Node2D" parent="MovementController"]
 
 [node name="down_left" type="RayCast2D" parent="MovementController/Rays"]
-position = Vector2(-16, 12)
-target_position = Vector2(2.08165e-12, 16)
+position = Vector2(-16, 2.08165e-12)
+target_position = Vector2(2.08165e-12, 32)
 
 [node name="down_right" type="RayCast2D" parent="MovementController/Rays"]
-position = Vector2(16, 12)
-target_position = Vector2(2.08165e-12, 16)
+position = Vector2(16, 2.08165e-12)
+target_position = Vector2(2.08165e-12, 32)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

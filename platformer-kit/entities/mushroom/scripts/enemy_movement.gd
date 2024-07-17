@@ -14,13 +14,12 @@ func get_vector() -> Vector2:
 	var dr_collider = down_right.get_collider()
 
 	if body.is_on_wall():
-		direction *= -1
+		direction *= - 1
 	else:
 		if not dl_collider or dl_collider is Spike:
 			direction = 1
-		if not dr_collider or dr_collider is Spike :
+		if not dr_collider or dr_collider is Spike:
 			direction = -1
-	
 	
 	sprite.flip_h = direction < 0
 	return Vector2(direction, 0)
