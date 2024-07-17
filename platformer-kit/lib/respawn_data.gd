@@ -1,8 +1,8 @@
 class_name RespawnData
 
-var scene_file_path: String
+var entity: Node2D
 var spawn_position: Vector2
 
-func _init(path: String, position: Vector2):
-	scene_file_path = path
+func _init(node: Node2D, position: Vector2):
+	entity = node
 	spawn_position = position
