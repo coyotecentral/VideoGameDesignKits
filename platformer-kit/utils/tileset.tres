@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://cfbo1ll6fb523"]
+[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://cfbo1ll6fb523"]
 
 [ext_resource type="Texture2D" uid="uid://uqnwsry4nyue" path="res://sprites/environment/tileset.png" id="1_cd6d4"]
 [ext_resource type="PackedScene" uid="uid://clc75fmcd81kp" path="res://entities/spike/spike_floor.tscn" id="2_gwdu2"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://ri4vmipyjoq1" path="res://entities/ladder/ladder.tscn" id="8_j1te8"]
 [ext_resource type="PackedScene" uid="uid://b7puubrfwyv1c" path="res://entities/checkpoint/checkpoint_sign.tscn" id="9_vrdr1"]
 [ext_resource type="PackedScene" uid="uid://blghjdurqmxv" path="res://entities/retractable_spike/retractable_spike_floor.tscn" id="10_fn07b"]
+[ext_resource type="PackedScene" uid="uid://7dk38e0dxucg" path="res://entities/key/key.tscn" id="10_snl8i"]
+[ext_resource type="PackedScene" uid="uid://duxt3yxmrwab1" path="res://entities/key_block/key_block.tscn" id="11_2jvdf"]
 [ext_resource type="PackedScene" uid="uid://crlcc2680t4ji" path="res://entities/retractable_spike/retractable_spike_left.tscn" id="11_inn6e"]
 [ext_resource type="PackedScene" uid="uid://bjqy11rppwwsx" path="res://entities/retractable_spike/retractable_spike_right.tscn" id="12_lru5w"]
 
@@ -866,6 +868,8 @@ scenes/4/scene = ExtResource("4_0xee4")
 scenes/5/scene = ExtResource("5_0lmfj")
 scenes/6/scene = ExtResource("8_j1te8")
 scenes/7/scene = ExtResource("9_vrdr1")
+scenes/8/scene = ExtResource("10_snl8i")
+scenes/9/scene = ExtResource("11_2jvdf")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xt8gf"]
 resource_name = "retractable_spikes"
