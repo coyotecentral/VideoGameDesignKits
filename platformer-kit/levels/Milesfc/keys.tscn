@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxem4ja2t62f0"]
 
 [ext_resource type="Script" path="res://lib/level.gd" id="1_6qvpo"]
-[ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://mushroom/player.tscn" id="2_alg6m"]
+[ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="2_alg6m"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="3_2xsev"]
 
 [node name="keys" type="Node2D"]
