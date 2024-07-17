@@ -9,7 +9,7 @@ var _final_death_count := 0
 
 var _scene_file_path: String = ""
 
-var _enemies_to_respawn: Array[RespawnData] = []
+var _entities_to_reset: Array[RespawnData] = []
 var _total_gems := 0
 var _seconds_elapsed := 0
 var _final_time := 0
@@ -79,18 +79,14 @@ func respawn():
 		# reset_level()
 		return
 	
-func respawn_enemies():
-	for e in _enemies_to_respawn:
-		var root = get_tree().get_root()
-		var scene = load(e.scene_file_path)
-		var instance = scene.instantiate()
-		root.add_child(instance)
-		instance.initial_position = e.spawn_position
-		instance.global_position = e.spawn_position
-	_enemies_to_respawn = []
+func reset_entities():
+	for meta in _entities_to_reset:
+		meta.entity.global_position = meta.spawn_position
+		meta.entity.handle_reset()
 
-func register_enemy_for_respawn(enemy: EnemyBody2D):
-	_enemies_to_respawn.push_back(RespawnData.new(enemy.scene_file_path, enemy.initial_position))
+# Expect entity to have a `reset()` method and an `initial_position` property
+func register_entity_for_reset(entity: Node2D):
+	_entities_to_reset.push_back(RespawnData.new(entity, entity.initial_position))
 
 func register_gem(gem: Gem):
 	_total_gems += 1
@@ -107,7 +103,7 @@ func complete_level():
 func reset_variables():
 	# Reset variables
 	_is_completed = false
-	_enemies_to_respawn = []
+	_entities_to_reset = []
 	_gem_count = 0
 	_death_count = -1
 	_checkpoint_active = false

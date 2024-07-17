@@ -6,8 +6,6 @@ class_name EnemyBody2D
 @export var death_state: CharacterState
 @export var respawnable := true
 
-var _queued_for_respawn := false
-
 var initial_position: Vector2
 
 signal death
@@ -15,8 +13,8 @@ signal death
 func _ready() -> void:
 	state_machine.init(self)
 	death.connect(_on_death)
-	add_to_group("enemies")
 	initial_position = global_position
+	LevelController.register_entity_for_reset(self)
 
 func _unhandled_input(event: InputEvent) -> void:
 	state_machine.process_input(event)
@@ -31,7 +29,11 @@ func _on_death():
 	set_collision_layer_value(1, false)
 	set_collision_layer_value(2, false)
 	set_collision_mask_value(1, false)
-	if (respawnable and not _queued_for_respawn):
-		LevelController.register_enemy_for_respawn(self)
-		_queued_for_respawn = true
 	state_machine.change_state(death_state)
+
+func handle_reset():
+	set_collision_layer_value(1, true)
+	set_collision_layer_value(2, true)
+	set_collision_mask_value(1, true)
+	state_machine.change_state(state_machine.starting_state)
+	visible = true
