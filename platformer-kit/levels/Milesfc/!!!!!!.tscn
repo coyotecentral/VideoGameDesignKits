@@ -1,5 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bo0vrt5jndu86"]
 
+
 [ext_resource type="Script" path="res://lib/level.gd" id="1_njpqi"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="1_vgaga"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_mwafu"]
