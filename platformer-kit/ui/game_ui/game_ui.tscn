@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://pwyaqiiegwuc"]
+[gd_scene load_steps=6 format=3 uid="uid://pwyaqiiegwuc"]
 
 [ext_resource type="Script" path="res://ui/game_ui/game_ui.gd" id="1_ilsv6"]
 [ext_resource type="Theme" uid="uid://cnabdh0mv7ar0" path="res://utils/ui_theme.tres" id="3_6d4jh"]
 [ext_resource type="PackedScene" uid="uid://bgoh0f486cmmu" path="res://entities/gem/gem_sprite.tscn" id="4_lm5mw"]
 [ext_resource type="Texture2D" uid="uid://mqvrkww463qe" path="res://ui/game_ui/sprites/skull.png" id="4_y1fvh"]
+[ext_resource type="Texture2D" uid="uid://cy0javun1cgie" path="res://sprites/environment/props/key.png" id="5_plm63"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_ilsv6")
 metadata/_edit_vertical_guides_ = [15.0]
-metadata/_edit_horizontal_guides_ = [31.0, 57.0]
+metadata/_edit_horizontal_guides_ = [31.0, 57.0, 87.0]
 
 [node name="UI" type="MarginContainer" parent="."]
 offset_right = 640.0
@@ -94,6 +95,35 @@ position = Vector2(9, 15)
 texture = ExtResource("4_y1fvh")
 
 [node name="Label" type="Label" parent="UI/Container/DeathCount/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_6d4jh")
+theme_override_font_sizes/font_size = 24
+text = "x 999"
+
+[node name="KeyCount" type="Control" parent="UI/Container"]
+layout_mode = 1
+anchors_preset = 0
+offset_top = 26.0
+offset_right = 68.0
+offset_bottom = 50.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Container/KeyCount"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 30.0
+offset_right = 69.0
+offset_bottom = 56.0
+theme_override_constants/separation = 6
+
+[node name="Control" type="Control" parent="UI/Container/KeyCount/HBoxContainer"]
+custom_minimum_size = Vector2(20, 2.08165e-12)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Container/KeyCount/HBoxContainer/Control"]
+position = Vector2(9, 15)
+texture = ExtResource("5_plm63")
+
+[node name="Label" type="Label" parent="UI/Container/KeyCount/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_6d4jh")
 theme_override_font_sizes/font_size = 24

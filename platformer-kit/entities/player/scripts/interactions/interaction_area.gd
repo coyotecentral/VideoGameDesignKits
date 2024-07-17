@@ -22,4 +22,6 @@ func get_interaction_events() -> Array[InteractionEvent]:
 			result.push_back(InteractionEvent.new(parent, InteractionTypes.Checkpoint))
 		if parent is Spike:
 			result.push_back(InteractionEvent.new(parent, InteractionTypes.Damage))
+		if parent is Key:
+			result.push_back(InteractionEvent.new(parent, InteractionTypes.Key))
 	return result

@@ -73,6 +73,9 @@ func handle_hitbox_area(delta: float) -> void:
 			InteractionTypes.Checkpoint:
 				for checkpoint in event.get_colliders():
 					checkpoint.set_active()
+			InteractionTypes.Key:
+				for key in event.get_colliders():
+					InteractionHandlers.collect_key(player, key)
 			InteractionTypes.Damage:
 				InteractionHandlers.take_damage(player, 1)
 			_:
