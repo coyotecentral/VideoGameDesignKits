@@ -32,8 +32,9 @@
 [ext_resource type="Script" path="res://entities/player/scripts/state/climb_state.gd" id="24_e5vco"]
 [ext_resource type="Script" path="res://entities/player/scripts/interactions/interaction_area.gd" id="27_avlta"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_esa46"]
-size = Vector2(13, 21)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ejhy"]
+radius = 7.0
+height = 18.0
 
 [sub_resource type="Animation" id="Animation_lnqd1"]
 length = 0.001
@@ -541,8 +542,8 @@ script = ExtResource("1_e0sqm")
 coyote_time = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 2.5)
-shape = SubResource("RectangleShape2D_esa46")
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_3ejhy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -3)
@@ -609,6 +610,7 @@ position = Vector2(0, 23)
 script = ExtResource("19_7k7iy")
 
 [node name="InteractionController" type="Node2D" parent="." node_paths=PackedStringArray("movement_controller", "player")]
+visible = false
 script = ExtResource("20_hyx15")
 movement_controller = NodePath("../MovementController")
 player = NodePath("..")
@@ -670,3 +672,4 @@ script = ExtResource("27_avlta")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionController/HitboxArea"]
 position = Vector2(-0.5, 2.5)
 shape = SubResource("RectangleShape2D_fe8oe")
+debug_color = Color(0.615686, 0.52549, 0.32549, 0.419608)
