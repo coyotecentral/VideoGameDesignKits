@@ -22,6 +22,7 @@ func process_physics(delta: float) -> State:
 		return fall_state
 
 	if movement_controller.is_jump_just_pressed():
+		parent.velocity.y -= 200
 		return fall_state
 
 	if movement == 0:
