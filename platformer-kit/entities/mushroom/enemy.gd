@@ -38,3 +38,4 @@ func handle_reset():
 	animations.play("RESET")
 	state_machine.change_state(state_machine.starting_state)
 	visible = true
+	velocity = Vector2()
