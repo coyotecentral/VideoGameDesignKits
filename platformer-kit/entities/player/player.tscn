@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cgadmi3sydqjh"]
+[gd_scene load_steps=50 format=3 uid="uid://cgadmi3sydqjh"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_e0sqm"]
 [ext_resource type="Texture2D" uid="uid://bh5d5ysebmle3" path="res://entities/player/sprites/idle/player-idle-1.png" id="2_xl5kk"]
@@ -31,9 +31,10 @@
 [ext_resource type="Script" path="res://entities/player/scripts/interactions/interaction_raycast.gd" id="21_58gfg"]
 [ext_resource type="Script" path="res://entities/player/scripts/state/climb_state.gd" id="24_e5vco"]
 [ext_resource type="Script" path="res://entities/player/scripts/interactions/interaction_area.gd" id="27_avlta"]
+[ext_resource type="Script" path="res://entities/player/scripts/interactions/interacion_shapecast.gd" id="31_42sge"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ejhy"]
-radius = 7.0
+radius = 6.0
 height = 18.0
 
 [sub_resource type="Animation" id="Animation_lnqd1"]
@@ -533,8 +534,14 @@ _data = {
 "run_right": SubResource("Animation_0qgnb")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1klug"]
+size = Vector2(12, 2)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fe8oe"]
-size = Vector2(13, 21)
+size = Vector2(16, 20.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3aln"]
+size = Vector2(16, 4)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_mask = 3
@@ -542,7 +549,7 @@ script = ExtResource("1_e0sqm")
 coyote_time = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.08165e-12, 4)
+position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_3ejhy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -557,9 +564,10 @@ libraries = {
 }
 autoplay = "idle_left"
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("damage_state", "animations", "movement_controller", "starting_state")]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("damage_state", "jump_state", "animations", "movement_controller", "starting_state")]
 script = ExtResource("18_avlc4")
 damage_state = NodePath("Damage")
+jump_state = NodePath("Jump")
 animations = NodePath("../AnimationPlayer")
 movement_controller = NodePath("../MovementController")
 starting_state = NodePath("Idle")
@@ -618,57 +626,29 @@ player = NodePath("..")
 target_position = Vector2(9, 2.08165e-12)
 script = ExtResource("21_58gfg")
 
-[node name="RightUpper" type="RayCast2D" parent="InteractionController"]
-position = Vector2(0, -6)
-target_position = Vector2(9, 2.08165e-12)
-script = ExtResource("21_58gfg")
-
-[node name="RightLower" type="RayCast2D" parent="InteractionController"]
-position = Vector2(0, 12)
-target_position = Vector2(9, 2.08165e-12)
-script = ExtResource("21_58gfg")
-
 [node name="LeftMiddle" type="RayCast2D" parent="InteractionController"]
 target_position = Vector2(-9, 2.08165e-12)
 script = ExtResource("21_58gfg")
 
-[node name="LeftUpper" type="RayCast2D" parent="InteractionController"]
-position = Vector2(0, -6)
-target_position = Vector2(-9, 2.08165e-12)
-script = ExtResource("21_58gfg")
-
-[node name="LeftLower" type="RayCast2D" parent="InteractionController"]
-position = Vector2(0, 12)
-target_position = Vector2(-9, 2.08165e-12)
-script = ExtResource("21_58gfg")
-
-[node name="DownMiddle" type="RayCast2D" parent="InteractionController"]
-target_position = Vector2(2.08165e-12, 15)
-collide_with_areas = true
-script = ExtResource("21_58gfg")
-
-[node name="DownRight" type="RayCast2D" parent="InteractionController"]
-position = Vector2(5, 0)
-target_position = Vector2(2.08165e-12, 15)
-collide_with_areas = true
-script = ExtResource("21_58gfg")
-
-[node name="DownLeft" type="RayCast2D" parent="InteractionController"]
-position = Vector2(-6, 1)
-target_position = Vector2(2.08165e-12, 15)
-collide_with_areas = true
-script = ExtResource("21_58gfg")
-
-[node name="LadderDown" type="RayCast2D" parent="InteractionController"]
+[node name="DownObjectShapecast" type="ShapeCast2D" parent="InteractionController"]
 position = Vector2(0, 14)
-target_position = Vector2(2.08165e-12, 5)
+shape = SubResource("RectangleShape2D_1klug")
+target_position = Vector2(2.08165e-12, 2.08165e-12)
 collide_with_areas = true
-script = ExtResource("21_58gfg")
+collide_with_bodies = false
+script = ExtResource("31_42sge")
 
 [node name="HitboxArea" type="Area2D" parent="InteractionController"]
 script = ExtResource("27_avlta")
+collide_with_bodies = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionController/HitboxArea"]
-position = Vector2(-0.5, 2.5)
+position = Vector2(2.08165e-12, 2.75)
 shape = SubResource("RectangleShape2D_fe8oe")
 debug_color = Color(0.615686, 0.52549, 0.32549, 0.419608)
+
+[node name="HurtboxShapecast" type="ShapeCast2D" parent="InteractionController"]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_n3aln")
+target_position = Vector2(2.08165e-12, 2.08165e-12)
+script = ExtResource("31_42sge")

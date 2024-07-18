@@ -4,7 +4,6 @@ extends CharacterState
 
 func enter() -> void:
 	super()
-	parent.velocity = Vector2.UP * 200
 
 func process_physics(delta: float) -> State:
 	parent.velocity.x = 0

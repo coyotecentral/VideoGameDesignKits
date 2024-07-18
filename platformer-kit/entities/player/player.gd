@@ -28,6 +28,9 @@ signal respawn
 signal damage_taken(amount: int)
 signal gem_collected
 signal key_collected
+signal fall_start
+signal fall_end
+signal enemy_bounce
 
 func _ready() -> void:
 	state_machine.init(self)

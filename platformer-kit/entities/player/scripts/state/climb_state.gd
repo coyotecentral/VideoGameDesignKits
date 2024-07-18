@@ -18,11 +18,11 @@ func exit():
 
 func process_physics(delta: float) -> State:
 	var movement = movement_controller.get_vector().y * parent.climb_speed
-	if not parent.can_climb and not parent.can_climb_down:
+	if not parent.can_climb:
 		return fall_state
 
 	if movement_controller.is_jump_just_pressed():
-		parent.velocity.y -= 200
+		parent.velocity.y += parent.jump_velocity * 0.5
 		return fall_state
 
 	if movement == 0:

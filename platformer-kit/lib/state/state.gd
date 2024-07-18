@@ -5,6 +5,9 @@ extends Node
 
 var parent: Node2D
 
+func init() -> void:
+	pass
+
 func enter() -> void:
 	pass
 

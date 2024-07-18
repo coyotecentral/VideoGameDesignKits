@@ -11,3 +11,5 @@ func init(p) -> void:
 		child.animations = animations
 		child.movement_controller = movement_controller
 	super(p)
+	for child in get_children():
+		child.init()
