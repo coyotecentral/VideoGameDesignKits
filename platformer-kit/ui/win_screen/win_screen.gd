@@ -6,6 +6,8 @@ extends CanvasLayer
 @export var continue_exploring_btn: Button
 @export var quit_to_menu_btn: Button
 
+var pull_focus = true 
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,9 +24,12 @@ func _ready():
 func _process(delta):
 	if visible:
 		Engine.time_scale = 0.0
-		continue_exploring_btn.grab_focus()
+		if pull_focus:
+			continue_exploring_btn.grab_focus()
+			pull_focus = false
 	else:
 		Engine.time_scale = 1.0
+		pull_focus = true
 
 func format_time(seconds: int) -> String:
 	var result = ""
