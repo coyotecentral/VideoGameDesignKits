@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelMeta" load_steps=2 format=3 uid="uid://2pyeo6vtqq6p"]
+
+[ext_resource type="Script" path="res://ui/main_menu/level_meta.gd" id="1_go13i"]
+
+[resource]
+script = ExtResource("1_go13i")
+level_name = "The Headhitter Gauntlet"
+author = "Max V"
+file = "res://levels/Max. V project/Insert Name Level.tscn"
