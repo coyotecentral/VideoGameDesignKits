@@ -80,11 +80,11 @@ func _handle_ladders() -> void:
 	player.can_climb = is_on_ladder
 
 func _handle_ladder_down(events: Array[InteractionEvent]) -> void:
+	var can_climb_down = false
 	for event in events:
 		var type = event.get_interaction_type()
 		if type == InteractionTypes.Ladder:
 			# This has to be global because this returns an Area2D
 			player.climb_x_snap = event.get_collider().global_position.x
-			player.can_climb_down = true
-		else:
-			player.can_climb_down = false
+			can_climb_down = true
+	player.can_climb_down = can_climb_down
