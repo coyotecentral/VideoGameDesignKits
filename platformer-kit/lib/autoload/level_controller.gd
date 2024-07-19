@@ -81,8 +81,10 @@ func respawn():
 	
 func reset_entities():
 	for meta in _entities_to_reset:
-		meta.entity.global_position = meta.spawn_position
-		meta.entity.handle_reset()
+		var entity = meta.entity
+		if is_instance_valid(entity):
+			entity.global_position = meta.spawn_position
+			entity.handle_reset()
 
 # Expect entity to have a `reset()` method and an `initial_position` property
 func register_entity_for_reset(entity: Node2D):
@@ -103,7 +105,7 @@ func complete_level():
 func reset_variables():
 	# Reset variables
 	_is_completed = false
-	_entities_to_reset = []
+	_entities_to_reset.resize(0)
 	_gem_count = 0
 	_death_count = -1
 	_checkpoint_active = false
