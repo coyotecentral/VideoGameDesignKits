@@ -14,6 +14,8 @@ func _ready():
 		level_button_container.add_child(_create_level_button(level))
 	Engine.time_scale = 1.0
 	LevelController.reset_variables()
+	var first_btn := level_button_container.get_child(0)
+	first_btn.grab_focus()
 
 func _create_level_button(level: LevelMeta) -> Button:
 	var btn = Button.new()

@@ -68,9 +68,17 @@ size_flags_vertical = 3
 
 [node name="Resume" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Quit")
 text = "Resume
 "
 
 [node name="Quit" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_bottom = NodePath("../Resume")
+focus_next = NodePath("../Resume")
+focus_previous = NodePath("../Resume")
 text = "Back to Menu"

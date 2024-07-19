@@ -11,7 +11,6 @@ extends CanvasLayer
 func _ready():
 	time_label.text = format_time(LevelController.get_final_time())
 	deaths_label.text = "%d" % LevelController.get_final_death_count()
-
 	continue_exploring_btn.pressed.connect(handle_continue_exploring)
 	quit_to_menu_btn.pressed.connect(func():
 		Engine.time_scale = 1.0
@@ -21,7 +20,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if visible:
+		Engine.time_scale = 0.0
+		continue_exploring_btn.grab_focus()
+	else:
+		Engine.time_scale = 1.0
 
 func format_time(seconds: int) -> String:
 	var result = ""

@@ -48,7 +48,8 @@ func _ready() -> void:
 	)
 
 	respawn.connect(func():
-		LevelController.reset_entities()
+		if LevelController.get_death_count() >= 0:
+			LevelController.reset_entities()
 		LevelController.increment_death_count()
 		if LevelController.get_death_count() > 0:
 			global_position = LevelController._respawn_position
@@ -62,3 +63,4 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	state_machine.process_frame(delta)
+	print(can_climb_down)
