@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://blkr8qqm0tlxm"]
+
+[ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://entities/mushroom/mushroom.tscn" id="1_7mkcu"]
+
+[node name="Mushroom" instance=ExtResource("1_7mkcu")]
+scale = Vector2(4, 4)
