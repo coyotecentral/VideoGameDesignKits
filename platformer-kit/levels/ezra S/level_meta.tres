@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelMeta" load_steps=2 format=3 uid="uid://qdanpuqmgdde"]
+
+[ext_resource type="Script" path="res://ui/main_menu/level_meta.gd" id="1_v4hq1"]
+
+[resource]
+script = ExtResource("1_v4hq1")
+level_name = "GG Temple"
+author = "Ezra S"
+file = "res://levels/ezra S/this is a level taht you play.tscn"
