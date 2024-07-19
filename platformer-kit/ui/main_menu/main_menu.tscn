@@ -101,7 +101,13 @@ horizontal_alignment = 1
 [node name="Label3" type="Label" parent="CanvasLayer/Control/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Summer Week 1"
+text = "Summer Week 2:"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer/Control/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Felix's Gem Adventures"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/ColorRect/MarginContainer/VBoxContainer"]
@@ -114,7 +120,7 @@ size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 text = "Level Select"
 horizontal_alignment = 1
 
