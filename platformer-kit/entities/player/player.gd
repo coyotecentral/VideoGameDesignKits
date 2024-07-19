@@ -49,6 +49,7 @@ func _ready() -> void:
 
 	respawn.connect(func():
 		if LevelController.get_death_count() >= 0:
+		LevelController.reset_entities()
 			LevelController.reset_entities()
 		LevelController.increment_death_count()
 		if LevelController.get_death_count() > 0:
