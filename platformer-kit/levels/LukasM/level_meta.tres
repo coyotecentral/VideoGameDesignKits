@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelMeta" load_steps=2 format=3 uid="uid://b2e4wqoexmlxd"]
+
+[ext_resource type="Script" path="res://ui/main_menu/level_meta.gd" id="1_qo6da"]
+
+[resource]
+script = ExtResource("1_qo6da")
+level_name = "LCC Quarry"
+author = "Lukas M"
+file = "res://levels/LukasM/scene thing.tscn"
