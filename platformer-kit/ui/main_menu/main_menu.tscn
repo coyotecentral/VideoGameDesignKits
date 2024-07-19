@@ -1,17 +1,24 @@
-[gd_scene load_steps=14 format=3 uid="uid://qxcngbvra7so"]
+[gd_scene load_steps=21 format=3 uid="uid://qxcngbvra7so"]
 
 [ext_resource type="Theme" uid="uid://cnabdh0mv7ar0" path="res://utils/ui_theme.tres" id="1_bccpn"]
 [ext_resource type="Texture2D" uid="uid://b7fink1osmqcm" path="res://sprites/environment/background/back.png" id="1_mwo27"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_r4rn8"]
 [ext_resource type="Script" path="res://ui/main_menu/main_menu.gd" id="2_xw3g8"]
 [ext_resource type="Texture2D" uid="uid://d2yp0i7odi44i" path="res://sprites/environment/props/rock.png" id="3_0jsj1"]
-[ext_resource type="Resource" uid="uid://bayxpttg7bisd" path="res://levels/sandbox.tres" id="4_1oqo1"]
+[ext_resource type="Resource" uid="uid://bqqvyo0pyru70" path="res://levels/Milo P/level_meta.tres" id="3_c3fbt"]
+[ext_resource type="Resource" uid="uid://dceo5c0kybrse" path="res://levels/Milesfc/the_begening.tres" id="4_dk7td"]
 [ext_resource type="Texture2D" uid="uid://doh2vwvbhli3l" path="res://sprites/environment/props/rock-1.png" id="4_s4byf"]
 [ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://entities/mushroom/mushroom.tscn" id="5_ni0u8"]
+[ext_resource type="Resource" uid="uid://dg5p6ehsxdvkg" path="res://levels/Milesfc/the_second.tres" id="5_ykhax"]
+[ext_resource type="Resource" uid="uid://ddmy55qecahku" path="res://levels/Milesfc/the_last.tres" id="6_3s3oo"]
 [ext_resource type="Texture2D" uid="uid://bh5d5ysebmle3" path="res://entities/player/sprites/idle/player-idle-1.png" id="6_qng77"]
 [ext_resource type="Texture2D" uid="uid://cw2gxiai8utdu" path="res://entities/player/sprites/idle/player-idle-2.png" id="7_0mgsr"]
+[ext_resource type="Resource" uid="uid://dpwtdafaqnejx" path="res://levels/Milesfc/pain.tres" id="7_u2vlg"]
+[ext_resource type="Resource" uid="uid://bf0vknb1mhcql" path="res://levels/Milesfc/doors.tres" id="8_488ca"]
 [ext_resource type="Texture2D" uid="uid://rs5i755fle8i" path="res://entities/player/sprites/idle/player-idle-3.png" id="8_nvtlu"]
+[ext_resource type="Resource" uid="uid://c5astl44sdvyi" path="res://levels/Milesfc/doors5.tres" id="9_13wdf"]
 [ext_resource type="Texture2D" uid="uid://dbtgx35fsldyp" path="res://entities/player/sprites/idle/player-idle-4.png" id="9_l3rnp"]
+[ext_resource type="Resource" uid="uid://b5yyhgwr2kh5g" path="res://levels/Milesfc/doomshroom.tres" id="10_knhvu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6b5lf"]
 animations = [{
@@ -47,7 +54,7 @@ grow_vertical = 2
 theme = ExtResource("1_bccpn")
 script = ExtResource("2_xw3g8")
 quit_button = NodePath("ColorRect/MarginContainer/VBoxContainer/Quit")
-levels = Array[Resource("res://ui/main_menu/level_meta.gd")]([ExtResource("4_1oqo1")])
+levels = Array[Resource("res://ui/main_menu/level_meta.gd")]([ExtResource("3_c3fbt"), ExtResource("4_dk7td"), ExtResource("5_ykhax"), ExtResource("6_3s3oo"), ExtResource("7_u2vlg"), ExtResource("8_488ca"), ExtResource("9_13wdf"), ExtResource("10_knhvu")])
 level_button_container = NodePath("ColorRect/MarginContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]

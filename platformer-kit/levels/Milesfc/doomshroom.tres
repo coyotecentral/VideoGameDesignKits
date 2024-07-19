@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelMeta" load_steps=2 format=3 uid="uid://b5yyhgwr2kh5g"]
+
+[ext_resource type="Script" path="res://ui/main_menu/level_meta.gd" id="1_blv3v"]
+
+[resource]
+script = ExtResource("1_blv3v")
+level_name = "Doomshroom"
+author = "Miles F-C"
+file = "res://levels/Milesfc/doomshroom.tscn"

@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bfwinxu444wpt"]
 
-[ext_resource type="Script" path="res://lib/autoload/level.gd" id="1_7tf8n"]
+[ext_resource type="Script" path="res://lib/level.gd" id="1_7tf8n"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_unpb0"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="3_dchyi"]
-[ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://mushroom.tscn" id="4_p5gd1"]
+[ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://entities/mushroom/mushroom.tscn" id="4_p5gd1"]
 [ext_resource type="Texture2D" uid="uid://dqdl45s8cway5" path="res://sprites/environment/props/tree-house.png" id="5_4475h"]
 
 [node name="nooooooo" type="Node2D"]
