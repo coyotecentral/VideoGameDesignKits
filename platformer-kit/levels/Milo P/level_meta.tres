@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_nfoub")
 level_name = "Floating Falls"
-author = "Milo B"
+author = "Milo P"
 file = "res://levels/Milo P/floating falls.tscn"
