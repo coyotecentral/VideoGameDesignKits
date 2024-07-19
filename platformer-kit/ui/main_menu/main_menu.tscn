@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://qxcngbvra7so"]
+[gd_scene load_steps=25 format=3 uid="uid://qxcngbvra7so"]
 
 [ext_resource type="Theme" uid="uid://cnabdh0mv7ar0" path="res://utils/ui_theme.tres" id="1_bccpn"]
 [ext_resource type="Texture2D" uid="uid://b7fink1osmqcm" path="res://sprites/environment/background/back.png" id="1_mwo27"]
@@ -19,6 +19,10 @@
 [ext_resource type="Resource" uid="uid://c5astl44sdvyi" path="res://levels/Milesfc/doors5.tres" id="9_13wdf"]
 [ext_resource type="Texture2D" uid="uid://dbtgx35fsldyp" path="res://entities/player/sprites/idle/player-idle-4.png" id="9_l3rnp"]
 [ext_resource type="Resource" uid="uid://b5yyhgwr2kh5g" path="res://levels/Milesfc/doomshroom.tres" id="10_knhvu"]
+[ext_resource type="Resource" uid="uid://c7toac2fj06dt" path="res://levels/Forrest M/level_meta.tres" id="11_n1g4n"]
+[ext_resource type="Resource" uid="uid://b2e4wqoexmlxd" path="res://levels/LukasM/level_meta.tres" id="12_nof74"]
+[ext_resource type="Resource" uid="uid://qdanpuqmgdde" path="res://levels/ezra S/level_meta.tres" id="13_t0jnl"]
+[ext_resource type="Resource" uid="uid://2pyeo6vtqq6p" path="res://levels/Max. V project/level_meta.tres" id="14_c0uf4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6b5lf"]
 animations = [{
@@ -54,7 +58,7 @@ grow_vertical = 2
 theme = ExtResource("1_bccpn")
 script = ExtResource("2_xw3g8")
 quit_button = NodePath("ColorRect/MarginContainer/VBoxContainer/Quit")
-levels = Array[Resource("res://ui/main_menu/level_meta.gd")]([ExtResource("3_c3fbt"), ExtResource("4_dk7td"), ExtResource("5_ykhax"), ExtResource("6_3s3oo"), ExtResource("7_u2vlg"), ExtResource("8_488ca"), ExtResource("9_13wdf"), ExtResource("10_knhvu")])
+levels = Array[Resource("res://ui/main_menu/level_meta.gd")]([ExtResource("3_c3fbt"), ExtResource("4_dk7td"), ExtResource("5_ykhax"), ExtResource("6_3s3oo"), ExtResource("7_u2vlg"), ExtResource("8_488ca"), ExtResource("9_13wdf"), ExtResource("10_knhvu"), ExtResource("11_n1g4n"), ExtResource("12_nof74"), ExtResource("13_t0jnl"), ExtResource("14_c0uf4")])
 level_button_container = NodePath("ColorRect/MarginContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
@@ -118,6 +122,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(250, 30)
 layout_mode = 2
 size_flags_vertical = 3
+follow_focus = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/ColorRect/MarginContainer/VBoxContainer/VBoxContainer/ScrollContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
