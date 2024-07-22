@@ -50,6 +50,7 @@ func _ready() -> void:
 
 func enable_hurt_boxes() -> void:
 	$HurtboxShapecast.enabled = true
+	hurtbox_delay_timer.stop()
 
 func disable_hurt_boxes() -> void:
 	hurtbox_delay_timer.wait_time = 0.125
