@@ -7,6 +7,7 @@ extends CharacterState
 @export var climb_state: State
 
 var queue_enemy_bounce := false
+var max_fall_timer: Timer
 
 func init():
 	super()
@@ -14,12 +15,27 @@ func init():
 		queue_enemy_bounce = true
 	)
 
+	max_fall_timer.wait_time = parent.max_fall_time
+	max_fall_timer.timeout.connect(func():
+		parent.max_fall_time_elapsed.emit()
+	)
+
+func _ready():
+	max_fall_timer = Timer.new()
+	max_fall_timer.one_shot = true
+	add_child(max_fall_timer)
+	
+
+
 func enter():
 	super()
 	parent.fall_start.emit()
+	max_fall_timer.wait_time = parent.max_fall_time
+	max_fall_timer.start()
 
 func exit():
 	super()
+	max_fall_timer.stop()
 	parent.fall_end.emit()
 
 func process_physics(delta: float) -> State:

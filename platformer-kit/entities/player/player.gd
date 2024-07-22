@@ -24,6 +24,9 @@ var deccel_step : float :
 @export var jump_time_to_fall := 0.4
 @export var coyote_time := 0.05
 
+@export_group("Misc")
+@export var max_fall_time := 5.0
+
 # Calculate the gravity based on how we want the jump to feel
 @onready var jump_velocity: float = ((2.0 * jump_height) / jump_time_to_peak) * - 1
 @onready var jump_gravity: float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * - 1.0
@@ -41,6 +44,7 @@ signal key_collected
 signal fall_start
 signal fall_end
 signal enemy_bounce
+signal max_fall_time_elapsed
 
 func _ready() -> void:
 	state_machine.init(self)
