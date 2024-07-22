@@ -24,11 +24,14 @@ func exit():
 
 
 func process_physics(delta: float) -> State:
-	var movement = movement_controller.get_vector().x * parent.move_speed
 
+	var movement = movement_controller.get_vector().x
+
+	# Ladders
 	if movement_controller.is_climb_pressed() and parent.can_climb:
 		return climb_state
 
+	# Coyote Time
 	if not parent.is_on_floor():
 		if _coyote_time_elapsed or movement == 0:
 			return fall_state
@@ -36,6 +39,7 @@ func process_physics(delta: float) -> State:
 			start_coyote_time()
 	
 
+	#Jump
 	if movement_controller.is_jump_just_pressed():
 		return jump_state
 
@@ -43,7 +47,10 @@ func process_physics(delta: float) -> State:
 	if movement == 0:
 		return idle_state
 
-	parent.velocity.x = movement
+	# Actual Movement
+	var next_velocity = min(abs(parent.velocity.x) + parent.accel_step * delta, parent.move_speed)
+	# Return 1.0 or -1.0
+	parent.velocity.x = round(movement) * next_velocity
 	parent.move_and_slide()
 	return null
 
@@ -54,3 +61,5 @@ func reset_coyote_time():
 func start_coyote_time():
 	_coyote_timer.wait_time = parent.coyote_time
 	_coyote_timer.start()
+
+	
