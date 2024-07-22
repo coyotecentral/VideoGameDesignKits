@@ -23,7 +23,7 @@ func process_physics(delta: float) -> State:
 	
 	# Decellerate
 	# TODO: Move this into a separate state
-	var next_velocity = abs(parent.velocity.x) - parent.accel_step * delta
+	var next_velocity = abs(parent.velocity.x) - parent.deccel_step * delta
 	parent.velocity.x = max(next_velocity, 0) if parent.velocity.x > 0 else min(-next_velocity, 0)
 	parent.move_and_slide()
 	return null

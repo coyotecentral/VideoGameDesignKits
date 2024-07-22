@@ -7,11 +7,16 @@ class_name Player
 @export var move_speed := 250.0
 @export var float_speed := 150.0
 @export var climb_speed := 150.0
-@export var accel_time := 0.25
-@export var deccel_time := 0.25
+@export var accel_time := 0.4
+@export var deccel_time := 0.2
+
+# The player accelerates at a linear rate
 var accel_step : float :
 	get:
 		return move_speed / accel_time
+var deccel_step : float :
+	get:
+		return move_speed / deccel_time
 
 @export_group("Jumping")
 @export var jump_height := 64.0
