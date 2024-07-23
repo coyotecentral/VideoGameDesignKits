@@ -30,7 +30,7 @@ func _ready():
 func _physics_process(delta: float):
 	if not is_waiting:
 		_follower.progress += (move_speed * delta) * direction
-	if _follower.global_position.distance_to(target_position()) < 2.0:
+	if _follower.position.distance_to(target_position()) < 1.0:
 		point_reached.emit()
 
 func target_position() -> Vector2:

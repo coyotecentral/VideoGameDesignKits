@@ -35,6 +35,7 @@ func _ready() -> void:
 
 	$HurtboxShapecast.set_handler(InteractionTypes.Enemy, func(collider, _delta):
 		collider.death.emit()
+		player.position.y = collider.position.y - 16
 		player.enemy_bounce.emit()
 	)
 
