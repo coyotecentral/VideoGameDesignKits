@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddp0lyqdrcmq5"]
+
+[ext_resource type="Script" path="res://entities/falling_platform/falling_platform.gd" id="1_fwrop"]
+[ext_resource type="Texture2D" uid="uid://ckwlcaejmo7mn" path="res://sprites/environment/props/block.png" id="1_m2dm1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qr4ed"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_if5iq"]
+size = Vector2(16, 2)
+
+[node name="FallingPlatform" type="RigidBody2D"]
+lock_rotation = true
+script = ExtResource("1_fwrop")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qr4ed")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_if5iq")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("1_m2dm1")
