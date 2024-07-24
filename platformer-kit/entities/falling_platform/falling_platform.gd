@@ -7,6 +7,8 @@ var _wait_timer: Timer
 var interaction_area: Area2D
 var did_fall := false
 
+var initial_position: Vector2
+
 func _ready():
 	if wait_time > 0:
 		_create_timer()
@@ -21,6 +23,9 @@ func _ready():
 				set_deferred("did_fall", true)
 	)
 	freeze = true
+
+	initial_position = global_position
+	LevelController.register_entity_for_reset(self)
 
 func _create_timer():
 	_wait_timer = Timer.new()
@@ -39,3 +44,7 @@ func _physics_process(delta: float):
 		if not _wait_timer.is_stopped() and _wait_timer.time_left <= shake_start_time:
 			var diff = Vector2(randf_range(-1, 1), randf_range(-1, 1))
 			$Sprites.position = diff
+
+func handle_reset():
+	freeze = true
+	$Sprites.position = Vector2()
