@@ -39,6 +39,8 @@ func _process_collision(collider: Node2D) -> InteractionEvent:
 		event = create_event.call(InteractionTypes.Enemy)
 	if collider is Ladder:
 		event = create_event.call(InteractionTypes.Ladder)
+	if collider is BounceShroom:
+		event = create_event.call(InteractionTypes.BounceShroom)
 	return event
 
 func _call_handler_for_event(event: InteractionEvent, delta: float):
