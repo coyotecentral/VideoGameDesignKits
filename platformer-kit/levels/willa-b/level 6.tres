@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_fjgvw")
-level_name = "The Village"
+level_name = "The Falling Village"
 author = "Willa B"
 file = "res://levels/willa-b/level 6.tscn"

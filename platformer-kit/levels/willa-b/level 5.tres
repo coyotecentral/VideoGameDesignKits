@@ -6,4 +6,4 @@
 script = ExtResource("1_u0h8t")
 level_name = "Ladders to Doors"
 author = "Willa B"
-file = "res://levels/willa-b/level 5.tres"
+file = "res://levels/willa-b/level 5.tscn"
