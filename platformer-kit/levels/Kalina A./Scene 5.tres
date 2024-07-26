@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelMeta" load_steps=2 format=3 uid="uid://dx2g4bt2gjuum"]
+
+[ext_resource type="Script" path="res://ui/main_menu/level_meta.gd" id="1_6floe"]
+
+[resource]
+script = ExtResource("1_6floe")
+level_name = "Level 5"
+author = "Kalina A."
+file = "res://levels/Kalina A./Scene 5.tscn"
