@@ -23,6 +23,11 @@ signal point_reached
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	match platform_type:
+		"loop":
+			_follower.loop = true
+		_:
+			_follower.loop = false
 	if(wait_time):
 		_create_timer()
 	point_reached.connect(_handle_point_reached)
@@ -30,7 +35,7 @@ func _ready():
 func _physics_process(delta: float):
 	if not is_waiting:
 		_follower.progress += (move_speed * delta) * direction
-	if _follower.position.distance_to(target_position()) < 1.0:
+	if _follower.position.distance_to(target_position()) < 1.0 or _follower.progress_ratio == 1.0:
 		point_reached.emit()
 
 func target_position() -> Vector2:

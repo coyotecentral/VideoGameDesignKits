@@ -47,4 +47,5 @@ func _physics_process(delta: float):
 
 func handle_reset():
 	freeze = true
+	linear_velocity = Vector2()
 	$Sprites.position = Vector2()
