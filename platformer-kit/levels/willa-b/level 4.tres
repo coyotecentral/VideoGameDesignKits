@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelMeta" load_steps=2 format=3 uid="uid://36i0xwelfwil"]
+
+[ext_resource type="Script" path="res://ui/main_menu/level_meta.gd" id="1_cfvgw"]
+
+[resource]
+script = ExtResource("1_cfvgw")
+level_name = "Everything Bagel"
+author = "Willa B"
+file = "res://levels/willa-b/level 4.tscn"
