@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://qxcngbvra7so"]
+[gd_scene load_steps=25 format=3 uid="uid://qxcngbvra7so"]
 
 [ext_resource type="Theme" uid="uid://cnabdh0mv7ar0" path="res://utils/ui_theme.tres" id="1_bccpn"]
 [ext_resource type="Texture2D" uid="uid://b7fink1osmqcm" path="res://sprites/environment/background/back.png" id="1_mwo27"]
@@ -20,6 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://dbtgx35fsldyp" path="res://entities/player/sprites/idle/player-idle-4.png" id="9_l3rnp"]
 [ext_resource type="Resource" uid="uid://cpfqe2mvmafn4" path="res://levels/willa-b/level 5.tres" id="10_c2wd0"]
 [ext_resource type="Resource" uid="uid://bdyqfpkh80wek" path="res://levels/willa-b/level 6.tres" id="11_tbj74"]
+[ext_resource type="Resource" uid="uid://bngo0d6xgmpne" path="res://levels/Daniel G/Scene.tres" id="12_kjy2g"]
+[ext_resource type="Resource" uid="uid://cb420og55q1il" path="res://levels/Daniel G/level 3.tres" id="13_r6ck8"]
+[ext_resource type="Resource" uid="uid://bm35fu0naaj2v" path="res://levels/Daniel G/Adventure level.tres" id="14_6df28"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6b5lf"]
 animations = [{
@@ -55,7 +58,7 @@ grow_vertical = 2
 theme = ExtResource("1_bccpn")
 script = ExtResource("2_xw3g8")
 quit_button = NodePath("ColorRect/MarginContainer/VBoxContainer/Quit")
-levels = Array[Resource("res://ui/main_menu/level_meta.gd")]([ExtResource("3_2oxhu"), ExtResource("4_mrdqy"), ExtResource("5_bjsvq"), ExtResource("6_o1mv6"), ExtResource("7_4rl4g"), ExtResource("8_pvl3k"), ExtResource("9_0ot8o"), ExtResource("10_c2wd0"), ExtResource("11_tbj74")])
+levels = Array[Resource("res://ui/main_menu/level_meta.gd")]([ExtResource("3_2oxhu"), ExtResource("4_mrdqy"), ExtResource("5_bjsvq"), ExtResource("6_o1mv6"), ExtResource("7_4rl4g"), ExtResource("8_pvl3k"), ExtResource("9_0ot8o"), ExtResource("10_c2wd0"), ExtResource("11_tbj74"), ExtResource("12_kjy2g"), ExtResource("13_r6ck8"), ExtResource("14_6df28")])
 level_button_container = NodePath("ColorRect/MarginContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
