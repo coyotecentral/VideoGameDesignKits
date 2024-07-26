@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelMeta" load_steps=2 format=3 uid="uid://c11caudnj445d"]
+
+[ext_resource type="Script" path="res://ui/main_menu/level_meta.gd" id="1_h7kbt"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_h7kbt")
+level_name = "mushroom escape"
+author = "lorenzo"
+file = "res://levels/lorenzo_e/level 2.tscn"
