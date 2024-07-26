@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://5w2hyhfdukwl"]
+[gd_scene load_steps=7 format=3 uid="uid://5w2hyhfdukwl"]
 
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="1_5t0ro"]
 [ext_resource type="Script" path="res://lib/level.gd" id="1_v8s50"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="2_wgmll"]
 [ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://entities/mushroom/mushroom.tscn" id="4_3bwir"]
 [ext_resource type="PackedScene" uid="uid://ba1bslg6qjvu8" path="res://entities/background/background.tscn" id="5_un7oi"]
+[ext_resource type="Texture2D" uid="uid://bm4ywy5rk5t3c" path="res://sprites/environment/props/pine.png" id="6_ny3jx"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_v8s50")
@@ -35,3 +36,11 @@ position = Vector2(3722, 977)
 position = Vector2(308, 250)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_un7oi")]
+
+[node name="Pine" type="Sprite2D" parent="."]
+position = Vector2(673, 256)
+texture = ExtResource("6_ny3jx")
+
+[node name="Pine2" type="Sprite2D" parent="."]
+position = Vector2(549, 221)
+texture = ExtResource("6_ny3jx")

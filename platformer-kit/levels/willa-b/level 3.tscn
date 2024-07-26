@@ -157,7 +157,7 @@ wait_time = 5.0
 [node name="MovingPlatform3" parent="." instance=ExtResource("7_wbrwb")]
 position = Vector2(5951, 711)
 curve = SubResource("Curve2D_7gspt")
-wait_time = 5.0
+wait_time = 2.0
 
 [node name="MovingPlatform4" parent="." instance=ExtResource("7_wbrwb")]
 position = Vector2(6174, 573)
