@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://qxcngbvra7so"]
+[gd_scene load_steps=22 format=3 uid="uid://qxcngbvra7so"]
 
 [ext_resource type="Theme" uid="uid://cnabdh0mv7ar0" path="res://utils/ui_theme.tres" id="1_bccpn"]
 [ext_resource type="Texture2D" uid="uid://b7fink1osmqcm" path="res://sprites/environment/background/back.png" id="1_mwo27"]
@@ -10,10 +10,16 @@
 [ext_resource type="Texture2D" uid="uid://doh2vwvbhli3l" path="res://sprites/environment/props/rock-1.png" id="4_s4byf"]
 [ext_resource type="Resource" uid="uid://bwcsbars5ysn6" path="res://levels/logan_w/level 4.tres" id="5_bjsvq"]
 [ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://entities/mushroom/mushroom.tscn" id="5_ni0u8"]
+[ext_resource type="Resource" uid="uid://b7snyv57rgt4l" path="res://levels/willa-b/level 1.tres" id="6_o1mv6"]
 [ext_resource type="Texture2D" uid="uid://bh5d5ysebmle3" path="res://entities/player/sprites/idle/player-idle-1.png" id="6_qng77"]
 [ext_resource type="Texture2D" uid="uid://cw2gxiai8utdu" path="res://entities/player/sprites/idle/player-idle-2.png" id="7_0mgsr"]
+[ext_resource type="Resource" uid="uid://bj27g138tomjg" path="res://levels/willa-b/level 2.tres" id="7_4rl4g"]
 [ext_resource type="Texture2D" uid="uid://rs5i755fle8i" path="res://entities/player/sprites/idle/player-idle-3.png" id="8_nvtlu"]
+[ext_resource type="Resource" uid="uid://b1jvifxk8i7is" path="res://levels/willa-b/level 3.tres" id="8_pvl3k"]
+[ext_resource type="Resource" uid="uid://36i0xwelfwil" path="res://levels/willa-b/level 4.tres" id="9_0ot8o"]
 [ext_resource type="Texture2D" uid="uid://dbtgx35fsldyp" path="res://entities/player/sprites/idle/player-idle-4.png" id="9_l3rnp"]
+[ext_resource type="Resource" uid="uid://cpfqe2mvmafn4" path="res://levels/willa-b/level 5.tres" id="10_c2wd0"]
+[ext_resource type="Resource" uid="uid://bdyqfpkh80wek" path="res://levels/willa-b/level 6.tres" id="11_tbj74"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6b5lf"]
 animations = [{
@@ -49,7 +55,7 @@ grow_vertical = 2
 theme = ExtResource("1_bccpn")
 script = ExtResource("2_xw3g8")
 quit_button = NodePath("ColorRect/MarginContainer/VBoxContainer/Quit")
-levels = Array[Resource("res://ui/main_menu/level_meta.gd")]([ExtResource("3_2oxhu"), ExtResource("4_mrdqy"), ExtResource("5_bjsvq")])
+levels = Array[Resource("res://ui/main_menu/level_meta.gd")]([ExtResource("3_2oxhu"), ExtResource("4_mrdqy"), ExtResource("5_bjsvq"), ExtResource("6_o1mv6"), ExtResource("7_4rl4g"), ExtResource("8_pvl3k"), ExtResource("9_0ot8o"), ExtResource("10_c2wd0"), ExtResource("11_tbj74")])
 level_button_container = NodePath("ColorRect/MarginContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
