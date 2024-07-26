@@ -6,4 +6,4 @@
 script = ExtResource("1_p161x")
 level_name = "Jail Breakout"
 author = "Daniel G"
-file = "res://levels/Daniel G/Scene.tscn"
+file = "res://levels/Daniel G/adventure level.tscn"

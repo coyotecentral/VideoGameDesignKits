@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_axit4")
-level_name = ""
-author = ""
-file = ""
+level_name = "Under the surface"
+author = "Parker M"
+file = "res://levels/Parker M/Under the surface.tscn"

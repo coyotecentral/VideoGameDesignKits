@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://qxcngbvra7so"]
+[gd_scene load_steps=37 format=3 uid="uid://qxcngbvra7so"]
 
 [ext_resource type="Theme" uid="uid://cnabdh0mv7ar0" path="res://utils/ui_theme.tres" id="1_bccpn"]
 [ext_resource type="Texture2D" uid="uid://b7fink1osmqcm" path="res://sprites/environment/background/back.png" id="1_mwo27"]
@@ -23,6 +23,18 @@
 [ext_resource type="Resource" uid="uid://bngo0d6xgmpne" path="res://levels/Daniel G/Scene.tres" id="12_kjy2g"]
 [ext_resource type="Resource" uid="uid://cb420og55q1il" path="res://levels/Daniel G/level 3.tres" id="13_r6ck8"]
 [ext_resource type="Resource" uid="uid://bm35fu0naaj2v" path="res://levels/Daniel G/Adventure level.tres" id="14_6df28"]
+[ext_resource type="Resource" uid="uid://blbjh6y4cbgqt" path="res://levels/Parker M/Under the surface.tres" id="15_sdeoj"]
+[ext_resource type="Resource" uid="uid://c2i7qthd8qu6g" path="res://levels/Parker M/2.tres" id="16_nkera"]
+[ext_resource type="Resource" uid="uid://b03vfvt8x3a1c" path="res://levels/lorenzo_e/sky forest.tres" id="17_slw50"]
+[ext_resource type="Resource" uid="uid://c11caudnj445d" path="res://levels/lorenzo_e/level 2.tres" id="18_af1y0"]
+[ext_resource type="Resource" uid="uid://ccbduarg7httc" path="res://levels/lorenzo_e/sandbox.tres" id="19_kepdk"]
+[ext_resource type="Resource" uid="uid://u1b33u1o7g87" path="res://levels/lorenzo_e/under cave.tres" id="20_a8j06"]
+[ext_resource type="Resource" uid="uid://bf8nfyn835vt1" path="res://levels/Kalina A./Scene 1.tres" id="21_4abow"]
+[ext_resource type="Resource" uid="uid://igyasojgjt2n" path="res://levels/Kalina A./Scene 2.tres" id="22_u81pc"]
+[ext_resource type="Resource" uid="uid://djt68dc4pnskg" path="res://levels/Kalina A./Scene 3.tres" id="23_6knxf"]
+[ext_resource type="Resource" uid="uid://5rtgioxxfego" path="res://levels/Kalina A./Scene 4.tres" id="24_1877t"]
+[ext_resource type="Resource" uid="uid://dx2g4bt2gjuum" path="res://levels/Kalina A./Scene 5.tres" id="25_3mikp"]
+[ext_resource type="Resource" uid="uid://ncsd16lwu2q8" path="res://levels/Kalina A./Scene 6.tres" id="26_5cqum"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6b5lf"]
 animations = [{
@@ -58,7 +70,7 @@ grow_vertical = 2
 theme = ExtResource("1_bccpn")
 script = ExtResource("2_xw3g8")
 quit_button = NodePath("ColorRect/MarginContainer/VBoxContainer/Quit")
-levels = Array[Resource("res://ui/main_menu/level_meta.gd")]([ExtResource("3_2oxhu"), ExtResource("4_mrdqy"), ExtResource("5_bjsvq"), ExtResource("6_o1mv6"), ExtResource("7_4rl4g"), ExtResource("8_pvl3k"), ExtResource("9_0ot8o"), ExtResource("10_c2wd0"), ExtResource("11_tbj74"), ExtResource("12_kjy2g"), ExtResource("13_r6ck8"), ExtResource("14_6df28")])
+levels = Array[Resource("res://ui/main_menu/level_meta.gd")]([ExtResource("3_2oxhu"), ExtResource("4_mrdqy"), ExtResource("5_bjsvq"), ExtResource("6_o1mv6"), ExtResource("7_4rl4g"), ExtResource("8_pvl3k"), ExtResource("9_0ot8o"), ExtResource("10_c2wd0"), ExtResource("11_tbj74"), ExtResource("12_kjy2g"), ExtResource("13_r6ck8"), ExtResource("14_6df28"), ExtResource("15_sdeoj"), ExtResource("16_nkera"), ExtResource("17_slw50"), ExtResource("18_af1y0"), ExtResource("19_kepdk"), ExtResource("20_a8j06"), ExtResource("21_4abow"), ExtResource("22_u81pc"), ExtResource("23_6knxf"), ExtResource("24_1877t"), ExtResource("25_3mikp"), ExtResource("26_5cqum")])
 level_button_container = NodePath("ColorRect/MarginContainer/VBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]

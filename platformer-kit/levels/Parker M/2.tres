@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_eynn6")
-level_name = ""
-author = ""
-file = ""
+level_name = "erm no"
+author = "Parker M"
+file = "res://levels/Parker M/2.tscn"
