@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelMeta" load_steps=2 format=3 uid="uid://cb420og55q1il"]
+
+[ext_resource type="Script" path="res://ui/main_menu/level_meta.gd" id="1_p01hd"]
+
+[resource]
+script = ExtResource("1_p01hd")
+level_name = "Adventure Level"
+author = "Daniel G"
+file = ""

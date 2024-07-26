@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelMeta" load_steps=2 format=3 uid="uid://bngo0d6xgmpne"]
+
+[ext_resource type="Script" path="res://ui/main_menu/level_meta.gd" id="1_6gd27"]
+
+[resource]
+script = ExtResource("1_6gd27")
+level_name = "Sky Platformer"
+author = "Daniel G"
+file = "res://levels/Scene.tscn"
