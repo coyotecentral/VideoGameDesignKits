@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelMeta" load_steps=2 format=3 uid="uid://bdyqfpkh80wek"]
+
+[ext_resource type="Script" path="res://ui/main_menu/level_meta.gd" id="1_fjgvw"]
+
+[resource]
+script = ExtResource("1_fjgvw")
+level_name = "The Falling Village"
+author = "Willa B"
+file = "res://levels/willa-b/level 6.tscn"
