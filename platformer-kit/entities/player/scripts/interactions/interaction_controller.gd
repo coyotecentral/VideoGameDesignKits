@@ -35,7 +35,7 @@ func _ready() -> void:
 
 	$HurtboxShapecast.set_handler(InteractionTypes.Enemy, func(collider, _delta):
 		collider.death.emit()
-		player.position.y = collider.global_position.y - 16
+		player.position.y = collider.global_position.y - 16 - player.get_parent().global_position.y
 		player.enemy_bounce.emit()
 	)
 
@@ -77,7 +77,7 @@ func _handle_ladders() -> void:
 		var parent = area.get_parent()
 		if parent is Ladder:
 			is_on_ladder = true
-			player.climb_x_snap = parent.global_position.x
+			player.climb_x_snap = parent.global_position.x - player.get_parent().global_position.x
 			break
 	player.can_climb = is_on_ladder
 
@@ -87,6 +87,6 @@ func _handle_ladder_down(events: Array[InteractionEvent]) -> void:
 		var type = event.get_interaction_type()
 		if type == InteractionTypes.Ladder:
 			# This has to be global because this returns an Area2D
-			player.climb_x_snap = event.get_collider().global_position.x
+			player.climb_x_snap = event.get_collider().global_position.x - player.get_parent().global_position.x
 			can_climb_down = true
 	player.can_climb_down = can_climb_down
