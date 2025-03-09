@@ -33,3 +33,6 @@ building out scalable games in Godot!
 
 ## Credits and Special Thanks
 Sunnyland Pixel Game Art by **ansimuz**
+
+## Coyote Testing
+Diane was here from Mac Mini 8
