@@ -36,3 +36,4 @@ Sunnyland Pixel Game Art by **ansimuz**
 
 ## Coyote Testing
 Diane was here from Mac Mini 8
+Marijke was here from Mac mini 7
