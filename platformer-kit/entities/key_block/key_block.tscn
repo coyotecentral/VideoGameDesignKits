@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://duxt3yxmrwab1"]
 
 [ext_resource type="Texture2D" uid="uid://bgqbkl54egkms" path="res://sprites/environment/props/key-block.png" id="1_3ggux"]
-[ext_resource type="Script" path="res://entities/key_block/key_block.gd" id="1_7xbdd"]
+[ext_resource type="Script" uid="uid://db375j5k5pqsv" path="res://entities/key_block/key_block.gd" id="1_7xbdd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76xnv"]
 size = Vector2(16, 32)
@@ -192,9 +192,9 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_la3lk"]
 _data = {
-"RESET": SubResource("Animation_cag1v"),
-"default": SubResource("Animation_ari2t"),
-"unlock": SubResource("Animation_vvgtl")
+&"RESET": SubResource("Animation_cag1v"),
+&"default": SubResource("Animation_ari2t"),
+&"unlock": SubResource("Animation_vvgtl")
 }
 
 [node name="KeyBlock" type="Node2D"]

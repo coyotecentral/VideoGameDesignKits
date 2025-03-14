@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgop15wpyeere"]
 
-[ext_resource type="Script" path="res://entities/controllable_platform/controllable_platform.gd" id="1_qdqha"]
+[ext_resource type="Script" uid="uid://clefrd3u8gssj" path="res://entities/controllable_platform/controllable_platform.gd" id="1_qdqha"]
 [ext_resource type="Texture2D" uid="uid://f8lv11jcka46" path="res://sprites/environment/props/small-platform.png" id="2_bwo64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bo3u"]

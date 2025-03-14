@@ -1,9 +1,9 @@
 [gd_scene load_steps=23 format=3 uid="uid://bshmglkckkwow"]
 
-[ext_resource type="Script" path="res://entities/mushroom/enemy.gd" id="1_wc4m8"]
-[ext_resource type="Script" path="res://entities/mushroom/scripts/enemy_state_machine.gd" id="2_ifisw"]
-[ext_resource type="Script" path="res://entities/mushroom/scripts/state/move.gd" id="3_grwv7"]
-[ext_resource type="Script" path="res://entities/mushroom/scripts/state/death.gd" id="4_8j4k0"]
+[ext_resource type="Script" uid="uid://do5g6ewon8nsl" path="res://entities/mushroom/enemy.gd" id="1_wc4m8"]
+[ext_resource type="Script" uid="uid://cne04lwtq50mn" path="res://entities/mushroom/scripts/enemy_state_machine.gd" id="2_ifisw"]
+[ext_resource type="Script" uid="uid://cbdeob88hi21m" path="res://entities/mushroom/scripts/state/move.gd" id="3_grwv7"]
+[ext_resource type="Script" uid="uid://cjfc6nm4nwub1" path="res://entities/mushroom/scripts/state/death.gd" id="4_8j4k0"]
 [ext_resource type="Texture2D" uid="uid://6aly8kxon2pk" path="res://entities/mushroom/sprites/jump/_0005_6.png" id="5_hdfdh"]
 [ext_resource type="Texture2D" uid="uid://bvmc7hqtp6dka" path="res://entities/mushroom/sprites/walking/0__0000_Layer-1.png" id="6_vs5n1"]
 [ext_resource type="Texture2D" uid="uid://cqefvw54penfq" path="res://entities/mushroom/sprites/walking/0__0001_Layer-2.png" id="7_x1df5"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://01o1ommn2wfx" path="res://entities/mushroom/sprites/walking/0__0007_Layer-8.png" id="13_na6un"]
 [ext_resource type="Texture2D" uid="uid://dl21asd07qumf" path="res://entities/mushroom/sprites/walking/0__0008_Layer-9.png" id="14_crpka"]
 [ext_resource type="Texture2D" uid="uid://cjbt2o3k5tncf" path="res://entities/mushroom/sprites/walking/0__0009_Layer-10.png" id="15_xclyn"]
-[ext_resource type="Script" path="res://entities/mushroom/scripts/enemy_movement.gd" id="16_n58bn"]
+[ext_resource type="Script" uid="uid://bxyogh0lyx3ge" path="res://entities/mushroom/scripts/enemy_movement.gd" id="16_n58bn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b62i0"]
 size = Vector2(21.25, 16)
@@ -350,10 +350,10 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ivgey"]
 _data = {
-"RESET": SubResource("Animation_ih1gx"),
-"death": SubResource("Animation_mh7jl"),
-"idle": SubResource("Animation_aqmie"),
-"idle_legacy": SubResource("Animation_bnuya")
+&"RESET": SubResource("Animation_ih1gx"),
+&"death": SubResource("Animation_mh7jl"),
+&"idle": SubResource("Animation_aqmie"),
+&"idle_legacy": SubResource("Animation_bnuya")
 }
 
 [node name="Mushroom" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "animations", "death_state")]

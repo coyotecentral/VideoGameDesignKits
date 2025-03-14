@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c8agqtajbl4nv"]
 
-[ext_resource type="Script" path="res://entities/moving_platform/moving_platform.gd" id="1_7abqi"]
+[ext_resource type="Script" uid="uid://c5qm3ljvthkjx" path="res://entities/moving_platform/moving_platform.gd" id="1_7abqi"]
 [ext_resource type="Texture2D" uid="uid://drcbplsih0r" path="res://sprites/environment/props/platform-long.png" id="2_mxr7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tqo3"]

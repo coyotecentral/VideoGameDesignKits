@@ -61,8 +61,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vjidh"]
 _data = {
-"RESET": SubResource("Animation_1xbnd"),
-"default": SubResource("Animation_xm74x")
+&"RESET": SubResource("Animation_1xbnd"),
+&"default": SubResource("Animation_xm74x")
 }
 
 [node name="KeyPress" type="Node2D"]

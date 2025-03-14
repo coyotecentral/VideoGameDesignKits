@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://blghjdurqmxv"]
 
 [ext_resource type="Texture2D" uid="uid://1d2a6iw3ylub" path="res://sprites/environment/props/spikes.png" id="2_becpr"]
-[ext_resource type="Script" path="res://entities/retractable_spike/retractable_spike.gd" id="2_grfcc"]
+[ext_resource type="Script" uid="uid://cob71dreqxnsd" path="res://entities/retractable_spike/retractable_spike.gd" id="2_grfcc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enwfv"]
 size = Vector2(16, 9)
@@ -173,9 +173,9 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k8832"]
 _data = {
-"RESET": SubResource("Animation_k4wgd"),
-"retract": SubResource("Animation_pr88t"),
-"reveal": SubResource("Animation_spn8v")
+&"RESET": SubResource("Animation_k4wgd"),
+&"retract": SubResource("Animation_pr88t"),
+&"reveal": SubResource("Animation_spn8v")
 }
 
 [node name="RetractableSpike" type="StaticBody2D"]
