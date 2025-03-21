@@ -1,6 +1,12 @@
 Video Game Design with Godot
 ---
 
+## Important Notice
+I am deprecating this repository and migrating the code here to a plugin-based approach
+to make the code here easier to share, modify, and distribute. This repository will see
+updates as I transition away from it.
+
+
 ## About this repository
 This repository contains the code and kits for VGD @ Coyote Central. It is a
 monorepo of a handful of video game design kits in line with a few popular video
