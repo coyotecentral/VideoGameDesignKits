@@ -42,7 +42,6 @@ func _process(_delta):
 		# elif not popup.visible:
 		#	pass
 		else:
-			print("Show tooltip")
 			if "SNES" in Input.get_joy_name(0) or "snes" in Input.get_joy_name(0):
 				button_press_tooltip.visible = true
 				button_press_tooltip.global_position = player.global_position + Vector2(0, -24)

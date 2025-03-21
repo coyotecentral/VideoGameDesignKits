@@ -562,7 +562,7 @@ flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_crbdt")
+&"": SubResource("AnimationLibrary_crbdt")
 }
 autoplay = "idle_left"
 
