@@ -1,6 +1,6 @@
 [gd_scene load_steps=51 format=3 uid="uid://cgadmi3sydqjh"]
 
-[ext_resource type="Script" path="res://entities/player/player.gd" id="1_e0sqm"]
+[ext_resource type="Script" uid="uid://3f7pxg2jw4ej" path="res://entities/player/player.gd" id="1_e0sqm"]
 [ext_resource type="Texture2D" uid="uid://bh5d5ysebmle3" path="res://entities/player/sprites/idle/player-idle-1.png" id="2_xl5kk"]
 [ext_resource type="Texture2D" uid="uid://cmppwe0jw5dym" path="res://entities/player/sprites/jump/player-jump-2.png" id="3_mi1oi"]
 [ext_resource type="Texture2D" uid="uid://cw2gxiai8utdu" path="res://entities/player/sprites/idle/player-idle-2.png" id="4_dwbsp"]
@@ -14,25 +14,25 @@
 [ext_resource type="Texture2D" uid="uid://cdt1isevdg0rw" path="res://entities/player/sprites/run/player-run-5.png" id="12_ran4g"]
 [ext_resource type="Texture2D" uid="uid://bjjonkixj84h1" path="res://entities/player/sprites/run/player-run-6.png" id="13_hrv7n"]
 [ext_resource type="Texture2D" uid="uid://d1iob5umbseww" path="res://entities/player/sprites/hurt/player-hurt-1.png" id="14_08biu"]
-[ext_resource type="Script" path="res://entities/player/scripts/state/idle_state.gd" id="15_eq6ef"]
+[ext_resource type="Script" uid="uid://cscgfpwyh8uqr" path="res://entities/player/scripts/state/idle_state.gd" id="15_eq6ef"]
 [ext_resource type="Texture2D" uid="uid://ce05y7pn8i3p1" path="res://entities/player/sprites/hurt/player-hurt-2.png" id="15_uky66"]
-[ext_resource type="Script" path="res://entities/player/scripts/state/move_state.gd" id="16_aee82"]
+[ext_resource type="Script" uid="uid://bprdtgxrrjyqu" path="res://entities/player/scripts/state/move_state.gd" id="16_aee82"]
 [ext_resource type="Texture2D" uid="uid://u82g0gwa340n" path="res://entities/player/sprites/crouch/player-crouch-1.png" id="16_rxs82"]
 [ext_resource type="Texture2D" uid="uid://cje6mi7gynxji" path="res://entities/player/sprites/crouch/player-crouch-2.png" id="17_ngklb"]
-[ext_resource type="Script" path="res://entities/player/scripts/state/jump_state.gd" id="17_xe8kk"]
-[ext_resource type="Script" path="res://entities/player/scripts/state/fall_state.gd" id="18_8xsas"]
-[ext_resource type="Script" path="res://entities/player/scripts/state/player_state_machine.gd" id="18_avlc4"]
+[ext_resource type="Script" uid="uid://bkejflw5yj6nk" path="res://entities/player/scripts/state/jump_state.gd" id="17_xe8kk"]
+[ext_resource type="Script" uid="uid://dwmr610chii6" path="res://entities/player/scripts/state/fall_state.gd" id="18_8xsas"]
+[ext_resource type="Script" uid="uid://bpn1ieqffpn05" path="res://entities/player/scripts/state/player_state_machine.gd" id="18_avlc4"]
 [ext_resource type="Texture2D" uid="uid://cmlefbsu30gqc" path="res://entities/player/sprites/climb/player-climb-1.png" id="18_x52uq"]
-[ext_resource type="Script" path="res://entities/player/scripts/player_movement_controller.gd" id="19_7k7iy"]
+[ext_resource type="Script" uid="uid://0g0yx6t64lsh" path="res://entities/player/scripts/player_movement_controller.gd" id="19_7k7iy"]
 [ext_resource type="Texture2D" uid="uid://csia21cah0nru" path="res://entities/player/sprites/climb/player-climb-2.png" id="19_dsstp"]
-[ext_resource type="Script" path="res://entities/player/scripts/state/damage_state.gd" id="19_qlga8"]
+[ext_resource type="Script" uid="uid://db76svdeuer38" path="res://entities/player/scripts/state/damage_state.gd" id="19_qlga8"]
 [ext_resource type="Texture2D" uid="uid://d4lltox8u6kvh" path="res://entities/player/sprites/climb/player-climb-3.png" id="20_gmeis"]
-[ext_resource type="Script" path="res://entities/player/scripts/interactions/interaction_controller.gd" id="20_hyx15"]
-[ext_resource type="Script" path="res://entities/player/scripts/interactions/interaction_raycast.gd" id="21_58gfg"]
-[ext_resource type="Script" path="res://entities/player/scripts/state/climb_state.gd" id="24_e5vco"]
-[ext_resource type="Script" path="res://entities/player/scripts/interactions/interaction_area.gd" id="27_avlta"]
-[ext_resource type="Script" path="res://entities/player/scripts/interactions/interacion_shapecast.gd" id="31_42sge"]
-[ext_resource type="Script" path="res://entities/player/scripts/max_fall_check.gd" id="33_stu1y"]
+[ext_resource type="Script" uid="uid://c12qlmfnqw6e6" path="res://entities/player/scripts/interactions/interaction_controller.gd" id="20_hyx15"]
+[ext_resource type="Script" uid="uid://ccd1p3s25bspw" path="res://entities/player/scripts/interactions/interaction_raycast.gd" id="21_58gfg"]
+[ext_resource type="Script" uid="uid://hvmwb606eee6" path="res://entities/player/scripts/state/climb_state.gd" id="24_e5vco"]
+[ext_resource type="Script" uid="uid://fupj0e731rrr" path="res://entities/player/scripts/interactions/interaction_area.gd" id="27_avlta"]
+[ext_resource type="Script" uid="uid://bpqdmeki80n76" path="res://entities/player/scripts/interactions/interacion_shapecast.gd" id="31_42sge"]
+[ext_resource type="Script" uid="uid://0lhljpmoupfa" path="res://entities/player/scripts/max_fall_check.gd" id="33_stu1y"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ejhy"]
 radius = 6.0
@@ -521,18 +521,18 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_crbdt"]
 _data = {
-"RESET": SubResource("Animation_lnqd1"),
-"climbing": SubResource("Animation_oxi2d"),
-"crouch_right": SubResource("Animation_xocmn"),
-"damage": SubResource("Animation_1mctf"),
-"fall_left": SubResource("Animation_0yitk"),
-"fall_right": SubResource("Animation_d48hw"),
-"idle_left": SubResource("Animation_bjlsw"),
-"idle_right": SubResource("Animation_es65l"),
-"jump_left": SubResource("Animation_04i06"),
-"jump_right": SubResource("Animation_y66aa"),
-"run_left": SubResource("Animation_hgh40"),
-"run_right": SubResource("Animation_0qgnb")
+&"RESET": SubResource("Animation_lnqd1"),
+&"climbing": SubResource("Animation_oxi2d"),
+&"crouch_right": SubResource("Animation_xocmn"),
+&"damage": SubResource("Animation_1mctf"),
+&"fall_left": SubResource("Animation_0yitk"),
+&"fall_right": SubResource("Animation_d48hw"),
+&"idle_left": SubResource("Animation_bjlsw"),
+&"idle_right": SubResource("Animation_es65l"),
+&"jump_left": SubResource("Animation_04i06"),
+&"jump_right": SubResource("Animation_y66aa"),
+&"run_left": SubResource("Animation_hgh40"),
+&"run_right": SubResource("Animation_0qgnb")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1klug"]
@@ -562,7 +562,7 @@ flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_crbdt")
+&"": SubResource("AnimationLibrary_crbdt")
 }
 autoplay = "idle_left"
 

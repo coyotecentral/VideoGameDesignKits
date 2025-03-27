@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dturik0w3xp6k"]
 
-[ext_resource type="Script" path="res://entities/gem/gem.gd" id="1_ci3y8"]
+[ext_resource type="Script" uid="uid://hsmu3g4thm1o" path="res://entities/gem/gem.gd" id="1_ci3y8"]
 [ext_resource type="PackedScene" uid="uid://bgoh0f486cmmu" path="res://entities/gem/gem_sprite.tscn" id="1_yimdj"]
 [ext_resource type="Texture2D" uid="uid://ds0cdnjdhae1u" path="res://entities/gem/sprites/collect/item-feedback-1.png" id="3_jylih"]
 [ext_resource type="Texture2D" uid="uid://0mudv6qxbrb0" path="res://entities/gem/sprites/collect/item-feedback-2.png" id="4_8lf1x"]
@@ -122,9 +122,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6dx12"]
 _data = {
-"RESET": SubResource("Animation_ivv8d"),
-"collect": SubResource("Animation_wudu5"),
-"default": SubResource("Animation_m0li5")
+&"RESET": SubResource("Animation_ivv8d"),
+&"collect": SubResource("Animation_wudu5"),
+&"default": SubResource("Animation_m0li5")
 }
 
 [node name="Gem" type="Node2D"]
