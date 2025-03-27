@@ -1,21 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://baqls0qh2o0dt"]
+[gd_scene load_steps=9 format=3 uid="uid://baqls0qh2o0dt"]
 
-[ext_resource type="Script" path="res://lib/level.gd" id="1_ad5wx"]
+[ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_ad5wx"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="1_tfeib"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_7iwf8"]
+[ext_resource type="Script" uid="uid://bsl8a1vysq1yw" path="res://levels/portal_listener.gd" id="2_tv6ri"]
 [ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://entities/mushroom/mushroom.tscn" id="4_ga1md"]
 [ext_resource type="PackedScene" uid="uid://cgop15wpyeere" path="res://entities/controllable_platform/controllable_platform.tscn" id="5_kgnc4"]
 [ext_resource type="PackedScene" uid="uid://bke7y2vvy02l7" path="res://entities/pressure_plate/pressure_plate.tscn" id="6_rcg2a"]
+[ext_resource type="PackedScene" uid="uid://g6eor75ky7j0" path="res://entities/portal/portal.tscn" id="7_llpag"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(13, 131)
 script = ExtResource("1_ad5wx")
 
+[node name="PortalListener" type="Node" parent="." node_paths=PackedStringArray("camera", "player")]
+script = ExtResource("2_tv6ri")
+camera = NodePath("../CharacterBody2D/Camera2D")
+player = NodePath("../CharacterBody2D")
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_tfeib")]
 position = Vector2(559, -65)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(90, 2)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 
@@ -39,4 +45,18 @@ position = Vector2(536, -56)
 [node name="ControllablePlatform" parent="." instance=ExtResource("5_kgnc4")]
 position = Vector2(507, -43)
 
+[node name="Portal" parent="." instance=ExtResource("7_llpag")]
+position = Vector2(182, -32)
+destination = "Portal"
+disabled = false
+other_portal = NodePath("../Portal2")
+
+[node name="Portal2" parent="." instance=ExtResource("7_llpag")]
+position = Vector2(3598, 1494)
+destination = "Portal"
+disabled = false
+other_portal = NodePath("../Portal")
+
 [connection signal="pressed" from="PressurePlate" to="ControllablePlatform" method="unfreeze"]
+[connection signal="teleport" from="Portal" to="PortalListener" method="_handle_teleport"]
+[connection signal="teleport" from="Portal2" to="PortalListener" method="_handle_teleport"]

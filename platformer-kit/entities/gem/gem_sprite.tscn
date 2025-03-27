@@ -41,8 +41,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bn35p"]
 _data = {
-"RESET": SubResource("Animation_ckehu"),
-"default": SubResource("Animation_82w86")
+&"RESET": SubResource("Animation_ckehu"),
+&"default": SubResource("Animation_82w86")
 }
 
 [node name="Gem" type="Node2D"]

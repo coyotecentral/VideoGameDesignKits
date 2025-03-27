@@ -1,4 +1,5 @@
-extends Node
+extends Node2D
+class_name Level
 
 @export var respawn_marker: Marker2D
 var timer: Timer

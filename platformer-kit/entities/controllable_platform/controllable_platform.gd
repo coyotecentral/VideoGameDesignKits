@@ -9,8 +9,7 @@ func _ready():
 	LevelController.register_entity_for_reset(self)
 
 func _process(delta: float):
-	print(global_position)
-	print("--")
+	pass
 
 func _physics_process(delta):
 	linear_velocity.x = 0

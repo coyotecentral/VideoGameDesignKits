@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://pwyaqiiegwuc"]
 
-[ext_resource type="Script" path="res://ui/game_ui/game_ui.gd" id="1_ilsv6"]
+[ext_resource type="Script" uid="uid://bplb3klqplqon" path="res://ui/game_ui/game_ui.gd" id="1_ilsv6"]
 [ext_resource type="Theme" uid="uid://cnabdh0mv7ar0" path="res://utils/ui_theme.tres" id="3_6d4jh"]
 [ext_resource type="PackedScene" uid="uid://bgoh0f486cmmu" path="res://entities/gem/gem_sprite.tscn" id="4_lm5mw"]
 [ext_resource type="Texture2D" uid="uid://mqvrkww463qe" path="res://ui/game_ui/sprites/skull.png" id="4_y1fvh"]
