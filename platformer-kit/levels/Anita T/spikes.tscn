@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhe8inw3da5co"]
+
+[ext_resource type="Texture2D" uid="uid://cw2lev5ykiege" path="res://white-spikes-clipart-xl.png" id="1_s0g1x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrdsm"]
+size = Vector2(42, 20)
+
+[node name="Spike" type="StaticBody2D" groups=["spike"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_nrdsm")
+
+[node name="White-spikes-clipart-xl2" type="Sprite2D" parent="."]
+position = Vector2(-7.62939e-06, 1.52588e-05)
+scale = Vector2(0.0220984, 0.0220984)
+texture = ExtResource("1_s0g1x")
