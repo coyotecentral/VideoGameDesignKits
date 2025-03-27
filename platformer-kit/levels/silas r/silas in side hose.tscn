@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyjp5yseaahmb"]
+
+[ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="1_2eib6"]
+[ext_resource type="Texture2D" uid="uid://cykb1n0xmjdlc" path="res://sprites/environment/props/door-opened.png" id="2_qcvhd"]
+[ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="3_jrgn3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_2eib6")
+format = 2
+layer_0/tile_data = PackedInt32Array(1376256, 1114112, 7, 1376257, 1114112, 7, 1376258, 1114112, 7, 1376259, 1114112, 7, 1376260, 1114112, 7, 1376261, 1114112, 7, 1376262, 1114112, 7, 1376263, 1114112, 7, 1376264, 1114112, 7, 1376265, 1114112, 7, 1376266, 1114112, 7, 1376267, 1114112, 7, 1376268, 1114112, 7, 1376269, 1114112, 7, 1376270, 1114112, 7, 1376271, 1114112, 7, 1376272, 1114112, 7, 1376273, 1114112, 7, 1376274, 1114112, 7, 1376275, 1114112, 7, 1376276, 1114112, 7, 1376277, 1114112, 7, 1376278, 1114112, 7, 1376279, 1114112, 7, 1376280, 1114112, 7, 1376281, 1114112, 7, 1376282, 1114112, 7, 1376283, 1114112, 7, 1376284, 1114112, 7, 1376285, 1114112, 7, 1376286, 1114112, 7, 1376287, 1114112, 7, 1376288, 1114112, 7, 1376289, 1114112, 7, 1376290, 1114112, 7, 1376291, 1114112, 7, 1376292, 1114112, 7, 1376293, 1114112, 7, 1376294, 1114112, 7, 1376295, 1114112, 7)
+
+[node name="Door-opened" type="Sprite2D" parent="."]
+position = Vector2(33, 272)
+texture = ExtResource("2_qcvhd")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_jrgn3")]
+position = Vector2(51, 324)
