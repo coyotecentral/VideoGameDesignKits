@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnbhch37tv7dg"]
+
+[ext_resource type="Texture2D" uid="uid://d34v357ynetwj" path="res://bedroom-scene-with-pink-bed-vector-15935723.jpg" id="1_jvaab"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8tjs"]
+size = Vector2(297, 135)
+
+[node name="RigidBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.500004, -0.499998)
+shape = SubResource("RectangleShape2D_t8tjs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(258, 44)
+texture = ExtResource("1_jvaab")
+region_enabled = true
+region_rect = Rect2(195, 313, 128, 62)
+metadata/_edit_group_ = true

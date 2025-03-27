@@ -1,0 +1,460 @@
+[gd_scene load_steps=26 format=3 uid="uid://d3nor4rp4f8re"]
+
+[ext_resource type="Script" uid="uid://vsd5hnftwmc6" path="res://LILY.gd" id="1_nf043"]
+[ext_resource type="Texture2D" uid="uid://b1y34pa5necxf" path="res://Piink Gamer Girl - Small.png" id="1_xhfd1"]
+[ext_resource type="Texture2D" uid="uid://fp4dkfkhtije" path="res://png-clipart-anime-character-designer-yu-no-a-girl-who-chants-love-at-the-bound-of-this-world-aaa-purple-game.png" id="3_i2bfn"]
+[ext_resource type="Texture2D" uid="uid://bsgg6g4ytcsfj" path="res://pink-wood-background-edit-online-1.jpg.png" id="4_k3eml"]
+[ext_resource type="Texture2D" uid="uid://d34v357ynetwj" path="res://bedroom-scene-with-pink-bed-vector-15935723.jpg" id="5_4fhu6"]
+[ext_resource type="Texture2D" uid="uid://bqc2a52tusevh" path="res://360_F_534413913_QF8E2ELN3S9c8L16w1roKxhi87bQA89O.jpg" id="6_2ifea"]
+[ext_resource type="Texture2D" uid="uid://deyxn57pctapo" path="res://5c52e5cb7fa44c1a9000026b.format-webp.width-2880_enjISFAQ1jPpdrGW.webp" id="7_emu0p"]
+[ext_resource type="PackedScene" uid="uid://bnbhch37tv7dg" path="res://platform.tscn" id="8_e3q0j"]
+[ext_resource type="Texture2D" uid="uid://c5kju61c76i36" path="res://nbre7nl05ztn.png" id="9_g4v4e"]
+[ext_resource type="Texture2D" uid="uid://j52riji0sxic" path="res://underwater tileable.png" id="10_vd4bu"]
+[ext_resource type="Texture2D" uid="uid://bsc0g03a5sgjs" path="res://green-grass-lawn-fresh-field-isolated-on-white-background-with-clipping-path-free-photo.jpg" id="11_kxnn3"]
+[ext_resource type="Texture2D" uid="uid://bq6q4ejvebmxf" path="res://images.jpeg" id="11_u80ms"]
+[ext_resource type="Texture2D" uid="uid://ciqy40qltbren" path="res://624_Angel.webp" id="12_htamg"]
+[ext_resource type="Texture2D" uid="uid://dalqbg633w5jy" path="res://istockphoto-1398516147-612x612.jpg" id="14_72tdb"]
+[ext_resource type="Texture2D" uid="uid://cx7gok2bbydpj" path="res://underwater backdrop.jpg" id="15_j3g2v"]
+[ext_resource type="Texture2D" uid="uid://cvi0o6bodhg0r" path="res://start button backdrop .jpg" id="17_rjqkl"]
+[ext_resource type="Texture2D" uid="uid://tqo6ym06ekmf" path="res://lovepik-start-button-png-image_401228855_wh1200.png" id="18_fs4d3"]
+[ext_resource type="Texture2D" uid="uid://j1jsnddariru" path="res://pixel-yellow-flag-icon-color-260nw-2162979023.jpg.webp" id="19_fs4d3"]
+[ext_resource type="PackedScene" uid="uid://dhe8inw3da5co" path="res://spikes.tscn" id="19_rjqkl"]
+[ext_resource type="Texture2D" uid="uid://cw2lev5ykiege" path="res://white-spikes-clipart-xl.png" id="20_fs4d3"]
+[ext_resource type="Texture2D" uid="uid://bidpirrnu2tud" path="res://yellow flag backdrop.jpeg" id="21_7vxoj"]
+[ext_resource type="Texture2D" uid="uid://c7e04fqkfqqhb" path="res://black scary backdrop.jpg" id="22_ei405"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20ctc"]
+size = Vector2(133, 166)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2bti"]
+size = Vector2(21323.6, 2145.9)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5j2or"]
+load_path = "res://.godot/imported/Piink Gamer Girl - Small.jpg-7cf838b7468d815f258cc449afb7de12.ctex"
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(37695, 18606)
+metadata/_edit_horizontal_guides_ = [15860.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = -6766.0
+offset_top = 7228.0
+offset_right = -1063.0
+offset_bottom = 9674.0
+texture = ExtResource("1_xhfd1")
+stretch_mode = 1
+
+[node name="CHARACTTERBODY20" type="CharacterBody2D" parent="."]
+z_index = 16
+position = Vector2(-2925, 2313)
+script = ExtResource("1_nf043")
+
+[node name="Png-clipart-anime-character-designer-yu-no-a-girl-who-chants-love-at-the-bound-of-this-world-aaa-purple-game" type="Sprite2D" parent="CHARACTTERBODY20"]
+position = Vector2(7, -13)
+scale = Vector2(0.116604, 0.0847523)
+texture = ExtResource("3_i2bfn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CHARACTTERBODY20"]
+position = Vector2(26.5, 5)
+shape = SubResource("RectangleShape2D_20ctc")
+debug_color = Color(1, 0.547707, 0.897711, 0.42)
+
+[node name="Camera2D" type="Camera2D" parent="CHARACTTERBODY20"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-959, 3048)
+scale = Vector2(4.93895, 0.850446)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(9526.52, 852.495)
+shape = SubResource("RectangleShape2D_d2bti")
+
+[node name="PiinkGamerGirl-Small" type="Sprite2D" parent="."]
+visible = false
+z_index = -7
+texture = SubResource("CompressedTexture2D_5j2or")
+
+[node name="PiinkGamerGirl-Small2" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(26127, -29981)
+scale = Vector2(1, -0.00340136)
+texture = SubResource("CompressedTexture2D_5j2or")
+
+[node name="Png-clipart-anime-character-designer-yu-no-a-girl-who-chants-love-at-the-bound-of-this-world-aaa-purple-game" type="Sprite2D" parent="."]
+position = Vector2(-14965, 7322)
+scale = Vector2(0.353332, 0.305986)
+texture = ExtResource("3_i2bfn")
+
+[node name="Png-clipart-anime-character-designer-yu-no-a-girl-who-chants-love-at-the-bound-of-this-world-aaa-purple-game2" type="Sprite2D" parent="."]
+position = Vector2(-12109, 11995)
+scale = Vector2(1.1691, 1.08634)
+texture = ExtResource("3_i2bfn")
+
+[node name="Pink-wood-background-edit-online-1_jpg" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-13743, 9382)
+scale = Vector2(0.863262, -2.33907)
+texture = ExtResource("4_k3eml")
+
+[node name="360F534413913Qf8e2eln3s9c8l16w1RoKxhi87bQa89o" type="Sprite2D" parent="."]
+position = Vector2(-2677, 2076)
+scale = Vector2(0.400155, 0.512119)
+texture = ExtResource("6_2ifea")
+
+[node name="Bedroom-scene-with-pink-bed-vector-15935723" type="Sprite2D" parent="."]
+position = Vector2(-2867, 2474)
+scale = Vector2(-2.44587, 2.06119)
+texture = ExtResource("5_4fhu6")
+
+[node name="5c52e5Cb7Fa44c1a9000026b_format-webp_width-2880EnjIsfaq1jPpdrGw" type="Sprite2D" parent="."]
+position = Vector2(-1282, 2472)
+scale = Vector2(2.17555, 2.26136)
+texture = ExtResource("7_emu0p")
+
+[node name="Sprite2D" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(33861.7, 9213)
+scale = Vector2(1.41115, 0.948206)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(3145, 1164)
+scale = Vector2(198.851, nan)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(nan, nan)
+scale = Vector2(0.468972, nan)
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(-2195, 2510)
+rotation = 1.57214
+scale = Vector2(2.04551, 0.865056)
+
+[node name="RigidBody2D4" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(12721, 4759)
+
+[node name="RigidBody2D5" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D6" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(17890, -715)
+scale = Vector2(-4.88045, -9.12319)
+
+[node name="RigidBody2D7" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D8" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D9" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(-93266, 20111)
+
+[node name="RigidBody2D10" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(-1779, 2660)
+scale = Vector2(1.51996, 0.60002)
+
+[node name="Nbre7Nl05Ztn" type="Sprite2D" parent="."]
+position = Vector2(355.001, 2468)
+scale = Vector2(2.73783, 1.86083)
+texture = ExtResource("9_g4v4e")
+
+[node name="RigidBody2D11" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+scale = Vector2(1.01494, 1.00731)
+
+[node name="RigidBody2D12" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D13" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D14" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D15" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D16" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D17" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D18" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(9302, 7109)
+scale = Vector2(17.5962, 15.5824)
+
+[node name="UnderwaterTileable" type="Sprite2D" parent="."]
+position = Vector2(118451, 29192)
+scale = Vector2(9.57324, 3.76953)
+texture = ExtResource("10_vd4bu")
+
+[node name="RigidBody2D19" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D20" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D21" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D22" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D23" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D24" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D25" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D26" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D27" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D28" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D29" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D30" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D31" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D32" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D33" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D34" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D35" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D36" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="Green-grass-lawn-fresh-field-isolated-on-white-background-with-clipping-path-free-photo" type="Sprite2D" parent="RigidBody2D36"]
+position = Vector2(45189, -12975.8)
+scale = Vector2(5.65578, 6.60153)
+texture = ExtResource("11_kxnn3")
+
+[node name="RigidBody2D37" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D41" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="Images" type="Sprite2D" parent="RigidBody2D41"]
+visible = false
+position = Vector2(-5914, -6806.3)
+scale = Vector2(37.4067, 12.1012)
+texture = ExtResource("11_u80ms")
+
+[node name="RigidBody2D42" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D40" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(-2830, 2843)
+scale = Vector2(0.610267, 1.38759)
+
+[node name="RigidBody2D43" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D44" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D45" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D46" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D39" parent="RigidBody2D46" instance=ExtResource("8_e3q0j")]
+
+[node name="RigidBody2D38" parent="RigidBody2D46/RigidBody2D39" instance=ExtResource("8_e3q0j")]
+scale = Vector2(1.00467, 0.997069)
+
+[node name="RigidBody2D47" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D48" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D49" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D50" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D51" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(35188, 28609)
+
+[node name="RigidBody2D52" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(19102, 13459)
+
+[node name="RigidBody2D53" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(-2533, 2633)
+scale = Vector2(0.6, 1.52)
+
+[node name="RigidBody2D54" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D55" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D56" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D57" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D58" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D59" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(22879, 10229.3)
+
+[node name="RigidBody2D60" parent="." instance=ExtResource("8_e3q0j")]
+visible = false
+position = Vector2(nan, nan)
+rotation = 4.69809
+scale = Vector2(-5.65563, nan)
+
+[node name="RigidBody2D61" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(19302, 4140)
+
+[node name="624Angel" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(16600, 5387)
+texture = ExtResource("12_htamg")
+
+[node name="624Angel2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(15670, 17696)
+scale = Vector2(15.764, 5.19)
+texture = ExtResource("12_htamg")
+
+[node name="Images2" type="Sprite2D" parent="."]
+position = Vector2(-3734, 3505)
+scale = Vector2(1.70667, 0.63111)
+texture = ExtResource("11_u80ms")
+
+[node name="Istockphoto-1398516147-612x612" type="Sprite2D" parent="."]
+position = Vector2(50585.8, -2571.44)
+scale = Vector2(24.1822, 32.9041)
+texture = ExtResource("14_72tdb")
+
+[node name="UnderwaterBackdrop" type="Sprite2D" parent="."]
+position = Vector2(85907.5, -2757.5)
+scale = Vector2(28.0474, 37.6948)
+texture = ExtResource("15_j3g2v")
+
+[node name="RigidBody2D62" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(nan, nan)
+scale = Vector2(0.0320621, nan)
+
+[node name="StartButtonBackdrop" type="Sprite2D" parent="."]
+position = Vector2(-3462, 4152)
+texture = ExtResource("17_rjqkl")
+
+[node name="Lovepik-start-button-png-image401228855Wh1200" type="Sprite2D" parent="."]
+position = Vector2(-2481, 2270)
+scale = Vector2(0.322916, 0.14625)
+texture = ExtResource("18_fs4d3")
+
+[node name="Spike" parent="." instance=ExtResource("19_rjqkl")]
+position = Vector2(-1560, 2824)
+scale = Vector2(18.76, 7)
+
+[node name="Spike2" parent="." instance=ExtResource("19_rjqkl")]
+position = Vector2(-770, 2818)
+scale = Vector2(18.76, 7)
+
+[node name="Pixel-yellow-flag-icon-color-260Nw-2162979023_jpg" type="Sprite2D" parent="."]
+position = Vector2(-1681, 1740)
+scale = Vector2(0.424827, 0.880094)
+texture = ExtResource("19_fs4d3")
+
+[node name="White-spikes-clipart-xl" type="Sprite2D" parent="."]
+position = Vector2(4913, -1009)
+scale = Vector2(0.518229, 0.2206)
+texture = ExtResource("20_fs4d3")
+
+[node name="Spike3" parent="." instance=ExtResource("19_rjqkl")]
+position = Vector2(-284, 2875)
+scale = Vector2(1370.01, nan)
+
+[node name="Spike4" parent="." instance=ExtResource("19_rjqkl")]
+position = Vector2(nan, nan)
+scale = Vector2(9764.83, nan)
+
+[node name="Spike5" parent="." instance=ExtResource("19_rjqkl")]
+position = Vector2(-1039, 3689)
+scale = Vector2(inf, nan)
+
+[node name="Spike6" parent="." instance=ExtResource("19_rjqkl")]
+position = Vector2(nan, nan)
+scale = Vector2(inf, nan)
+
+[node name="Spike7" parent="." instance=ExtResource("19_rjqkl")]
+position = Vector2(nan, nan)
+scale = Vector2(56.3542, nan)
+metadata/_edit_lock_ = true
+
+[node name="Spike8" parent="." instance=ExtResource("19_rjqkl")]
+position = Vector2(181, 2818)
+scale = Vector2(30.8274, 6.76032)
+
+[node name="YellowFlagBackdrop" type="Sprite2D" parent="."]
+position = Vector2(-2173, 1487)
+scale = Vector2(0.13988, 0.337362)
+texture = ExtResource("21_7vxoj")
+
+[node name="RigidBody2D38" parent="." instance=ExtResource("8_e3q0j")]
+position = Vector2(-1962, 4500)
+scale = Vector2(3.33543, -0.941914)
+
+[node name="BlackScaryBackdrop" type="Sprite2D" parent="."]
+position = Vector2(1881, 2604)
+scale = Vector2(inf_neg, nan)
+texture = ExtResource("22_ei405")
+
+[node name="BlackScaryBackdrop2" type="Sprite2D" parent="."]
+position = Vector2(nan, nan)
+scale = Vector2(inf, nan)
+texture = ExtResource("22_ei405")
+
+[node name="BlackScaryBackdrop3" type="Sprite2D" parent="."]
+position = Vector2(nan, nan)
+rotation = nan
+scale = Vector2(-0.248483, nan)
+texture = ExtResource("22_ei405")
+
+[node name="BlackScaryBackdrop4" type="Sprite2D" parent="."]
+position = Vector2(2164, 841)
+texture = ExtResource("22_ei405")
+
+[node name="BlackScaryBackdrop5" type="Sprite2D" parent="."]
+position = Vector2(2127.82, 2465.32)
+scale = Vector2(-2.60193, 2.57601)
+texture = ExtResource("22_ei405")
+
+[node name="YellowFlagBackdrop2" type="Sprite2D" parent="."]
+position = Vector2(-3108.02, 1657.85)
+rotation = 0.0239083
+scale = Vector2(0.11386, 0.273002)
+
+[node name="YellowFlagBackdrop3" type="Sprite2D" parent="."]
+position = Vector2(-2186, 2084)
+scale = Vector2(0.0869048, 0.214684)
+texture = ExtResource("21_7vxoj")
