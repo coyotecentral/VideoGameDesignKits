@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://db7l6te1hcnje"]
+
+[ext_resource type="Theme" uid="uid://bmh1w8guga3th" path="res://lib/resources/ui_theme.tres" id="1_1vxfm"]
+[ext_resource type="Script" uid="uid://w8o3cg1nmtq1" path="res://lib/scripts/snake_kit_ui.gd" id="2_qrgoy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qrgoy"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1vxfm")
+script = ExtResource("2_qrgoy")
+metadata/_edit_horizontal_guides_ = [40.0]
+
+[node name="UI" type="ColorRect" parent="."]
+top_level = true
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 40.0
+color = Color(0.180392, 0.203922, 0.25098, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_1vxfm")
+theme_override_font_sizes/font_size = 24
+text = "SnakeGame"
+
+[node name="VSeparator" type="VSeparator" parent="UI/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qrgoy")
+
+[node name="Score" type="HBoxContainer" parent="UI/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.2
+
+[node name="Label" type="Label" parent="UI/MarginContainer/HBoxContainer/Score"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.92549, 0.937255, 0.956863, 1)
+theme_override_font_sizes/font_size = 24
+text = "Score"
+
+[node name="Value" type="Label" parent="UI/MarginContainer/HBoxContainer/Score"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.92549, 0.937255, 0.956863, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.141176, 0.160784, 0.2, 1)
+
+[node name="Borders" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="R" type="ColorRect" parent="Borders"]
+offset_right = 16.0
+offset_bottom = 360.0
+color = Color(0.180392, 0.203922, 0.25098, 1)
+
+[node name="L" type="ColorRect" parent="Borders"]
+layout_mode = 0
+offset_left = 624.0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.180392, 0.203922, 0.25098, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Borders"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 344.0
+offset_right = 624.0
+offset_bottom = 360.0
+color = Color(0.180392, 0.203922, 0.25098, 1)

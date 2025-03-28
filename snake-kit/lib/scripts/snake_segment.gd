@@ -1,0 +1,2 @@
+extends SnakeKitTile
+class_name SnakeSegment
