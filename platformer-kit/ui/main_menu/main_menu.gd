@@ -19,7 +19,7 @@ func _ready():
 
 func _create_level_button(level: LevelMeta) -> Button:
 	var btn = Button.new()
-	btn.text = level.level_name
+	btn.text = "%s by %s" % [level.level_name, level.author]
 	btn.pressed.connect(func():
 		get_tree().change_scene_to_file(level.file)
 	)
