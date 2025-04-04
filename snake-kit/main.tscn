@@ -1,12 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccap3l01xhno0"]
+[gd_scene load_steps=5 format=3 uid="uid://ccap3l01xhno0"]
 
-[ext_resource type="Script" uid="uid://d13ef5x4olykh" path="res://test/StudentScript.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://bgisplct8w7p5" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://db7l6te1hcnje" path="res://lib/scenes/ui.tscn" id="2_0xm2m"]
+[ext_resource type="Theme" uid="uid://bmh1w8guga3th" path="res://lib/resources/ui_theme.tres" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://wyyvdmxic0a1" path="res://coundown.tscn" id="4_1bvp3"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0xm2m")
+tick_rate = 8.0
 metadata/_edit_vertical_guides_ = [16.0, 624.0]
 metadata/_edit_horizontal_guides_ = [40.0, 344.0]
 
 [node name="Control" parent="." instance=ExtResource("2_0xm2m")]
 metadata/_edit_horizontal_guides_ = [34.0]
+
+[node name="LoseScreen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 17.0
+offset_top = 42.0
+offset_right = 623.0
+offset_bottom = 346.0
+theme = ExtResource("3_h2yge")
+
+[node name="Panel" type="Panel" parent="LoseScreen"]
+layout_mode = 0
+offset_right = 609.0
+offset_bottom = 300.0
+
+[node name="Label" type="Label" parent="LoseScreen/Panel"]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 134.0
+offset_right = 321.0
+offset_bottom = 151.0
+text = "You Lose"
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_1bvp3")]

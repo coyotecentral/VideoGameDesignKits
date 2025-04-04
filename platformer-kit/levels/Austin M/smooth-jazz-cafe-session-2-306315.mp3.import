@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgg6ydf3c3p8b"
+path="res://.godot/imported/smooth-jazz-cafe-session-2-306315.mp3-437524d96f4573646595ebb193c3be5b.mp3str"
+
+[deps]
+
+source_file="res://levels/Austin M/smooth-jazz-cafe-session-2-306315.mp3"
+dest_files=["res://.godot/imported/smooth-jazz-cafe-session-2-306315.mp3-437524d96f4573646595ebb193c3be5b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
