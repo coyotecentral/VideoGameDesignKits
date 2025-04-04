@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5gi6u6d68xc5"
+path="res://.godot/imported/1-32. Guardian Battle.mp3-5c605c781edf52d690e15c559ab9f00a.mp3str"
+
+[deps]
+
+source_file="res://levels/1-32. Guardian Battle.mp3"
+dest_files=["res://.godot/imported/1-32. Guardian Battle.mp3-5c605c781edf52d690e15c559ab9f00a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
