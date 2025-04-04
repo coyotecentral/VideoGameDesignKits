@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvymg2r3qi1aw"
+path="res://.godot/imported/smooth-jazz-travel-vlog-podcast-music-290508.mp3-ce956bdf69bf73d77d1bc5013cc9a9da.mp3str"
+
+[deps]
+
+source_file="res://levels/Aryan K/music/smooth-jazz-travel-vlog-podcast-music-290508.mp3"
+dest_files=["res://.godot/imported/smooth-jazz-travel-vlog-podcast-music-290508.mp3-ce956bdf69bf73d77d1bc5013cc9a9da.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

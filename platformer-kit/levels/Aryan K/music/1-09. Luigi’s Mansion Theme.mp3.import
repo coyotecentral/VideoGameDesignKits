@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d4c3mjvhjjmvj"
+path="res://.godot/imported/1-09. Luigi’s Mansion Theme.mp3-dd5ab33ccfb8529c1fcfca965018e656.mp3str"
+
+[deps]
+
+source_file="res://levels/Aryan K/music/1-09. Luigi’s Mansion Theme.mp3"
+dest_files=["res://.godot/imported/1-09. Luigi’s Mansion Theme.mp3-dd5ab33ccfb8529c1fcfca965018e656.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chmo0w3a32iie"
+path="res://.godot/imported/09. Mutation.mp3-ec127332106b3afe0491c44a6eb0243f.mp3str"
+
+[deps]
+
+source_file="res://levels/Aryan K/music/09. Mutation.mp3"
+dest_files=["res://.godot/imported/09. Mutation.mp3-ec127332106b3afe0491c44a6eb0243f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
