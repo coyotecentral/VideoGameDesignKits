@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_utn5h"]
 [ext_resource type="TileSet" uid="uid://b2eehst0nvoyj" path="res://addons/kenney pixel platformer/tile sets/terrain_tile_set.tres" id="3_ui8wt"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="4_twhw8"]
-[ext_resource type="AudioStream" uid="uid://chmo0w3a32iie" path="res://levels/ARYAN KARAMI/music/09. Mutation.mp3" id="5_ui8wt"]
+[ext_resource type="AudioStream" uid="uid://chmo0w3a32iie" path="res://levels/Aryan K/music/09. Mutation.mp3" id="5_ui8wt"]
 [ext_resource type="PackedScene" uid="uid://g6eor75ky7j0" path="res://entities/portal/portal.tscn" id="6_twhw8"]
 
 [node name="1=1=+1=1" type="Node2D"]

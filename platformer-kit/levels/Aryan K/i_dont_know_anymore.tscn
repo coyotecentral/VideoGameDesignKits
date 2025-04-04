@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="1_j6vp2"]
 [ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_urg8k"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="2_26req"]
-[ext_resource type="AudioStream" uid="uid://d4c3mjvhjjmvj" path="res://levels/ARYAN KARAMI/music/1-09. Luigi’s Mansion Theme.mp3" id="3_r7fh6"]
+[ext_resource type="AudioStream" uid="uid://d4c3mjvhjjmvj" path="res://levels/Aryan K/music/1-09. Luigi’s Mansion Theme.mp3" id="3_r7fh6"]
 [ext_resource type="PackedScene" uid="uid://g6eor75ky7j0" path="res://entities/portal/portal.tscn" id="4_uuqt8"]
 
 [sub_resource type="TileSet" id="TileSet_gxp1b"]

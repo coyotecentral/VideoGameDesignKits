@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="1_2o7cu"]
 [ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_d7ems"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="2_aullc"]
-[ext_resource type="AudioStream" uid="uid://bvymg2r3qi1aw" path="res://levels/ARYAN KARAMI/music/smooth-jazz-travel-vlog-podcast-music-290508.mp3" id="4_3cgoh"]
+[ext_resource type="AudioStream" uid="uid://bvymg2r3qi1aw" path="res://levels/Aryan K/music/smooth-jazz-travel-vlog-podcast-music-290508.mp3" id="4_3cgoh"]
 [ext_resource type="PackedScene" uid="uid://g6eor75ky7j0" path="res://entities/portal/portal.tscn" id="5_3cgoh"]
 
 [node name="Level1+1maybe" type="Node2D"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://xvexjvlch250"
+path="res://.godot/imported/lofi-music-hip-hop-295207.mp3-2bc5418654a44c36204597221e9f3a77.mp3str"
+
+[deps]
+
+source_file="res://levels/Nate H's cool thing/lofi-music-hip-hop-295207.mp3"
+dest_files=["res://.godot/imported/lofi-music-hip-hop-295207.mp3-2bc5418654a44c36204597221e9f3a77.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

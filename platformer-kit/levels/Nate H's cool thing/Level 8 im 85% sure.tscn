@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxjyf6821fppy"]
+
+[ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_ftejg"]
+[ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_0s4qa"]
+[ext_resource type="TileSet" uid="uid://b2eehst0nvoyj" path="res://addons/kenney pixel platformer/tile sets/terrain_tile_set.tres" id="3_15p3l"]
+[ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="4_q81pa"]
+[ext_resource type="PackedScene" uid="uid://g6eor75ky7j0" path="res://entities/portal/portal.tscn" id="5_0s4qa"]
+[ext_resource type="AudioStream" uid="uid://r3jddrm4m1oo" path="res://levels/Nate H's cool thing/lofi-background-music-309034.mp3" id="5_15p3l"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ftejg")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_0s4qa")
+format = 2
+layer_0/tile_data = PackedInt32Array(393256, 2, 458752, 3735591, 2, 458752, 5767204, 2, 196608, 655367, 3, 65536, 655368, 3, 65536, 393231, 3, 65536, 393232, 3, 65536, 262169, 3, 65536, 262170, 3, 65536, 262179, 3, 65536, 262180, 3, 65536, 720939, 3, 65536, 1310768, 3, 65536, 2228278, 3, 65536, 3080245, 3, 65536, 3604524, 3, 65536, 3866655, 3, 65536, 4194327, 3, 65536, 4718609, 3, 65536, 5308439, 3, 65536, 3407921, 4, 65536, 2687032, 4, 65536, 1703987, 4, 65536, 1048621, 4, 65536, 393247, 4, 65536, 393246, 4, 65536, 524299, 4, 65536, 524300, 4, 65536, 327700, 4, 65536, 327701, 4, 65536)
+
+[node name="TileMap2" type="TileMap" parent="."]
+position = Vector2(1, -2)
+scale = Vector2(0.889028, 0.887282)
+tile_set = ExtResource("3_15p3l")
+format = 2
+layer_0/tile_data = PackedInt32Array(917504, 131073, 2, 917505, 131073, 2, 917506, 131073, 2, 917507, 131073, 2, 917508, 131073, 2, 917509, 131073, 2, 917510, 131073, 2, 917511, 131073, 2, 917512, 131073, 2, 917513, 131073, 2, 917514, 131073, 2, 917515, 131073, 2, 917516, 131073, 2, 917517, 131073, 2, 917518, 131073, 2, 917519, 131073, 2, 917520, 131073, 2, 917521, 131073, 2, 917522, 131073, 2, 917523, 131073, 2, 917524, 131073, 2, 917525, 131073, 2, 917526, 131073, 2, 917527, 131073, 2, 917528, 131073, 2, 917529, 131073, 2, 917530, 131073, 2, 917531, 131073, 2, 917532, 131073, 2, 917533, 131073, 2, 917534, 131073, 2, 917535, 131073, 2, 720903, 1179649, 1, 720904, 1179649, 1, 589835, 1179649, 1, 589836, 1179649, 1, 458767, 1179649, 1, 458768, 1179649, 1, 393236, 1179649, 1, 393237, 1179649, 1, 327705, 1179649, 1, 327706, 1179649, 1, 458782, 1179649, 1, 458783, 1179649, 1, 327715, 1179649, 1, 327716, 1179649, 1, 458792, 1179649, 1, 458793, 1179649, 1, 786475, 131074, 6, 1114157, 131074, 6, 1376304, 131074, 6, 1769523, 131074, 6, 2293814, 131074, 6, 2752568, 131074, 6, 3145781, 131074, 6, 3473457, 131074, 6, 3670060, 131074, 6, 3801127, 131074, 6, 3932191, 720897, 1610612740, 3997722, 720897, 1610612740, 4259863, 720897, 1610612740, 4522004, 720897, 1610612740, 4784145, 720897, 1610612740, 5177363, 720897, 1610612740, 3211285, 1179649, 2, 3080206, 1179649, 2, 3211278, 1179649, 2, 5373975, 720897, 1610612740, 5570588, 720897, 1610612740, 5832739, 720897, 4, 5832740, 720897, 4, 5832741, 720897, 4, 5832742, 720897, 4, 5832743, 720897, 4, 5832744, 720897, 4, 5832745, 720897, 4, 5832746, 720897, 4, 5832747, 720897, 4, 5832748, 720897, 4, 720899, 1179649, 8)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_q81pa")]
+position = Vector2(21, 207)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_15p3l")
+autoplay = true
+
+[node name="Portal" parent="." instance=ExtResource("5_0s4qa")]
+position = Vector2(690, 1394)
+destination = "Scene"
+scene_path = "uid://7ivhhk4yghr1"

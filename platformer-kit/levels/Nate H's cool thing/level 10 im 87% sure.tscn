@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=3 uid="uid://l1qqf3uyk21f"]
+
+[ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_msn2v"]
+[ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_gi3x7"]
+[ext_resource type="TileSet" uid="uid://b2eehst0nvoyj" path="res://addons/kenney pixel platformer/tile sets/terrain_tile_set.tres" id="3_wtk8h"]
+[ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="4_bshqv"]
+[ext_resource type="AudioStream" uid="uid://c5mf5s32osn0i" path="res://levels/Nate H's cool thing/cat-cafe-lofi-309576.mp3" id="5_yqk2u"]
+[ext_resource type="PackedScene" uid="uid://g6eor75ky7j0" path="res://entities/portal/portal.tscn" id="6_3cfiv"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_msn2v")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_gi3x7")
+format = 2
+layer_0/tile_data = PackedInt32Array(-589718, 2, 196608)
+
+[node name="TileMap2" type="TileMap" parent="."]
+scale = Vector2(0.888716, 0.91519)
+tile_set = ExtResource("3_wtk8h")
+format = 2
+layer_0/tile_data = PackedInt32Array(1376256, 131073, 1, 1376257, 131073, 1, 1376258, 131073, 1, 1376259, 131073, 1, 1376262, 131073, 1, 1376263, 131073, 1, 1376264, 131073, 1, 1376267, 131073, 1, 1376268, 131073, 1, 1376269, 131073, 1, 1376272, 131073, 1, 1376273, 131073, 1, 1376274, 131073, 1, 1376277, 131073, 1, 1376278, 131073, 1, 1376279, 131073, 1, 1376282, 131073, 1, 1376283, 131073, 1, 1376284, 131073, 1, 1376287, 131073, 1, 1376288, 131073, 1, 1376289, 131073, 1, 1376292, 131073, 1, 1376293, 131073, 1, 1376294, 131073, 1, 1376297, 131073, 1, 1376298, 131073, 1, 1376299, 131073, 1, 1376302, 131073, 1, 1376303, 131073, 1, 1376304, 131073, 1, 1376307, 131073, 1, 1376308, 131073, 1, 1376309, 131073, 1, -524189, 720897, 4, -524188, 720897, 4, -524187, 720897, 4, -524186, 720897, 4, -524185, 720897, 4, -524184, 720897, 4, -524183, 720897, 4, -524182, 720897, 4, -524181, 720897, 4, -524180, 720897, 4, -524179, 720897, 4, -524178, 720897, 4, -524176, 720897, 4, -524177, 720897, 4, 1179649, 720898, 8, 1179650, 655362, 8)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_bshqv")]
+position = Vector2(12, 332)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_yqk2u")
+autoplay = true
+
+[node name="Portal" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(81, 381)
+destination = "Portal"
+other_portal = NodePath("../Portal11")
+
+[node name="Portal2" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(159, 380)
+destination = "Portal"
+other_portal = NodePath("../Portal12")
+
+[node name="Portal3" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(240, 380)
+destination = "Portal"
+other_portal = NodePath("../Portal13")
+
+[node name="Portal4" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(320, 381)
+destination = "Portal"
+other_portal = NodePath("../Portal14")
+
+[node name="Portal5" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(399, 380)
+destination = "Portal"
+other_portal = NodePath("../Portal15")
+
+[node name="Portal6" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(482, 380)
+destination = "Portal"
+other_portal = NodePath("../Portal16")
+
+[node name="Portal7" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(561, 380)
+destination = "Portal"
+other_portal = NodePath("../Portal17")
+
+[node name="Portal8" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(641, 381)
+destination = "Portal"
+other_portal = NodePath("../Portal20")
+
+[node name="Portal9" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(720, 381)
+destination = "Portal"
+other_portal = NodePath("../Portal18")
+
+[node name="Portal10" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(801, 379)
+destination = "Portal"
+other_portal = NodePath("../Portal19")
+
+[node name="Portal11" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(83, 1057)
+
+[node name="Portal12" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(186, 1055)
+
+[node name="Portal13" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(310, 1048)
+
+[node name="Portal14" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(430, 1033)
+
+[node name="Portal15" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(580, 1029)
+
+[node name="Portal16" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(720, 1027)
+
+[node name="Portal17" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(855, 1012)
+
+[node name="Portal18" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(958, 1027)
+
+[node name="Portal19" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(1191, 1010)
+
+[node name="Portal20" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(1614, -155)
+
+[node name="Portal21" parent="." instance=ExtResource("6_3cfiv")]
+position = Vector2(1777, -154)
+destination = "Scene"
+scene_path = "uid://cx3t6h3n00ppy"

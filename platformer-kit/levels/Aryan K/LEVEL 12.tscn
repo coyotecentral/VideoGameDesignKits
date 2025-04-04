@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_qef5s"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_7djms"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="3_ikmxv"]
-[ext_resource type="AudioStream" uid="uid://crnmr0e1mwcfe" path="res://levels/ARYAN KARAMI/music/13. Keygen.mp3" id="4_7djms"]
-[ext_resource type="TileSet" uid="uid://cycp8irflaec4" path="res://levels/ARYAN KARAMI/Tilemap/new_tile_set.tres" id="5_xh8qi"]
+[ext_resource type="AudioStream" uid="uid://crnmr0e1mwcfe" path="res://levels/Aryan K/music/13. Keygen.mp3" id="4_7djms"]
+[ext_resource type="TileSet" uid="uid://cycp8irflaec4" path="res://levels/Aryan K/Tilemap/new_tile_set.tres" id="5_xh8qi"]
 [ext_resource type="PackedScene" uid="uid://g6eor75ky7j0" path="res://entities/portal/portal.tscn" id="6_7djms"]
 
 [node name="LEVEL 1+2 MAYBE" type="Node2D"]

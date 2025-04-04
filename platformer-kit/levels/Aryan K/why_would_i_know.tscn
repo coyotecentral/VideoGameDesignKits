@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_psr86"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_dqaa0"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="4_clax3"]
-[ext_resource type="AudioStream" uid="uid://bmxvajv2f3o6e" path="res://levels/ARYAN KARAMI/music/2-08. New Donk City.mp3" id="5_psr86"]
+[ext_resource type="AudioStream" uid="uid://bmxvajv2f3o6e" path="res://levels/Aryan K/music/2-08. New Donk City.mp3" id="5_psr86"]
 [ext_resource type="PackedScene" uid="uid://g6eor75ky7j0" path="res://entities/portal/portal.tscn" id="6_npbj8"]
 
 [sub_resource type="TileSet" id="TileSet_gxp1b"]
