@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bmxvajv2f3o6e"
+path="res://.godot/imported/2-08. New Donk City.mp3-d2105ddfe93480907c3c48e5b1e01192.mp3str"
+
+[deps]
+
+source_file="res://levels/ARYAN KARAMI/2-08. New Donk City.mp3"
+dest_files=["res://.godot/imported/2-08. New Donk City.mp3-d2105ddfe93480907c3c48e5b1e01192.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

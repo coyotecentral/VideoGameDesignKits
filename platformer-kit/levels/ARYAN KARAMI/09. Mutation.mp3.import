@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chmo0w3a32iie"
+path="res://.godot/imported/09. Mutation.mp3-1b63573964fa6623c00a4eea9fb06afe.mp3str"
+
+[deps]
+
+source_file="res://levels/ARYAN KARAMI/09. Mutation.mp3"
+dest_files=["res://.godot/imported/09. Mutation.mp3-1b63573964fa6623c00a4eea9fb06afe.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

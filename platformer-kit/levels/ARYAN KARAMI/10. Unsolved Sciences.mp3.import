@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://iietrqhpbdiy"
+path="res://.godot/imported/10. Unsolved Sciences.mp3-a1b8dc2caf041a355b756a30b579bb06.mp3str"
+
+[deps]
+
+source_file="res://levels/ARYAN KARAMI/10. Unsolved Sciences.mp3"
+dest_files=["res://.godot/imported/10. Unsolved Sciences.mp3-a1b8dc2caf041a355b756a30b579bb06.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
