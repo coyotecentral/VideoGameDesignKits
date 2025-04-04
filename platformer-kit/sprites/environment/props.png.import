@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jido300aege5"
-path="res://.godot/imported/props.png-8e7e1e76f600fac17cd809752632bafe.ctex"
+path="res://.godot/imported/props.png-1c7b597298f29c5becee086d8314b9cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/environment/background/props.png"
-dest_files=["res://.godot/imported/props.png-8e7e1e76f600fac17cd809752632bafe.ctex"]
+source_file="res://sprites/environment/props.png"
+dest_files=["res://.godot/imported/props.png-1c7b597298f29c5becee086d8314b9cd.ctex"]
 
 [params]
 

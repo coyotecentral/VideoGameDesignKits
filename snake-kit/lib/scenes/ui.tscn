@@ -79,6 +79,7 @@ color = Color(0.141176, 0.160784, 0.2, 1)
 anchors_preset = 0
 
 [node name="R" type="ColorRect" parent="Borders"]
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 360.0
 color = Color(0.180392, 0.203922, 0.25098, 1)
