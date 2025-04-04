@@ -12,7 +12,6 @@ size = Vector2(22, 31)
 z_index = -1
 script = ExtResource("1_lirgq")
 destination = "Level"
-emit_only = null
 
 [node name="Area2D" type="Area2D" parent="."]
 

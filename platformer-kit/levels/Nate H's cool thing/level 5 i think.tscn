@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://c47ohnnqttbu4"]
+
+[ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_jgh27"]
+[ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_q50t8"]
+[ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="3_rojom"]
+[ext_resource type="AudioStream" uid="uid://ilxw1ruja6du" path="res://levels/Nate H's cool thing/morning-relaxing-144011.mp3" id="4_q50t8"]
+[ext_resource type="PackedScene" uid="uid://g6eor75ky7j0" path="res://entities/portal/portal.tscn" id="4_vjxv5"]
+[ext_resource type="TileSet" uid="uid://b2eehst0nvoyj" path="res://addons/kenney pixel platformer/tile sets/terrain_tile_set.tres" id="6_rojom"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jgh27")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_q50t8")
+format = 2
+layer_0/tile_data = PackedInt32Array(1048577, 917505, 10, 1048576, 851969, 10, 1048579, 917505, 10, 1048578, 851969, 10, 1048581, 917505, 10, 1048580, 851969, 10, 1048583, 917505, 10, 1048582, 851969, 10, 1048585, 917505, 10, 1048584, 851969, 10, 1048587, 917505, 10, 1048586, 851969, 10, 1048589, 917505, 10, 1048588, 851969, 10, 1048591, 917505, 10, 1048590, 851969, 10, 1048593, 917505, 10, 1048592, 851969, 10, 1048595, 917505, 10, 1048594, 851969, 10, 1048597, 917505, 10, 1048596, 851969, 10, 1048599, 917505, 10, 1048598, 851969, 10, 1048601, 917505, 10, 1048600, 851969, 10, 1048603, 917505, 10, 1048602, 851969, 10, 1048605, 917505, 10, 1048604, 851969, 10, 1048607, 917505, 10, 1048606, 851969, 10, 1048609, 917505, 10, 1048608, 851969, 10, 851974, 720896, 16, 720905, 720896, 16, 655373, 720896, 16, 589842, 720896, 16, 393237, 720896, 16, 196632, 720896, 16, 65563, 720896, 16, 131104, 720896, 16, 36, 720896, 16, -131032, 720896, 16, 262186, 720896, 16, 655404, 720896, 16, 983086, 720896, 16, 1376304, 720896, 16, 1769521, 720896, 16, 2162738, 720896, 16, 3670071, 1245184, 18, 3670072, 1245184, 18, 3670073, 1245184, 18, 5242922, 1245184, 18, 5242923, 1245184, 18, 5242924, 1245184, 18, 6488100, 1245184, 18, 6488099, 1245184, 18, 6488098, 1245184, 18, 6488097, 1245184, 18, 6488094, 1245184, 18, 6488093, 1245184, 18, 6488092, 1245184, 18, 6488091, 1245184, 18, 6488090, 1245184, 18, 6488089, 1245184, 18, 6488096, 1245184, 18, 6488095, 1245184, 18, 6422558, 2, 196608, 786438, 3, 65536, 589837, 3, 65536, 327701, 3, 65536, 27, 3, 65536, -65500, 3, 65536, 196650, 3, 65536, 917550, 3, 65536, 1703985, 3, 65536, 3604535, 3, 65536, 3604536, 3, 65536, 3604537, 3, 65536, 655369, 4, 65536, 524306, 4, 65536, 65568, 4, 65536, 589868, 4, 65536, 1310768, 4, 65536, 2097202, 4, 65536, 5177386, 4, 65536, 5177387, 4, 65536, 5177388, 4, 65536)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_rojom")]
+position = Vector2(15, 236)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_q50t8")
+autoplay = true
+
+[node name="Portal" parent="." instance=ExtResource("4_vjxv5")]
+position = Vector2(428, 1559)
+destination = "Scene"
+scene_path = "uid://cmh6v8xisk1ap"
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource("6_rojom")
+format = 2
+layer_0/tile_data = PackedInt32Array(786434, 983041, 8)

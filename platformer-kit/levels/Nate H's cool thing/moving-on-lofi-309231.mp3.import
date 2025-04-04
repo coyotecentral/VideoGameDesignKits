@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2nkhhhdm1dh0"
+path="res://.godot/imported/moving-on-lofi-309231.mp3-d952890fccaa89d58e5760f7f71c51c4.mp3str"
+
+[deps]
+
+source_file="res://levels/Nate H's cool thing/moving-on-lofi-309231.mp3"
+dest_files=["res://.godot/imported/moving-on-lofi-309231.mp3-d952890fccaa89d58e5760f7f71c51c4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
