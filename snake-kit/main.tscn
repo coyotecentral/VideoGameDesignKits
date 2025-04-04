@@ -1,12 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccap3l01xhno0"]
+[gd_scene load_steps=5 format=3 uid="uid://ccap3l01xhno0"]
 
-[ext_resource type="Script" uid="uid://d13ef5x4olykh" path="res://test/StudentScript.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://ow3kpjplsvta" path="res://snake_game.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://db7l6te1hcnje" path="res://lib/scenes/ui.tscn" id="2_0xm2m"]
+[ext_resource type="Theme" uid="uid://bmh1w8guga3th" path="res://lib/resources/ui_theme.tres" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://ba1p4u40fvf6s" path="res://countdown.tscn" id="4_1bvp3"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0xm2m")
+tick_rate = 15.0
 metadata/_edit_vertical_guides_ = [16.0, 624.0]
 metadata/_edit_horizontal_guides_ = [40.0, 344.0]
 
 [node name="Control" parent="." instance=ExtResource("2_0xm2m")]
 metadata/_edit_horizontal_guides_ = [34.0]
+
+[node name="lose" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 38.0
+offset_right = 623.0
+offset_bottom = 341.0
+theme = ExtResource("3_h2yge")
+
+[node name="Panel" type="Panel" parent="lose"]
+layout_mode = 0
+offset_right = 611.0
+offset_bottom = 304.0
+
+[node name="Label" type="Label" parent="lose/Panel"]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 140.0
+offset_right = 923.0
+offset_bottom = 555.0
+text = "You lose get better"
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_1bvp3")]
