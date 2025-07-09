@@ -394,7 +394,7 @@ directional = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ivgey")
+&"": SubResource("AnimationLibrary_ivgey")
 }
 autoplay = "idle"
 
@@ -414,3 +414,26 @@ position = Vector2(16, 2.08165e-12)
 target_position = Vector2(2.08165e-12, 32)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="HealthBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 24.0
+
+[node name="Max" type="ColorRect" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.156863)
+
+[node name="Current" type="ColorRect" parent="HealthBar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 4.0
+color = Color(0.367453, 0.761195, 0, 1)

@@ -31,7 +31,16 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	state_machine.process_frame(delta)
+	if _current_health == max_health:
+		$HealthBar.visible = false
+	else:
+		$HealthBar.visible = true
+		var current_bar: ColorRect = $HealthBar.get_node("Current")
+		current_bar.size.x = $HealthBar.size.x * _current_health / max_health
+
+
 	if _current_health <= 0:
+		$HealthBar.visible = false
 		death.emit()
 
 func _on_death():
