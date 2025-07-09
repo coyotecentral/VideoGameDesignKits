@@ -1,12 +1,17 @@
 extends CharacterBody2D
 class_name EnemyBody2D
 
+@export var drops_key := false
+var key_scene = preload("uid://7dk38e0dxucg")
+var dropped_items: Array[Node] = []
+
 @export var state_machine: EnemyStateMachine
 @export var animations: AnimationPlayer
 @export var death_state: CharacterState
 @export var respawnable := true
 
 var initial_position: Vector2
+var did_drop := false
 @export var max_health = 1
 var _current_health = 1
 
@@ -44,6 +49,14 @@ func _process(delta: float) -> void:
 		death.emit()
 
 func _on_death():
+	if drops_key and not did_drop:
+			var d: RigidBody2D = key_scene.instantiate()
+			get_tree().get_root().add_child(d)
+			d.position = global_position
+			d.linear_velocity = Vector2(randi_range(-100, 100), randi_range(-100, 0))
+			did_drop = true
+			dropped_items.append(d)
+
 	set_collision_layer_value(1, false)
 	set_collision_layer_value(2, false)
 	set_collision_mask_value(1, false)
@@ -62,3 +75,10 @@ func handle_reset():
 	visible = true
 	velocity = Vector2()
 	_current_health = max_health
+	did_drop = false
+	if drops_key:
+		LevelController.decrement_key_count()
+		did_drop = false
+		for d in dropped_items:
+			if is_instance_valid(d):
+				d.queue_free()
