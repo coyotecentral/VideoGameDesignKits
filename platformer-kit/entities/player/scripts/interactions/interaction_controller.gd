@@ -38,7 +38,7 @@ func _ready() -> void:
 		player.enemy_bounce.emit()
 		# 24 is a magic number that transports the player enough so that the hurtbox doesn't retrigger
 		# Was previously 16
-		player.position.y = collider.global_position.y - max(24, 32 * collider.scale.y) - player.get_parent().global_position.y
+		player.position.y = collider.global_position.y - clamp(20 * collider.scale.y  - 16, 24, INF) - player.get_parent().global_position.y
 	)
 
 	hurtbox_delay_timer = Timer.new()
