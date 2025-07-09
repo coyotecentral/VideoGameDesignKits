@@ -4,7 +4,7 @@ var _respawn_position := Vector2()
 var _checkpoint_active := false
 var _gem_count := 0
 var _key_count := 0
-var _death_count := -1
+var _death_count := 0
 var _final_death_count := 0
 
 var _scene_file_path: String = ""
