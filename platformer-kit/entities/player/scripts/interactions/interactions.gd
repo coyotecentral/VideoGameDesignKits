@@ -1,7 +1,7 @@
 class_name InteractionHandlers
 
 static func push_object(collider: Node2D, force: Vector2, delta: float) -> void:
-	collider.position += force * delta
+	collider.velocity = force
 
 static func take_damage(player: Player, amount: int=1) -> void:
 	player.damage_taken.emit(amount)
