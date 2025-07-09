@@ -21,6 +21,8 @@ func _handle_shapecast_collision(collider: Node2D):
 	if collider is EnemyBody2D:
 		# Instant kill
 		collider.death.emit()
+	elif collider is Player:
+		collider.damage_taken.emit(1)
 
 func handle_reset():
 	velocity = Vector2()
