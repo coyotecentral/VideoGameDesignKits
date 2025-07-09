@@ -1,9 +1,7 @@
-extends AnimatableBody2D
+extends CharacterBody2D
 class_name MovableCrate
 
-@onready var shape_cast: ShapeCast2D = $ShapeCast2D
-
-var velocity := Vector2()
+@onready var shapecast: ShapeCast2D = $ShapeCast2D
 var initial_position: Vector2
 
 func _ready() -> void:
@@ -11,14 +9,18 @@ func _ready() -> void:
 	LevelController.register_entity_for_reset(self)
 
 func _physics_process(delta: float) -> void:
-	if not is_grounded():
+	if not is_on_floor():
 		velocity.y += 980 * delta
-	else:
-		velocity.y = 0
-	var collision = move_and_collide(velocity * delta)
+	move_and_slide()
+	if shapecast.get_collision_count():
+		for i in range(0, shapecast.get_collision_count()):
+			_handle_shapecast_collision(shapecast.get_collider(i))
 
-func is_grounded() -> bool:
-	return shape_cast.get_collision_count() > 0
+# Handle any event that would trigger the shapecast on the bottom
+func _handle_shapecast_collision(collider: Node2D):
+	if collider is EnemyBody2D:
+		# Instant kill
+		collider.death.emit()
 
 func handle_reset():
 	velocity = Vector2()
