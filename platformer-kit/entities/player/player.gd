@@ -64,6 +64,7 @@ func _ready() -> void:
 	)
 
 	respawn.connect(func():
+		velocity = Vector2()
 		if LevelController.get_death_count() >= 0:
 			LevelController.reset_entities()
 		LevelController.increment_death_count()

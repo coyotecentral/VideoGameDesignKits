@@ -44,12 +44,7 @@ func _ready():
 	timer.start()
 	
 	LevelController.set_scene_path(scene_file_path)
-	
-	# Hack to see if it's the first time we're loading
-	if LevelController._death_count <= 0:
-		LevelController.set_spawn_position(respawn_marker.global_position)
-	
-	_player.respawn.emit()
+	LevelController.set_spawn_position(respawn_marker.global_position)
 
 func _process(delta: float):
 	if LevelController.is_gems_completed() and not win_screen:

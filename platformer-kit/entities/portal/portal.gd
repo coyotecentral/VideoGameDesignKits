@@ -89,7 +89,7 @@ func _handle_auto(player: Node2D):
 		teleport.emit(player, portal.global_position)
 	if destination == "Scene":
 		scene_change.emit(player, _level_scene_path)
-		get_tree().change_scene_to_file(_level_scene_path)
+		get_tree().call_deferred("change_scene_to_file", _level_scene_path)
 
 func _handle_emit_only(player: Node2D):
 	if destination == "Portal":
