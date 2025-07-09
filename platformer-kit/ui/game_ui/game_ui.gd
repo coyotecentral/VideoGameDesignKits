@@ -9,15 +9,17 @@ class_name GameUI
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	_update_labels()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _update_labels():
 	gem_count_label.text = "%d / %d" % [LevelController.get_gem_count(), LevelController.get_total_gem_count()]
 	death_count_label.text = "%d" % LevelController.get_death_count()
 	key_count_label.text = "%d" % LevelController.get_key_count()
 	timer_label.text = format_time(LevelController.get_seconds_elapsed())
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	_update_labels()
 
 func format_time(seconds: int) -> String:
 	var result = ""
