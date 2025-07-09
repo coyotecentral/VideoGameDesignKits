@@ -10,9 +10,9 @@ size = Vector2(31, 31)
 a = Vector2(-15, 2.08165e-12)
 b = Vector2(15, 2.08165e-12)
 
-[node name="AnimatableBody2D" type="AnimatableBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(8, -8)
-sync_to_physics = false
+floor_stop_on_slope = false
 script = ExtResource("1_3cqhw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
