@@ -90,13 +90,16 @@ func handle_reset():
 	velocity = Vector2()
 	_current_health = max_health
 	if did_drop:
+		var decrement_gem = true
 		if drops_key:
 			LevelController.decrement_key_count()
-		if drops_gem:
-			LevelController._gem_count -= 1
 
 		for d in dropped_items:
 				if is_instance_valid(d):
+					if d is Gem:
+						decrement_gem = false
 					d.queue_free()
+		if decrement_gem:
+			LevelController._gem_count -= 1
 
 		did_drop = false
