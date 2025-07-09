@@ -11,10 +11,14 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += 980 * delta
+	else:
+		velocity = velocity.move_toward(Vector2(), 1000 * delta)
 	move_and_slide()
-	if shapecast.get_collision_count():
-		for i in range(0, shapecast.get_collision_count()):
-			_handle_shapecast_collision(shapecast.get_collider(i))
+
+	if not is_on_floor():
+		if shapecast.get_collision_count():
+			for i in range(0, shapecast.get_collision_count()):
+				_handle_shapecast_collision(shapecast.get_collider(i))
 
 # Handle any event that would trigger the shapecast on the bottom
 func _handle_shapecast_collision(collider: Node2D):
