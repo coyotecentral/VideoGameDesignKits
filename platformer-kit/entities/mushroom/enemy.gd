@@ -2,7 +2,10 @@ extends CharacterBody2D
 class_name EnemyBody2D
 
 @export var drops_key := false
+@export var drops_gem := false
+
 var key_scene = preload("uid://7dk38e0dxucg")
+var gem_scene = preload("uid://dturik0w3xp6k")
 var dropped_items: Array[Node] = []
 
 @export var state_machine: EnemyStateMachine
@@ -24,6 +27,9 @@ func _ready() -> void:
 	death.connect(_on_death)
 	initial_position = global_position
 	LevelController.register_entity_for_reset(self)
+	# Hack to make sure the gem counter is accurate
+	if drops_gem:
+		LevelController._total_gems += 1
 	damage.connect(func():
 		_take_damage(1)
 	)
@@ -49,13 +55,21 @@ func _process(delta: float) -> void:
 		death.emit()
 
 func _on_death():
-	if drops_key and not did_drop:
+	if not did_drop:
+		if drops_key:
 			var d: RigidBody2D = key_scene.instantiate()
 			get_tree().get_root().add_child(d)
 			d.position = global_position
 			d.linear_velocity = Vector2(randi_range(-100, 100), randi_range(-100, 0))
-			did_drop = true
 			dropped_items.append(d)
+		if drops_gem:
+			var d: = gem_scene.instantiate()
+			get_tree().get_root().add_child(d)
+			d.position = global_position
+			# Hack to make sure the gem counter is accurate
+			dropped_items.append(d)
+			LevelController._total_gems -= 1
+		did_drop = true
 
 	set_collision_layer_value(1, false)
 	set_collision_layer_value(2, false)
@@ -75,10 +89,14 @@ func handle_reset():
 	visible = true
 	velocity = Vector2()
 	_current_health = max_health
-	did_drop = false
-	if drops_key:
-		LevelController.decrement_key_count()
-		did_drop = false
+	if did_drop:
+		if drops_key:
+			LevelController.decrement_key_count()
+		if drops_gem:
+			LevelController._gem_count -= 1
+
 		for d in dropped_items:
-			if is_instance_valid(d):
-				d.queue_free()
+				if is_instance_valid(d):
+					d.queue_free()
+
+		did_drop = false
