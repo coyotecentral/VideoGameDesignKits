@@ -34,9 +34,11 @@ func _ready() -> void:
 	)
 
 	$HurtboxShapecast.set_handler(InteractionTypes.Enemy, func(collider, _delta):
-		collider.death.emit()
-		player.position.y = collider.global_position.y - 16 - player.get_parent().global_position.y
+		collider.damage.emit()
 		player.enemy_bounce.emit()
+		# 24 is a magic number that transports the player enough so that the hurtbox doesn't retrigger
+		# Was previously 16
+		player.position.y = collider.global_position.y - max(24, 32 * collider.scale.y) - player.get_parent().global_position.y
 	)
 
 	hurtbox_delay_timer = Timer.new()
@@ -46,6 +48,7 @@ func _ready() -> void:
 		$HurtboxShapecast.enabled = false
 	)
 
+	player.enemy_bounce.connect(disable_hurt_boxes)
 	player.fall_start.connect(enable_hurt_boxes)
 	player.fall_end.connect(disable_hurt_boxes)
 

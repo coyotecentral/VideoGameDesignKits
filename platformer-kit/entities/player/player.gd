@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+var manual_override: bool = false
+
 @onready var state_machine: CharacterStateMachine = $StateMachine
 
 @export_group("Movement")
@@ -70,10 +72,13 @@ func _ready() -> void:
 	)
 
 func _unhandled_input(event: InputEvent) -> void:
-	state_machine.process_input(event)
+	if not manual_override:
+		state_machine.process_input(event)
 
 func _physics_process(delta: float) -> void:
-	state_machine.process_physics(delta)
+	if not manual_override:
+		state_machine.process_physics(delta)
 
 func _process(delta: float) -> void:
-	state_machine.process_frame(delta)
+	if manual_override:
+		state_machine.process_frame(delta)
