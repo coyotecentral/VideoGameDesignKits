@@ -16,4 +16,5 @@ windows: main_menu
 	${GODOT} --headless --export-release "Windows Desktop" build/windows/${WINDOWS_EXE_NAME} --embed-pck
 
 main_menu:
+	mkdir -p autogen
 	${GODOT} -s tools/create_main_menu.gd
