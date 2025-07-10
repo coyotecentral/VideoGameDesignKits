@@ -1,13 +1,17 @@
 extends CharacterBody2D
 class_name EnemyBody2D
 
+@export_group("Options")
 @export var drops_key := false
 @export var drops_gem := false
+@export var move_speed := 100.0
+@export var max_health = 1
 
 var key_scene = preload("uid://7dk38e0dxucg")
 var gem_scene = preload("uid://dturik0w3xp6k")
 var dropped_items: Array[Node] = []
 
+@export_group("Don't touch")
 @export var state_machine: EnemyStateMachine
 @export var animations: AnimationPlayer
 @export var death_state: CharacterState
@@ -15,7 +19,6 @@ var dropped_items: Array[Node] = []
 
 var initial_position: Vector2
 var did_drop := false
-@export var max_health = 1
 var _current_health = 1
 
 signal death
