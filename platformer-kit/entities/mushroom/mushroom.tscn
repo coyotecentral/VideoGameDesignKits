@@ -364,6 +364,7 @@ script = ExtResource("1_wc4m8")
 state_machine = NodePath("StateMachine")
 animations = NodePath("AnimationPlayer")
 death_state = NodePath("StateMachine/death")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, 4)
