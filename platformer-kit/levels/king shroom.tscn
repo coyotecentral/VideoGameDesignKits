@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://uyufigumu1tw"]
+
+[ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_yflg2"]
+[ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_iy8u8"]
+[ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="2_jd8qq"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_yflg2")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_iy8u8")
+format = 2
+layer_0/tile_data = PackedInt32Array(196603, 1114112, 7, 131067, 1114112, 7, 131068, 1114112, 7, 196604, 1114112, 7, 196605, 1114112, 7, 196606, 1114112, 7, 196607, 1114112, 7, 131072, 1114112, 7, 65536, 1114112, 7, 131071, 1114112, 7, 131070, 1114112, 7, 131069, 1114112, 7, 131073, 1114112, 7, 131074, 1114112, 7, 131075, 1114112, 7, 131076, 1114112, 7, 131077, 1114112, 7, 196613, 1114112, 7, 196612, 1114112, 7, 196611, 1114112, 7, 196610, 1114112, 7, 196609, 1114112, 7, 196608, 1114112, 7, 262143, 1114112, 7, 262142, 1114112, 7, 262141, 1114112, 7, 262140, 1114112, 7, 262139, 1114112, 7, 262147, 1114112, 7, 262148, 1114112, 7, 262149, 1114112, 7, 262150, 1114112, 7, 262151, 1114112, 7, 262152, 1114112, 7, 262153, 1114112, 7, 262154, 1114112, 7, 262155, 1114112, 7, 262156, 1114112, 7, 196619, 1114112, 7, 196618, 1114112, 7, 196617, 1114112, 7, 196616, 1114112, 7, 196615, 1114112, 7, 196614, 1114112, 7, 196620, 1114112, 7, 65537, 2, 65536, 65540, 2, 196608, 131080, 2, 196608, 131083, 2, 196608)
+script = ExtResource("1_yflg2")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_jd8qq")]
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]

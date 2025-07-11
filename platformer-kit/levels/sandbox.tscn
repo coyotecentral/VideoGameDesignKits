@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_ad5wx"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="1_tfeib"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_7iwf8"]
-[ext_resource type="Script" uid="uid://bsl8a1vysq1yw" path="res://levels/portal_listener.gd" id="2_tv6ri"]
+[ext_resource type="Script" path="res://levels/portal_listener.gd" id="2_tv6ri"]
 [ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://entities/mushroom/mushroom.tscn" id="4_ga1md"]
 [ext_resource type="PackedScene" uid="uid://cgop15wpyeere" path="res://entities/controllable_platform/controllable_platform.tscn" id="5_kgnc4"]
 [ext_resource type="PackedScene" uid="uid://bke7y2vvy02l7" path="res://entities/pressure_plate/pressure_plate.tscn" id="6_rcg2a"]
@@ -48,13 +48,13 @@ position = Vector2(507, -43)
 [node name="Portal" parent="." instance=ExtResource("7_llpag")]
 position = Vector2(182, -32)
 destination = "Portal"
-disabled = false
+emit_only = false
 other_portal = NodePath("../Portal2")
 
 [node name="Portal2" parent="." instance=ExtResource("7_llpag")]
 position = Vector2(3598, 1494)
 destination = "Portal"
-disabled = false
+emit_only = false
 other_portal = NodePath("../Portal")
 
 [connection signal="pressed" from="PressurePlate" to="ControllablePlatform" method="unfreeze"]

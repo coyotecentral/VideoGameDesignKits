@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw7o2en3owhvd"]
+
+[ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_0rlyq"]
+[ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="2_dvffe"]
+[ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="3_tgkpn"]
+[ext_resource type="PackedScene" uid="uid://cepqul5oupgtp" path="res://entities/readable_sign/readable_sign.tscn" id="4_a1nqc"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_0rlyq")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_dvffe")]
+position = Vector2(4, -6)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(4, -6)
+tile_set = ExtResource("3_tgkpn")
+format = 2
+layer_0/tile_data = PackedInt32Array(655352, 1114112, 7, 655353, 1114112, 7, 655354, 1114112, 7, 655355, 1114112, 7, 655356, 1114112, 7, 720892, 1114112, 7, 720893, 1114112, 7, 720894, 1114112, 7, 720895, 1114112, 7, 655360, 1114112, 7, 655361, 1114112, 7, 655362, 1114112, 7, 655363, 1114112, 7, 655364, 1114112, 7, 655365, 1114112, 7, 655366, 1114112, 7, 655367, 1114112, 7, 655368, 1114112, 7, 655369, 1114112, 7, 655370, 1114112, 7, 655371, 1114112, 7, 720888, 1114112, 7, 720889, 1114112, 7, 720890, 1114112, 7, 720891, 1114112, 7, 655357, 1114112, 7, 655358, 1114112, 7, 655359, 1114112, 7, 589824, 1114112, 7, 589825, 1114112, 7, 589826, 1114112, 7, 589827, 1114112, 7, 589828, 1114112, 7, 589833, 1114112, 7, 589834, 1114112, 7, 589835, 1114112, 7, 589832, 1114112, 7, 589831, 1114112, 7, 589830, 1114112, 7, 589829, 1114112, 7)
+
+[node name="ReadableSign" parent="." instance=ExtResource("4_a1nqc")]
+position = Vector2(121, 123)
