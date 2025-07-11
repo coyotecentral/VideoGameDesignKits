@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://qxcngbvra7so"]
+[gd_scene load_steps=14 format=3 uid="uid://qxcngbvra7so"]
 
 [ext_resource type="Theme" uid="uid://cnabdh0mv7ar0" path="res://utils/ui_theme.tres" id="1_bccpn"]
 [ext_resource type="Texture2D" uid="uid://b7fink1osmqcm" path="res://sprites/environment/background/back.png" id="1_mwo27"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_r4rn8"]
 [ext_resource type="Script" uid="uid://h15pndux5yri" path="res://ui/main_menu/main_menu.gd" id="2_xw3g8"]
 [ext_resource type="Texture2D" uid="uid://d2yp0i7odi44i" path="res://sprites/environment/props/rock.png" id="3_0jsj1"]
+[ext_resource type="PackedScene" uid="uid://cpg4a7p1h1h5u" path="res://autogen/auto_level_select.tscn" id="3_xio0d"]
 [ext_resource type="Texture2D" uid="uid://doh2vwvbhli3l" path="res://sprites/environment/props/rock-1.png" id="4_s4byf"]
 [ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://entities/mushroom/mushroom.tscn" id="5_ni0u8"]
 [ext_resource type="Texture2D" uid="uid://bh5d5ysebmle3" path="res://entities/player/sprites/idle/player-idle-1.png" id="6_qng77"]
@@ -110,8 +111,9 @@ custom_minimum_size = Vector2(250, 30)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Control" type="Control" parent="CanvasLayer/Control/ColorRect/MarginContainer/VBoxContainer/VBoxContainer/ScrollContainer"]
+[node name="VBoxContainer" parent="CanvasLayer/Control/ColorRect/MarginContainer/VBoxContainer/VBoxContainer/ScrollContainer" instance=ExtResource("3_xio0d")]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Quit" type="Button" parent="CanvasLayer/Control/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
