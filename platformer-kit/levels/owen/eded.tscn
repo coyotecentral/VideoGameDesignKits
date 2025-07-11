@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://f1o4j8n33b8e"]
+
+[ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="1_l8jae"]
+[ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_bbswf"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_l8jae")]
+position = Vector2(37, 22)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_bbswf")
+format = 2
+layer_0/tile_data = PackedInt32Array(327680, 458752, 1, 327681, 458752, 1, 327682, 458752, 1, 327683, 458752, 1, 327684, 458752, 1, 327685, 458752, 1, 327686, 458752, 1, 327687, 458752, 1)

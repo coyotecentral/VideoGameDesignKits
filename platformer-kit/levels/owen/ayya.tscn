@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3qy6dh0m4arv"]
+
+[ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_hdwg7"]
+[ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="1_q7w2o"]
+[ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="2_iobvs"]
+[ext_resource type="PackedScene" uid="uid://bke7y2vvy02l7" path="res://entities/pressure_plate/pressure_plate.tscn" id="3_iobvs"]
+[ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://entities/mushroom/mushroom.tscn" id="4_cm3x7"]
+[ext_resource type="PackedScene" uid="uid://g6eor75ky7j0" path="res://entities/portal/portal.tscn" id="5_hh5fy"]
+[ext_resource type="PackedScene" uid="uid://cepqul5oupgtp" path="res://entities/readable_sign/readable_sign.tscn" id="7_ldjn7"]
+[ext_resource type="Texture2D" uid="uid://cckptdp1ql0aj" path="res://sprites/environment/props/sign.png" id="8_ygcbv"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_hdwg7")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_iobvs")]
+position = Vector2(46, 18)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-46, -18)
+
+[node name="PressurePlate" parent="." instance=ExtResource("3_iobvs")]
+position = Vector2(138, 104)
+
+[node name="TileMap" type="TileMap" parent="PressurePlate"]
+position = Vector2(-138, -104)
+tile_set = ExtResource("1_q7w2o")
+format = 2
+layer_0/tile_data = PackedInt32Array(589823, 458752, 1, 524288, 458752, 1, 524289, 458752, 1, 458753, 458752, 1, 458754, 458752, 1, 458755, 458752, 1, 458756, 458752, 1, 458757, 458752, 1, 458758, 458752, 1, 458759, 458752, 1, 458760, 458752, 1, 458761, 458752, 1, 458762, 655360, 1, 458763, 655360, 1, 458764, 655360, 1, 458765, 655360, 1, 458766, 655360, 1, 458767, 655360, 1, 393231, 2, 589824, 65551, 458752, 1, 131087, 458752, 1, 196623, 458752, 1, -327665, 458752, 1, -262129, 458752, 1, -196593, 458752, 1, -131057, 458752, 1, -65521, 458752, 1, 15, 458752, 1, -786417, 458752, 1, -720881, 458752, 1, -655345, 458752, 1, -589809, 458752, 1, -524273, 458752, 1, -458737, 458752, 1, -393201, 458752, 1, 393221, 2, 131072, 196622, 2, 655360, 262159, 458752, 1, 131086, 2, 524288, 458768, 458752, 1, 458769, 458752, 1, 458770, 458752, 1, 458771, 458752, 1, 458772, 458752, 1, 458773, 458752, 1, 458774, 458752, 1, 393236, 4, 65536, 393235, 4, 65536, 327699, 4, 65536, 327700, 4, 65536, 262163, 4, 65536, 262164, 4, 65536, 196627, 4, 65536, 458775, 458752, 1, 458776, 458752, 1, 458777, 458752, 1, 458778, 458752, 1, 196628, 4, 65536, 131091, 4, 65536, 131092, 4, 65536, 196635, 458752, 1, 196636, 458752, 1, 196637, 458752, 1, 196638, 458752, 1, 196639, 458752, 1, 196640, 458752, 1, 131099, 2, 196608, 131100, 2, 196608, 131101, 2, 196608, 131102, 2, 196608, 131103, 2, 196608, 131104, 2, 196608, 131105, 2, 196608, 196641, 458752, 1, 131106, 917504, 4, 196642, 1048576, 4, 65571, 917504, 4, 131107, 917504, 5, -65502, 1048576, 4, -131039, 1048576, 4, -196576, 1048576, 4, -262113, 1048576, 4, -196577, 458752, 1, -131040, 458752, 1, -65503, 458752, 1, 65555, 4, 65536, 65556, 4, 65536, 20, 4, 65536, 19, 4, 65536, 131098, 458752, 1, -262114, 458752, 1, -262115, 458752, 1, -262116, 458752, 1, -262117, 458752, 1, -262118, 458752, 1, -262119, 458752, 1, -262120, 458752, 1, -262121, 458752, 1, -262122, 458752, 1, -262123, 458752, 1, -262124, 458752, 1, -262125, 458752, 1, -262126, 458752, 1, -262127, 458752, 1, -262128, 458752, 1, -458736, 524288, 5, -458735, 524288, 5, -524268, 917504, 4, -589803, 917504, 4, -655338, 917504, 4, -524267, 917504, 5, -589802, 917504, 5, -327662, 196608, 7, -327655, 196608, 7, -327657, 196608, 7, -327661, 393217, 7, -327653, 393217, 7, -327651, 393217, 7, -327656, 393217, 7, -327664, 393217, 7, -655337, 458752, 1, -655336, 458752, 1, -655335, 458752, 1, -655334, 458752, 1, -655333, 458752, 1, -655332, 458752, 1, -655331, 458752, 1, -655330, 458752, 1, -655329, 458752, 1, -655328, 458752, 1, -655327, 458752, 1, -720863, 458752, 1, -786398, 458752, 1, -720862, 917504, 5, -851933, 458752, 1, -786397, 917504, 5, -917468, 917504, 4, -851932, 458752, 1, -983003, 917504, 4, -917467, 458752, 1, -1048538, 917504, 4, -983002, 917504, 5, -1048537, 458752, 1, -1048536, 458752, 1, -1048535, 458752, 1, -1048544, 262144, 10, -983008, 327680, 10, -1048543, 327680, 10, -917474, 262144, 10, -851938, 262144, 11, -917473, 262144, 11, -1048546, 262144, 10, -983010, 262144, 11, -1048545, 327680, 10, -983009, 262144, 10, -720864, 458752, 1, -983000, 458752, 1, -983001, 458752, 1, -917466, 458752, 1, -786399, 458752, 1, -786400, 458752, 1, -851935, 458752, 1, -851934, 458752, 1, -917470, 458752, 1, -917469, 458752, 1, -720873, 2, 458752, -1048534, 458752, 1, -1048533, 458752, 1, -1048532, 458752, 1, -1048531, 458752, 1, -1048530, 458752, 1, -1048529, 458752, 1, -983005, 2, 589824, -1114077, 458752, 1, -1114078, 458752, 1, -1114079, 458752, 1, -1114080, 458752, 1, -1114081, 458752, 1, -1114082, 458752, 1)
+
+[node name="Mushroom" parent="PressurePlate" instance=ExtResource("4_cm3x7")]
+position = Vector2(144, -177)
+max_health = 2
+
+[node name="Mushroom2" parent="PressurePlate" instance=ExtResource("4_cm3x7")]
+position = Vector2(208, -179)
+max_health = 2
+
+[node name="Mushroom3" parent="PressurePlate" instance=ExtResource("4_cm3x7")]
+position = Vector2(313, -274)
+drops_key = true
+max_health = 15
+
+[node name="Portal" parent="PressurePlate" instance=ExtResource("5_hh5fy")]
+position = Vector2(559, -393)
+destination = "Scene"
+emit_only = false
+scene_path = "uid://kce6p7hnv6m6"
+
+[node name="ReadableSign" parent="." node_paths=PackedStringArray("popup") instance=ExtResource("7_ldjn7")]
+position = Vector2(-4, 116)
+popup = NodePath("../Sign/Label")
+
+[node name="Sign" type="Sprite2D" parent="."]
+position = Vector2(-4, 119)
+texture = ExtResource("8_ygcbv")
+
+[node name="Label" type="Label" parent="Sign"]
+offset_left = 77.0
+offset_top = -98.0
+offset_right = 201.0
+offset_bottom = -75.0
+text = "fort mush mush"
