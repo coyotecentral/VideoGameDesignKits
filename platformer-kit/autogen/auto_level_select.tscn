@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b76ghfbt2jjxc"]
+
+[sub_resource type="GDScript" id="GDScript_ukje3"]
+script/source = "extends Button
+
+func _ready() -> void:
+	pressed.connect(func():
+		get_tree().change_scene_to_file(\"uid://b2myqupfxjtnc\")
+	)
+"
+
+[node name="VBoxContainer" type="VBoxContainer"]
+size_flags_horizontal = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+text = "placeholder name by EEEEEEEEEEEEEEEe"
+script = SubResource("GDScript_ukje3")
