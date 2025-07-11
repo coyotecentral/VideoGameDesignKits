@@ -1,6 +1,7 @@
-[gd_scene load_steps=51 format=3 uid="uid://cgadmi3sydqjh"]
+[gd_scene load_steps=52 format=3 uid="uid://cgadmi3sydqjh"]
 
 [ext_resource type="Script" uid="uid://3f7pxg2jw4ej" path="res://entities/player/player.gd" id="1_e0sqm"]
+[ext_resource type="Texture2D" uid="uid://dg3715vj0udyk" path="res://entities/player/BigbabyTom.png" id="2_8q4fm"]
 [ext_resource type="Texture2D" uid="uid://bh5d5ysebmle3" path="res://entities/player/sprites/idle/player-idle-1.png" id="2_xl5kk"]
 [ext_resource type="Texture2D" uid="uid://cmppwe0jw5dym" path="res://entities/player/sprites/jump/player-jump-2.png" id="3_mi1oi"]
 [ext_resource type="Texture2D" uid="uid://cw2gxiai8utdu" path="res://entities/player/sprites/idle/player-idle-2.png" id="4_dwbsp"]
@@ -554,6 +555,10 @@ max_fall_time = 1.0
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_3ejhy")
 
+[node name="BigbabyTom" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(468, 75)
+texture = ExtResource("2_8q4fm")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -3)
 texture = ExtResource("2_xl5kk")
@@ -650,7 +655,7 @@ shape = SubResource("RectangleShape2D_fe8oe")
 debug_color = Color(0.615686, 0.52549, 0.32549, 0.419608)
 
 [node name="HurtboxShapecast" type="ShapeCast2D" parent="InteractionController"]
-position = Vector2(0, 15)
+position = Vector2(8, 16)
 shape = SubResource("RectangleShape2D_n3aln")
 target_position = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("31_42sge")
