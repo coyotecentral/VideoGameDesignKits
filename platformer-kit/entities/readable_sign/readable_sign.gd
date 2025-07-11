@@ -38,7 +38,7 @@ func hide_tooltip():
 func _process(_delta):
 	if player:
 		if Input.is_action_just_pressed("interact"):
-			popup.visible = true
+			show_popup()
 		# elif not popup.visible:
 		#	pass
 		else:
@@ -50,4 +50,18 @@ func _process(_delta):
 				keypress_tooltip.global_position = player.global_position + Vector2(0, -24)
 	else:
 		hide_tooltip()
+		hide_popup()
+
+func toggle_popup() -> void:
+	if not popup:
+		return
+	else:
+		popup.visible = !popup.visible
+
+func show_popup() -> void:
+	if not popup: return
+	popup.visible = true
+
+func hide_popup() -> void:
+		if not popup: return
 		popup.visible = false
