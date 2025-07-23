@@ -3,6 +3,8 @@ extends RigidBody2D
 var initial_position: Vector2
 var _reset = false
 
+@onready var shapecast: ShapeCast2D = $ShapeCast2D
+
 func _ready():
 	freeze = true
 	initial_position = global_position
@@ -13,6 +15,9 @@ func _process(delta: float):
 
 func _physics_process(delta):
 	linear_velocity.x = 0
+	if shapecast.get_collision_count():
+		for i in range(0, shapecast.get_collision_count()):
+			_handle_shapecast_collision(shapecast.get_collider(i))
 
 func unfreeze():
 	if freeze:
@@ -32,3 +37,9 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 func handle_reset():
 	_reset = true
+
+func _handle_shapecast_collision(collider: Node2D) -> void:
+	if collider is Player:
+		collider.damage_taken.emit(1)
+	elif collider is EnemyBody2D:
+		collider.death.emit()

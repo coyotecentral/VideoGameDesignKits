@@ -3,11 +3,12 @@ extends CharacterState
 
 @export_group("Transitions")
 @export var fall_state: State
-
+@export var dash_state: State
 
 func enter():
-	super()
+	super ()
 	parent.velocity.y = parent.jump_velocity
+	parent.jump_counter += 1
 
 func process_physics(delta: float) -> State:
 	# Hacky way to make character face the right direction
@@ -22,7 +23,9 @@ func process_physics(delta: float) -> State:
 	parent.velocity.x = movement
 	parent.move_and_slide()
 
+	if movement_controller.is_dash_just_pressed() and parent.dash_counter == 0:
+		return dash_state
+
 	if parent.velocity.y >= 0.0:
 		return fall_state
 	return null
-	

@@ -13,10 +13,10 @@ var manual_override: bool = false
 @export var deccel_time := 0.2
 
 # The player accelerates at a linear rate
-var accel_step : float :
+var accel_step: float:
 	get:
 		return move_speed / accel_time
-var deccel_step : float :
+var deccel_step: float:
 	get:
 		return move_speed / deccel_time
 
@@ -30,14 +30,18 @@ var deccel_step : float :
 @export var max_fall_time := 5.0
 
 # Calculate the gravity based on how we want the jump to feel
-@onready var jump_velocity: float = ((2.0 * jump_height) / jump_time_to_peak) * - 1
-@onready var jump_gravity: float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * - 1.0
-@onready var fall_gravity: float = ((-2.0 * jump_height) / (jump_time_to_fall * jump_time_to_fall)) * - 1.0
+@onready var jump_velocity: float = ((2.0 * jump_height) / jump_time_to_peak) * -1
+@onready var jump_gravity: float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
+@onready var fall_gravity: float = ((-2.0 * jump_height) / (jump_time_to_fall * jump_time_to_fall)) * -1.0
 
 # Supplemental state variables
 var can_climb := false
 var can_climb_down := false
 var climb_x_snap: float = 0
+var jump_counter := 0
+var dash_counter: int = 0
+var max_dashes := 1
+@export var max_jumps := 2
 
 signal respawn
 signal damage_taken(amount: int)

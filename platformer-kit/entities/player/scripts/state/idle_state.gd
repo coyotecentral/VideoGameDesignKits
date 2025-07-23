@@ -6,10 +6,13 @@ extends CharacterState
 @export var jump_state: State
 @export var fall_state: State
 @export var climb_state: State
+@export var dash_state: State
 
 func process_physics(delta: float) -> State:
 	if not parent.is_on_floor():
 		return fall_state
+	else:
+		parent.dash_counter = 0
 
 	if movement_controller.get_vector().y < 0 and parent.can_climb_down:
 		parent.position.y += parent.climb_speed * delta
@@ -20,6 +23,8 @@ func process_physics(delta: float) -> State:
 		return move_state
 	if movement_controller.is_jump_just_pressed():
 		return jump_state
+	if movement_controller.is_dash_just_pressed() and parent.dash_counter == 0:
+		return dash_state
 	
 	# Decellerate
 	# TODO: Move this into a separate state

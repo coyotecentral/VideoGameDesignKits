@@ -5,6 +5,10 @@ class_name PlayerMovementController
 var _is_jump_queued = false
 var _jump_buffer_timer: Timer
 
+var _dash_timeout := 1.0
+var _dash_ready = true
+@onready var _timer_dash_timeout: Timer = Timer.new()
+
 func _ready():
 	_jump_buffer_timer = Timer.new()
 	_jump_buffer_timer.one_shot = true
@@ -12,6 +16,12 @@ func _ready():
 		_is_jump_queued = false
 	)
 	add_child(_jump_buffer_timer)
+
+	_timer_dash_timeout.one_shot = true
+	_timer_dash_timeout.timeout.connect(func():
+		_dash_ready = true
+	)
+	add_child(_timer_dash_timeout)
 
 
 func get_vector() -> Vector2:
@@ -43,3 +53,14 @@ func _start_jump_buffer() -> void:
 
 func is_climb_pressed() -> bool:
 	return Input.is_action_pressed("up") or Input.is_action_just_pressed("down")
+
+func is_dash_just_pressed() -> bool:
+	var result = Input.is_action_just_pressed("dash")
+	if not _dash_ready:
+		return false
+	elif result:
+		_dash_ready = false
+		_timer_dash_timeout.start()
+		return true
+	else:
+		return result
