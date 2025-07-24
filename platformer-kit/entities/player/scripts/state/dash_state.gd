@@ -15,6 +15,7 @@ var dash_start = false
 var is_done = false
 var movement: Vector2
 var time: float = 0
+<<<<<<< HEAD
 var last_ghost_time := 0.0
 var max_ghosts = 4
 var ghost_count = 0
@@ -111,7 +112,6 @@ func process_physics(delta: float) -> State:
 		return fall_state
 	elif time >= max(updash_dur, upx_dash_dur, dash_duration):
 		return fall_state
-
 
 	if dash_start:
 		if movement == Vector2.UP:
