@@ -3,7 +3,7 @@ extends CharacterState
 @export_group("Transitions")
 @export var fall_state: State
 
-var dash_duration := 0.1
+var dash_duration := 0.3
 var upx_dash_dur := 0.3
 var updash_dur := 0.15
 
@@ -16,7 +16,8 @@ var up_dash_vel = 250.0 * 4.5
 var x_dash_vel = 250.0 * 7.0
 var upx_dash_vel = 250.0 * 4.5
 
-var velocity_falloff_time := 2.8
+var upx_vel_falloff := 4.0
+var x_vel_falloff := 2.8
 var updash_velocity_falloff := 1.0
 
 
@@ -50,6 +51,8 @@ func process_physics(delta: float) -> State:
 		return fall_state
 	elif movement.y < 0 and movement.x != 0.0 and time >= upx_dash_dur:
 		return fall_state
+	elif time >= max(updash_dur, upx_dash_dur, dash_duration):
+		return fall_state
 
 
 	if dash_start:
@@ -61,19 +64,24 @@ func process_physics(delta: float) -> State:
 			parent.velocity = movement * x_dash_vel
 		dash_start = false
 	else:
-		# Horiz dash out
 		var sign = -1 if movement_controller.facing == "left" else 1
 		var init_x_vel = parent.velocity.x
-		var next_x_vel = init_x_vel * ease_out(min(time / velocity_falloff_time, 1.0))
-		if movement_controller.get_vector().x != 0:
-			# parent.velocity.x = max(next_x_vel, init_x_vel)
-			parent.velocity.x = next_x_vel
+		var next_x_vel = init_x_vel * ease_out(min(time / upx_vel_falloff, 1.0))
+
+		if movement.x != 0 && movement.y < 0:
+			# Updash out
+			parent.velocity.x *= ease_out(min(time / upx_vel_falloff, 1.0))
 		else:
-			parent.velocity.x *= ease_out(min(time / velocity_falloff_time, 1.0))
+			parent.velocity.x *= ease_out(min(time / x_vel_falloff, 1.0))
 
 		# falling
-		if movement.y:
+		if movement.y < 0:
 			parent.velocity.y *= ease_out(min(time / updash_velocity_falloff, 1.0))
+		elif movement.y > 0:
+			# down dash
+			parent.velocity.y *= ease_out(min(time / updash_velocity_falloff, 1.0))
+		elif movement.x and time < 0.02:
+			parent.velocity.y = 0
 		else:
 			parent.velocity.y += parent.fall_gravity * delta
 	parent.move_and_slide()
