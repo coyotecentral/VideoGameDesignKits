@@ -36,6 +36,14 @@ var init_camera_position_smoothing: bool
 var shakes: int = 0
 var max_shakes: int = 5
 
+var camera_shake := false
+var camera: Camera2D
+var init_camera_pos: Vector2
+var init_camera_position_smoothing: bool
+
+var shakes: int = 0
+var max_shakes: int = 6
+
 
 func enter():
 	super ()
@@ -54,6 +62,14 @@ func enter():
 	instance.rotation = movement.angle()
 	get_tree().get_root().add_child(instance)
 	ghost_count = 0
+
+	camera = get_viewport().get_camera_2d()
+	if camera:
+		init_camera_position_smoothing = camera.position_smoothing_enabled
+		init_camera_pos = camera.position
+		if camera_shake:
+			camera.position_smoothing_enabled = false
+	shakes = 0
 
 	camera = get_viewport().get_camera_2d()
 	if camera:
