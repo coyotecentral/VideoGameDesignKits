@@ -15,7 +15,6 @@ var dash_start = false
 var is_done = false
 var movement: Vector2
 var time: float = 0
-<<<<<<< HEAD
 var last_ghost_time := 0.0
 var max_ghosts = 4
 var ghost_count = 0
