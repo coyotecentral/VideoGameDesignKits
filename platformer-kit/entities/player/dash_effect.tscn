@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://b1cuox0n447my"]
 
-[ext_resource type="Texture2D" uid="uid://b1syd0fvbklt7" path="res://levels/diane nguyen/slash/01.png" id="1_5fs4c"]
-[ext_resource type="Texture2D" uid="uid://bhnit8npsfpqv" path="res://levels/diane nguyen/slash/00.png" id="2_bpyj7"]
-[ext_resource type="Texture2D" uid="uid://cfe5xc6tsw0vs" path="res://levels/diane nguyen/slash/02.png" id="3_ld75s"]
-[ext_resource type="Texture2D" uid="uid://c6n3v8mv2o5qa" path="res://levels/diane nguyen/slash/03.png" id="4_otxjt"]
+[ext_resource type="Texture2D" uid="uid://b1syd0fvbklt7" path="res://entities/player/slash/01.png" id="1_5fs4c"]
+[ext_resource type="Texture2D" uid="uid://bhnit8npsfpqv" path="res://entities/player/slash/00.png" id="2_bpyj7"]
+[ext_resource type="Texture2D" uid="uid://cfe5xc6tsw0vs" path="res://entities/player/slash/02.png" id="3_ld75s"]
+[ext_resource type="Texture2D" uid="uid://c6n3v8mv2o5qa" path="res://entities/player/slash/03.png" id="4_otxjt"]
 
 [sub_resource type="Animation" id="Animation_wudvf"]
 resource_name = "default"

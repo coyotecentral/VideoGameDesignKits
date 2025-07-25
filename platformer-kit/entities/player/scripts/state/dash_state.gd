@@ -5,6 +5,7 @@ extends CharacterState
 
 var dash_sprite = preload("uid://b1cuox0n447my")
 var ghost_sprite = preload("uid://c0g0cwdtk8gvh")
+var particle_scene = preload("uid://bkc6xt46ergnm")
 
 var dash_duration := 0.2
 var upx_dash_dur := 0.3
@@ -17,17 +18,13 @@ var time: float = 0
 var last_ghost_time := 0.0
 var max_ghosts = 4
 var ghost_count = 0
-
-# var up_dash_vel = 250.0 * 4.5
-# var x_dash_vel = 250.0 * 4.0
-# var upx_dash_vel = 250.0 * 4.5
+var ghost_spacing = 0.05
 
 var up_dash_vel = 250.0 * 2.5
 var x_dash_vel = 250.0 * 2.5
 var upx_dash_vel = 250.0 * 3.0
 
 var upx_vel_falloff := 3.5
-# var x_vel_falloff := 2.8
 var x_vel_falloff := 2.8
 var updash_velocity_falloff := 1.5
 
@@ -74,7 +71,7 @@ func exit():
 		camera.position_smoothing_enabled = init_camera_position_smoothing
 
 func process_physics(delta: float) -> State:
-	if time == 0.0 or time - last_ghost_time >= 0.08 and ghost_count < max_ghosts:
+	if time == 0.0 or time - last_ghost_time >= ghost_spacing and ghost_count < max_ghosts:
 		var ghost = ghost_sprite.instantiate()
 		if movement_controller.facing == "left":
 			ghost.flip_h = true
@@ -82,6 +79,13 @@ func process_physics(delta: float) -> State:
 		get_tree().get_root().add_child(ghost)
 		last_ghost_time = time
 		ghost_count += 1
+
+		if ghost_count > 1 and ghost_count < max_ghosts:
+			var particles = particle_scene.instantiate()
+			particles.global_position = parent.global_position
+			var emitter: CPUParticles2D = particles.get_node("CPUParticles2D")
+			emitter.direction = movement * -1.0
+			get_tree().get_root().add_child(particles)
 	# Camera shake
 	if camera_shake:
 		if shakes < max_shakes:
@@ -102,9 +106,6 @@ func process_physics(delta: float) -> State:
 		return fall_state
 	if movement.y < 0 and movement.x == 0.0 and time >= updash_dur:
 		# Updash exit
-		# if movement.y < 0:
-		# 	parent.velocity.y = 0
-		# return fall_state
 		return fall_state
 	elif movement.y < 0 and movement.x != 0.0 and time >= upx_dash_dur:
 		return fall_state

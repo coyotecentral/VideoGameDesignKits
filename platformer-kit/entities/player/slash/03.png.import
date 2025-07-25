@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6n3v8mv2o5qa"
-path="res://.godot/imported/03.png-181de343a1d8b5f5e077f8ee12ac5412.ctex"
+path="res://.godot/imported/03.png-e98caaeaf8266e7251132c673acfc184.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/diane nguyen/slash/03.png"
-dest_files=["res://.godot/imported/03.png-181de343a1d8b5f5e077f8ee12ac5412.ctex"]
+source_file="res://entities/player/slash/03.png"
+dest_files=["res://.godot/imported/03.png-e98caaeaf8266e7251132c673acfc184.ctex"]
 
 [params]
 
