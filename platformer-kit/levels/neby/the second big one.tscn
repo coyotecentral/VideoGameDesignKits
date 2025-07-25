@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_qrks2"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_tb12a"]
 [ext_resource type="PackedScene" uid="uid://c8agqtajbl4nv" path="res://entities/moving_platform/moving_platform.tscn" id="3_mdqr4"]
-[ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player.tscn" id="4_tb12a"]
+[ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="4_tb12a"]
 
 [sub_resource type="Curve2D" id="Curve2D_tb12a"]
 _data = {

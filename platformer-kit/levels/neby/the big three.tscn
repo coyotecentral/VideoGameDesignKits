@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_fkvp2"]
 [ext_resource type="PackedScene" uid="uid://cgop15wpyeere" path="res://entities/controllable_platform/controllable_platform.tscn" id="4_hqxc7"]
 [ext_resource type="PackedScene" uid="uid://bke7y2vvy02l7" path="res://entities/pressure_plate/pressure_plate.tscn" id="5_fgrj3"]
-[ext_resource type="PackedScene" uid="uid://xb8ykvrkfnsm" path="res://entities/player/player.tscn" id="6_2h5p3"]
+[ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="6_2h5p3"]
 [ext_resource type="PackedScene" uid="uid://ba1bslg6qjvu8" path="res://entities/background/background.tscn" id="6_fgrj3"]
 
 [node name="TheBigThree" type="Node2D"]
