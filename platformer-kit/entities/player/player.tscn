@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cgadmi3sydqjh"]
+[gd_scene load_steps=53 format=3 uid="uid://cgadmi3sydqjh"]
 
 [ext_resource type="Script" uid="uid://3f7pxg2jw4ej" path="res://entities/player/player.gd" id="1_e0sqm"]
 [ext_resource type="Texture2D" uid="uid://bh5d5ysebmle3" path="res://entities/player/sprites/idle/player-idle-1.png" id="2_xl5kk"]
@@ -32,6 +32,7 @@
 [ext_resource type="Script" uid="uid://hvmwb606eee6" path="res://entities/player/scripts/state/climb_state.gd" id="24_e5vco"]
 [ext_resource type="Script" uid="uid://fupj0e731rrr" path="res://entities/player/scripts/interactions/interaction_area.gd" id="27_avlta"]
 [ext_resource type="Script" uid="uid://c8slylu8v8fd8" path="res://entities/player/scripts/state/dash_state.gd" id="28_8q4fm"]
+[ext_resource type="Script" uid="uid://dagl5w6kjhecp" path="res://entities/player/scripts/state/wall_grab_state.gd" id="29_np63p"]
 [ext_resource type="Script" uid="uid://bpqdmeki80n76" path="res://entities/player/scripts/interactions/interacion_shapecast.gd" id="31_42sge"]
 [ext_resource type="Script" uid="uid://0lhljpmoupfa" path="res://entities/player/scripts/max_fall_check.gd" id="33_stu1y"]
 
@@ -599,13 +600,14 @@ fall_state = NodePath("../Fall")
 dash_state = NodePath("../Dash")
 animation_name = "jump"
 
-[node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "move_state", "climb_state", "jump_state", "dash_state")]
+[node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "move_state", "climb_state", "jump_state", "dash_state", "wall_grab_state")]
 script = ExtResource("18_8xsas")
 idle_state = NodePath("../Idle")
 move_state = NodePath("../Move")
 climb_state = NodePath("../Climbing")
 jump_state = NodePath("../Jump")
 dash_state = NodePath("../Dash")
+wall_grab_state = NodePath("../WallGrab")
 animation_name = "fall"
 
 [node name="Damage" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state")]
@@ -625,6 +627,11 @@ directional = false
 script = ExtResource("28_8q4fm")
 fall_state = NodePath("../Fall")
 animation_name = "jump"
+
+[node name="WallGrab" type="Node" parent="StateMachine" node_paths=PackedStringArray("jump_state", "fall_state")]
+script = ExtResource("29_np63p")
+jump_state = NodePath("../Jump")
+fall_state = NodePath("../Fall")
 
 [node name="MovementController" type="Node2D" parent="."]
 position = Vector2(0, 23)

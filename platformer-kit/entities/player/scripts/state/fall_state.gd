@@ -7,6 +7,7 @@ extends CharacterState
 @export var climb_state: State
 @export var jump_state: State
 @export var dash_state: State
+@export var wall_grab_state: State
 
 var queue_enemy_bounce := false
 var max_fall_timer: Timer
@@ -47,7 +48,10 @@ func process_physics(delta: float) -> State:
 	#
 	var movement = movement_controller.get_vector().x
 	if movement:
-		parent.velocity.x = lerp(parent.velocity.x, movement * parent.float_speed, 5 * delta)
+		if parent.is_on_wall_only() and should_wall_grab():
+			return wall_grab_state
+		else:
+			parent.velocity.x = lerp(parent.velocity.x, movement * parent.float_speed, 5 * delta)
 	else:
 		parent.velocity.x = lerp(parent.velocity.x, 0.0, delta)
 
@@ -73,3 +77,19 @@ func process_physics(delta: float) -> State:
 			return idle_state
 	
 	return null
+
+func should_wall_grab():
+	var wall_direction = get_wall_direction()
+	var input_x = movement_controller.get_vector().x
+	return sign(input_x * wall_direction) == 1
+
+func get_wall_direction() -> int:
+	var controller = parent.get_node("InteractionController")
+	var left_ray: InteractionRaycast = controller.left_middle
+	var right_ray: InteractionRaycast = controller.right_middle
+	if left_ray.is_colliding():
+		return -1
+	elif right_ray.is_colliding():
+		return 1
+	else:
+		return 0

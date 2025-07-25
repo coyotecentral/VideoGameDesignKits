@@ -4,12 +4,14 @@ extends Node2D
 @export var player: Player
 
 @onready var hitbox_area: InteractionArea = $HitboxArea
+@onready var left_middle: InteractionRaycast = $LeftMiddle
+@onready var right_middle: InteractionRaycast = $RightMiddle
 var hurtbox_delay_timer: Timer
 
 func _ready() -> void:
 	$LeftMiddle.set_handler(InteractionTypes.PushableObject, func(collider, delta):
 		if movement_controller.facing == "left":
-			InteractionHandlers.push_object(collider, Vector2( - 75.0, 0), delta)
+			InteractionHandlers.push_object(collider, Vector2(-75.0, 0), delta)
 	)
 
 	$RightMiddle.set_handler(InteractionTypes.PushableObject, func(collider, delta):
@@ -38,7 +40,7 @@ func _ready() -> void:
 		player.enemy_bounce.emit()
 		# 24 is a magic number that transports the player enough so that the hurtbox doesn't retrigger
 		# Was previously 16
-		player.position.y = collider.global_position.y - clamp(20 * collider.scale.y  - 16, 24, INF) - player.get_parent().global_position.y
+		player.position.y = collider.global_position.y - clamp(20 * collider.scale.y - 16, 24, INF) - player.get_parent().global_position.y
 	)
 
 	hurtbox_delay_timer = Timer.new()
@@ -62,7 +64,7 @@ func disable_hurt_boxes() -> void:
 
 func _physics_process(delta: float) -> void:
 	for c in get_children():
-		if c is InteractionRaycast: 
+		if c is InteractionRaycast:
 			c.process_collision(delta)
 		if c is InteractionArea:
 			c.process_collision(delta)
