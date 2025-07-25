@@ -3,6 +3,9 @@ extends CharacterState
 @export_group("Transitions")
 @export var fall_state: State
 
+var dash_sprite = preload("uid://b1cuox0n447my")
+var ghost_sprite = preload("uid://c0g0cwdtk8gvh")
+
 var dash_duration := 0.2
 var upx_dash_dur := 0.3
 var updash_dur := 0.15
@@ -11,23 +14,30 @@ var dash_start = false
 var is_done = false
 var movement: Vector2
 var time: float = 0
+var last_ghost_time := 0.0
+var max_ghosts = 4
+var ghost_count = 0
 
-var up_dash_vel = 250.0 * 4.5
-var x_dash_vel = 250.0 * 7.0
-var upx_dash_vel = 250.0 * 4.5
+# var up_dash_vel = 250.0 * 4.5
+# var x_dash_vel = 250.0 * 4.0
+# var upx_dash_vel = 250.0 * 4.5
+
+var up_dash_vel = 250.0 * 2.5
+var x_dash_vel = 250.0 * 2.5
+var upx_dash_vel = 250.0 * 3.0
 
 var upx_vel_falloff := 3.5
 # var x_vel_falloff := 2.8
 var x_vel_falloff := 2.8
-var updash_velocity_falloff := 1.0
+var updash_velocity_falloff := 1.5
 
-var camera_shake := false
+var camera_shake := true
 var camera: Camera2D
 var init_camera_pos: Vector2
 var init_camera_position_smoothing: bool
 
 var shakes: int = 0
-var max_shakes: int = 6
+var max_shakes: int = 5
 
 
 func enter():
@@ -42,6 +52,11 @@ func enter():
 			movement = Vector2.LEFT
 	is_done = false
 	dash_start = true
+	var instance = dash_sprite.instantiate()
+	instance.global_position = parent.global_position + movement * 8
+	instance.rotation = movement.angle()
+	get_tree().get_root().add_child(instance)
+	ghost_count = 0
 
 	camera = get_viewport().get_camera_2d()
 	if camera:
@@ -59,11 +74,24 @@ func exit():
 		camera.position_smoothing_enabled = init_camera_position_smoothing
 
 func process_physics(delta: float) -> State:
+	if time == 0.0 or time - last_ghost_time >= 0.08 and ghost_count < max_ghosts:
+		var ghost = ghost_sprite.instantiate()
+		if movement_controller.facing == "left":
+			ghost.flip_h = true
+		ghost.global_position = parent.global_position
+		get_tree().get_root().add_child(ghost)
+		last_ghost_time = time
+		ghost_count += 1
 	# Camera shake
 	if camera_shake:
 		if shakes < max_shakes:
 			var shake_magnitude = 2
-			camera.position = init_camera_pos + Vector2(randf() * shake_magnitude, randf() * shake_magnitude)
+			var s
+			if shakes % 2 == 0:
+				s = 1
+			else:
+				s = -1
+			camera.position = init_camera_pos + movement.normalized() * shake_magnitude * s
 			shakes += 1
 		else:
 			camera.position = init_camera_pos
@@ -93,16 +121,13 @@ func process_physics(delta: float) -> State:
 			parent.velocity = movement * x_dash_vel
 		dash_start = false
 	else:
-		var sign = -1 if movement_controller.facing == "left" else 1
-		var init_x_vel = parent.velocity.x
-		var next_x_vel = init_x_vel * cube_ease_out(min(time / upx_vel_falloff, 1.0))
-
 		if movement.x != 0 && movement.y < 0:
 			# Updash out
 			parent.velocity.x *= cube_ease_out(min(time / upx_vel_falloff, 1.0))
 		else:
 			# Horiz dash
-			parent.velocity.x *= cube_ease_out(min(time / x_vel_falloff, 1.0))
+			var next_vel = parent.velocity.x * cube_ease_out(min(time / x_vel_falloff, 1.0))
+			parent.velocity.x = max(abs(next_vel), parent.float_speed) * sign(parent.velocity.x)
 
 		# falling
 		if movement.y < 0:

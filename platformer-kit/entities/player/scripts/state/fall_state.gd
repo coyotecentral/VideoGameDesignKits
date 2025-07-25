@@ -44,8 +44,13 @@ func process_physics(delta: float) -> State:
 	# Hacky way of making sprite face the right direction
 	animations.play("%s_%s" % [animation_name, movement_controller.facing])
 	parent.velocity.y += parent.fall_gravity * delta
-	var movement = movement_controller.get_vector().x * parent.float_speed
-	parent.velocity.x = movement
+
+	#
+	var movement = movement_controller.get_vector().x
+	if movement:
+		parent.velocity.x = lerp(parent.velocity.x, movement * parent.float_speed, 5 * delta)
+	else:
+		parent.velocity.x = lerp(parent.velocity.x, 0.0, delta)
 
 	if movement_controller.is_jump_just_pressed() and \
 		parent.jump_counter < parent.max_jumps \
