@@ -32,7 +32,7 @@
 [ext_resource type="Script" uid="uid://hvmwb606eee6" path="res://entities/player/scripts/state/climb_state.gd" id="24_e5vco"]
 [ext_resource type="Script" uid="uid://fupj0e731rrr" path="res://entities/player/scripts/interactions/interaction_area.gd" id="27_avlta"]
 [ext_resource type="Script" uid="uid://c8slylu8v8fd8" path="res://entities/player/scripts/state/dash_state.gd" id="28_8q4fm"]
-[ext_resource type="Script" uid="uid://dagl5w6kjhecp" path="res://entities/player/scripts/state/wall_grab_state.gd" id="29_np63p"]
+[ext_resource type="Script" path="res://entities/player/scripts/state/wall_grab_state.gd" id="29_np63p"]
 [ext_resource type="Script" uid="uid://bpqdmeki80n76" path="res://entities/player/scripts/interactions/interacion_shapecast.gd" id="31_42sge"]
 [ext_resource type="Script" uid="uid://0lhljpmoupfa" path="res://entities/player/scripts/max_fall_check.gd" id="33_stu1y"]
 

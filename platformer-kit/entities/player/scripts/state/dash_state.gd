@@ -36,14 +36,6 @@ var init_camera_position_smoothing: bool
 var shakes: int = 0
 var max_shakes: int = 5
 
-var camera_shake := true
-var camera: Camera2D
-var init_camera_pos: Vector2
-var init_camera_position_smoothing: bool
-
-var shakes: int = 0
-var max_shakes: int = 5
-
 
 func enter():
 	super ()
