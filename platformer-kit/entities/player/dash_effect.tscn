@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1cuox0n447my"]
+
+[ext_resource type="Texture2D" uid="uid://b1syd0fvbklt7" path="res://entities/player/slash/01.png" id="1_5fs4c"]
+[ext_resource type="Texture2D" uid="uid://bhnit8npsfpqv" path="res://entities/player/slash/00.png" id="2_bpyj7"]
+[ext_resource type="Texture2D" uid="uid://cfe5xc6tsw0vs" path="res://entities/player/slash/02.png" id="3_ld75s"]
+[ext_resource type="Texture2D" uid="uid://c6n3v8mv2o5qa" path="res://entities/player/slash/03.png" id="4_otxjt"]
+
+[sub_resource type="Animation" id="Animation_wudvf"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.269009),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_bpyj7"), ExtResource("1_5fs4c"), ExtResource("3_ld75s"), ExtResource("4_otxjt"), null]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.266667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ndyh4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_5fs4c")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ym4au"]
+_data = {
+&"RESET": SubResource("Animation_ndyh4"),
+&"default": SubResource("Animation_wudvf")
+}
+
+[node name="Node2D" type="Sprite2D"]
+texture = ExtResource("1_5fs4c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ym4au")
+}
+autoplay = "default"

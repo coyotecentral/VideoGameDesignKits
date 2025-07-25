@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkc6xt46ergnm"]
+
+[ext_resource type="Script" uid="uid://db3g5fvp3hjhl" path="res://entities/player/particle_effect.gd" id="1_qr4ly"]
+
+[sub_resource type="Curve" id="Curve_qr4ly"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_bjiq0"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.644231, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="ParticleEffect" type="Node2D"]
+script = ExtResource("1_qr4ly")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 3
+lifetime = 0.39
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 2.5
+spread = 2.11
+gravity = Vector2(0, 200)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+damping_min = 64.063
+damping_max = 75.848
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_qr4ly")
+color_ramp = SubResource("Gradient_bjiq0")

@@ -14,6 +14,8 @@ func process_physics(delta: float) -> State:
 	else:
 		parent.dash_counter = 0
 
+	if movement_controller.is_dash_just_pressed() and parent.dash_counter == 0:
+		return dash_state
 	if movement_controller.get_vector().y < 0 and parent.can_climb_down:
 		parent.position.y += parent.climb_speed * delta
 		return climb_state
@@ -23,8 +25,7 @@ func process_physics(delta: float) -> State:
 		return move_state
 	if movement_controller.is_jump_just_pressed():
 		return jump_state
-	if movement_controller.is_dash_just_pressed() and parent.dash_counter == 0:
-		return dash_state
+	
 	
 	# Decellerate
 	# TODO: Move this into a separate state
