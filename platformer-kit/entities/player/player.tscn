@@ -624,6 +624,7 @@ directional = false
 [node name="Dash" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state")]
 script = ExtResource("28_8q4fm")
 fall_state = NodePath("../Fall")
+animation_name = "jump"
 
 [node name="MovementController" type="Node2D" parent="."]
 position = Vector2(0, 23)
