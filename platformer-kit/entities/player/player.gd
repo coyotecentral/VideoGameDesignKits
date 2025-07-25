@@ -40,7 +40,7 @@ var can_climb_down := false
 var climb_x_snap: float = 0
 var jump_counter := 0
 var dash_counter: int = 0
-var max_dashes := 1
+var max_dashes := 10
 @export var max_jumps := 2
 
 signal respawn

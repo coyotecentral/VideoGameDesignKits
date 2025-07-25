@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bo35daigicd33"]
+
+[ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="1_5vjvw"]
+[ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_lpohp"]
+[ext_resource type="PackedScene" uid="uid://dturik0w3xp6k" path="res://entities/gem/gem.tscn" id="2_lpohp"]
+[ext_resource type="PackedScene" uid="uid://pmv06ptdyajr" path="res://entities/spike/spike_right.tscn" id="3_4t5pj"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yes5d"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lpohp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 320)
+shape = SubResource("WorldBoundaryShape2D_yes5d")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_5vjvw")]
+position = Vector2(288, 216)
+
+[node name="Gem" parent="." instance=ExtResource("2_lpohp")]
+position = Vector2(456, 216)
+
+[node name="Spike" parent="." instance=ExtResource("3_4t5pj")]
+position = Vector2(147, 296)
