@@ -23,7 +23,7 @@ var deccel_step: float:
 @export_group("Jumping")
 @export var jump_height := 64.0
 @export var jump_time_to_peak := 0.5
-@export var jump_time_to_fall := 0.4
+@export var jump_time_to_fall := 0.35
 @export var coyote_time := 0.05
 
 @export_group("Misc")

@@ -7,6 +7,7 @@ extends CharacterState
 @export var climb_state: State
 @export var jump_state: State
 @export var dash_state: State
+@export var wall_grab_state: State
 
 var queue_enemy_bounce := false
 var max_fall_timer: Timer
