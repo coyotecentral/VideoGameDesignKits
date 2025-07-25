@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ba1bslg6qjvu8" path="res://entities/background/background.tscn" id="2_qt6yx"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="2_v3fyd"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="3_7rej6"]
-[ext_resource type="Script" uid="uid://cvigh86hnnvy4" path="res://Dyl/tile_map_layer_2.gd" id="4_v3fyd"]
+[ext_resource type="Script" uid="uid://cvigh86hnnvy4" path="res://levels/Dyl/tile_map_layer_2.gd" id="4_v3fyd"]
 [ext_resource type="PackedScene" uid="uid://dturik0w3xp6k" path="res://entities/gem/gem.tscn" id="5_7rej6"]
 [ext_resource type="Texture2D" uid="uid://bgf6yslfc1urc" path="res://sprites/environment/background/middle.png" id="7_1g4dg"]
 [ext_resource type="Texture2D" uid="uid://drcbplsih0r" path="res://sprites/environment/props/platform-long.png" id="8_1kt0y"]
