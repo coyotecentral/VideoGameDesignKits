@@ -30,7 +30,6 @@ func _ready():
 
 func enter():
 	super ()
-	print("falling")
 	parent.fall_start.emit()
 	max_fall_timer.wait_time = parent.max_fall_time
 	max_fall_timer.start()
