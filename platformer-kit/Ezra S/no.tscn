@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://b5kel4ko5d5p"]
+[gd_scene load_steps=33 format=4 uid="uid://b5kel4ko5d5p"]
 
 [ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_gayc7"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="1_ph5pb"]
@@ -23,14 +23,13 @@
 [ext_resource type="PackedScene" uid="uid://duxt3yxmrwab1" path="res://entities/key_block/key_block.tscn" id="20_g0w5g"]
 [ext_resource type="Texture2D" uid="uid://cykb1n0xmjdlc" path="res://sprites/environment/props/door-opened.png" id="20_vvctw"]
 [ext_resource type="PackedScene" uid="uid://7dk38e0dxucg" path="res://entities/key/key.tscn" id="21_41vi5"]
-[ext_resource type="PackedScene" uid="uid://b7puubrfwyv1c" path="res://ui/checkpoint_sign.tscn" id="24_g0w5g"]
-[ext_resource type="Script" uid="uid://c3lpoqh5uk86p" path="res://Ezra S/dianes_camera.gd" id="26_6ufg7"]
+[ext_resource type="PackedScene" uid="uid://b7puubrfwyv1c" path="res://entities/checkpoint/checkpoint_sign.tscn" id="24_g0w5g"]
 [ext_resource type="Texture2D" uid="uid://cckptdp1ql0aj" path="res://sprites/environment/props/sign.png" id="27_6ufg7"]
 [ext_resource type="Texture2D" uid="uid://crf0j2cqmxe14" path="res://sprites/environment/props/spike-skull.png" id="28_pmucr"]
 [ext_resource type="Texture2D" uid="uid://drpaxs6c75g28" path="res://sprites/environment/props/skulls.png" id="29_rcgey"]
 [ext_resource type="PackedScene" uid="uid://blghjdurqmxv" path="res://entities/retractable_spike/retractable_spike_floor.tscn" id="31_yy5bd"]
 [ext_resource type="Texture2D" uid="uid://doh2vwvbhli3l" path="res://sprites/environment/props/rock-1.png" id="32_oa4xr"]
-[ext_resource type="Texture2D" uid="uid://iain8qi5o4i8" path="res://entities/controllable_platform/dev.png" id="32_pmucr"]
+[ext_resource type="Texture2D" uid="uid://bhcbrkbouud3y" path="res://Ezra S/dev.png" id="32_pmucr"]
 [ext_resource type="Texture2D" uid="uid://drcbplsih0r" path="res://sprites/environment/props/platform-long.png" id="33_rcgey"]
 
 [sub_resource type="Curve2D" id="Curve2D_0jhqv"]
@@ -224,11 +223,6 @@ position = Vector2(2560, 512)
 [node name="KillFloor3" parent="." instance=ExtResource("14_rx30c")]
 position = Vector2(3508, 586)
 scale = Vector2(48.6, 0.600002)
-
-[node name="DianesCamera" type="Camera2D" parent="."]
-position = Vector2(4476, 837)
-enabled = false
-script = ExtResource("26_6ufg7")
 
 [node name="KeyBlock2" parent="." instance=ExtResource("20_g0w5g")]
 position = Vector2(2909, 246)
