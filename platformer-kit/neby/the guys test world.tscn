@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=4 uid="uid://caohdt6hs5vs3"]
+
+[ext_resource type="PackedScene" uid="uid://xb8ykvrkfnsm" path="res://entities/player/player.tscn" id="1_3tesv"]
+[ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_8gc53"]
+[ext_resource type="PackedScene" uid="uid://cgop15wpyeere" path="res://entities/controllable_platform/controllable_platform.tscn" id="3_76qqn"]
+[ext_resource type="PackedScene" uid="uid://bke7y2vvy02l7" path="res://entities/pressure_plate/pressure_plate.tscn" id="4_nhnm0"]
+
+[node name="TheGuysTestWorld" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_3tesv")]
+position = Vector2(9, 28)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAA0AAAABAAEAAAABAA0AAAABAAEAAAACAA0AAAABAAEAAAADAA0AAAABAAEAAAAEAA0AAAABAAEAAAAFAA0AAAABAAEAAAAGAA0AAAABAAEAAAAHAA0AAAABAAEAAAAIAA0AAAABAAEAAAAJAA0AAAABAAEAAAAKAA0AAAABAAEAAAALAA0AAAABAAEAAAAMAA0AAAABAAEAAAANAA0AAAABAAEAAAAOAA0AAAABAAEAAAAPAA0AAAABAAEAAAAQAA0AAAABAAEAAAARAA0AAAABAAEAAAASAA0AAAABAAEAAAATAA0AAAABAAEAAAAUAA0AAAABAAEAAAAVAA0AAAABAAEAAAAWAA0AAAABAAEAAAAXAA0AAAABAAEAAAAYAA0AAAABAAEAAAAZAA0AAAABAAEAAAAaAA0AAAABAAEAAAAbAA0AAAABAAEAAAAcAA0AAAABAAEAAAAdAA0AAAABAAEAAAAeAA0AAAABAAEAAAAfAA0AAAABAAEAAAAgAA0AAAABAAEAAAAhAAwAAAABAAEAAAAiAAwAAAABAAEAAAAjAAwAAAABAAEAAAAkAAwAAAABAAEAAAAlAAwAAAABAAEAAAAmAAwAAAABAAEAAAAnAAwAAAABAAEAAAAoAAwAAAABAAEAAAApAAsAAAABAAEAAAAqAAsAAAABAAEAAAA=")
+tile_set = ExtResource("2_8gc53")
+
+[node name="PressurePlate" parent="." instance=ExtResource("4_nhnm0")]
+position = Vector2(75, 203)
+
+[node name="ControllablePlatfor" parent="PressurePlate" instance=ExtResource("3_76qqn")]
+position = Vector2(220, -142)
+
+[node name="ControllablePlatform2" parent="." instance=ExtResource("3_76qqn")]
+position = Vector2(276, 62)
+
+[connection signal="pressed" from="PressurePlate" to="PressurePlate/ControllablePlatfor" method="unfreeze"]
+[connection signal="pressed" from="PressurePlate" to="ControllablePlatform2" method="unfreeze"]
