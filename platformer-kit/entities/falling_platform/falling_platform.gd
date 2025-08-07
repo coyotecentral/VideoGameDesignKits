@@ -1,15 +1,19 @@
-extends RigidBody2D
+extends AnimatableBody2D
 class_name FallingPlatform
 
 @export var wait_time := 1.0
 @export var shake_start_time := 0.5
+@export_enum("No Collision", "Collision") var fall_type = "Collision"
 @onready var shapecast: ShapeCast2D = $ShapeCast2D
 
 var _wait_timer: Timer
 var interaction_area: Area2D
 var did_fall := false
+var freeze := true
+var is_on_floor := false
 
 var initial_position: Vector2
+var linear_velocity := Vector2()
 
 func _ready():
 	if wait_time > 0:
@@ -25,6 +29,7 @@ func _ready():
 				set_deferred("did_fall", true)
 	)
 	freeze = true
+
 
 	initial_position = global_position
 	LevelController.register_entity_for_reset(self)
@@ -46,17 +51,28 @@ func _physics_process(delta: float):
 		if not _wait_timer.is_stopped() and _wait_timer.time_left <= shake_start_time:
 			var diff = Vector2(randf_range(-1, 1), randf_range(-1, 1))
 			$Sprites.position = diff
+	if not freeze:
+		if fall_type != "Collision" or not is_on_floor:
+			position += linear_velocity * delta
+			linear_velocity += Vector2.DOWN * 980 * delta
 	if shapecast.get_collision_count():
 		for i in range(0, shapecast.get_collision_count()):
 			_handle_shapecast_collision(shapecast.get_collider(i))
+	else:
+		is_on_floor = false
 
 func handle_reset():
 	freeze = true
+	did_fall = false
 	linear_velocity = Vector2()
 	$Sprites.position = Vector2()
+	global_position = initial_position
+	_wait_timer.stop()
 
 func _handle_shapecast_collision(collider: Node2D) -> void:
 	if collider is Player:
 		collider.damage_taken.emit(1)
 	elif collider is EnemyBody2D:
 		collider.death.emit()
+	elif collider is TileMap or collider is TileMapLayer:
+		is_on_floor = true

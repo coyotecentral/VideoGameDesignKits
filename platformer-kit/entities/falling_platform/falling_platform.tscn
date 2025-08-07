@@ -13,8 +13,7 @@ size = Vector2(16, 2)
 a = Vector2(-8, 0)
 b = Vector2(8, 0)
 
-[node name="FallingPlatform" type="RigidBody2D"]
-lock_rotation = true
+[node name="FallingPlatform" type="AnimatableBody2D"]
 script = ExtResource("1_fwrop")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -33,4 +32,4 @@ texture = ExtResource("1_m2dm1")
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]
 shape = SubResource("SegmentShape2D_w0mc0")
-target_position = Vector2(0, 8)
+target_position = Vector2(0, 9)
