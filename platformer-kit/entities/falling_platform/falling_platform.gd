@@ -71,8 +71,10 @@ func handle_reset():
 
 func _handle_shapecast_collision(collider: Node2D) -> void:
 	if collider is Player:
-		collider.damage_taken.emit(1)
+		if did_fall:
+			collider.damage_taken.emit(1)
 	elif collider is EnemyBody2D:
-		collider.death.emit()
+		if did_fall:
+			collider.death.emit()
 	elif collider is TileMap or collider is TileMapLayer:
 		is_on_floor = true
