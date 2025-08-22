@@ -1,0 +1,84 @@
+[gd_scene load_steps=16 format=3 uid="uid://dj4rrne6fahsp"]
+
+[ext_resource type="Theme" uid="uid://cnabdh0mv7ar0" path="res://utils/ui_theme.tres" id="1_5wiq6"]
+[ext_resource type="Texture2D" uid="uid://mqvrkww463qe" path="res://ui/game_ui/sprites/skull.png" id="1_f64pj"]
+[ext_resource type="PackedScene" uid="uid://ba1bslg6qjvu8" path="res://entities/background/background.tscn" id="3_q78pp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_coloy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_housg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_etmbl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a3eag"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2lck"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_inr27"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ojrs8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hjjrb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_awyms"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rwpgw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hbpwy"]
+
+[sub_resource type="GDScript" id="GDScript_coloy"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pressed.connect(func():
+		get_tree().change_scene_to_file(\"res://ui/main_menu/main_menu.tscn\")
+	)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="GameOver" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 215.0
+offset_top = 121.0
+offset_right = 387.0
+offset_bottom = 162.0
+theme = ExtResource("1_5wiq6")
+theme_override_colors/font_color = Color(0.0634656, 0.0595126, 0.0594499, 1)
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER"
+
+[node name="Skull" type="Sprite2D" parent="."]
+position = Vector2(299, 197)
+scale = Vector2(3.60937, 3.78125)
+texture = ExtResource("1_f64pj")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("3_q78pp")]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 210.0
+offset_top = 253.0
+offset_right = 387.0
+offset_bottom = 302.0
+theme = ExtResource("1_5wiq6")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_coloy")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_housg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_etmbl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_a3eag")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_x2lck")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_inr27")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ojrs8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_hjjrb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_awyms")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_rwpgw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hbpwy")
+text = "Main Menu"
+script = SubResource("GDScript_coloy")

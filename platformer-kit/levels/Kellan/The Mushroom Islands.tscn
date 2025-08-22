@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=4 uid="uid://dvaeo7r4dyd4w"]
+[gd_scene load_steps=11 format=4 uid="uid://dvaeo7r4dyd4w"]
 
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="1_0e48y"]
-[ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_epypp"]
+[ext_resource type="Script" uid="uid://c6rj5rxm5r3g6" path="res://levels/Kellan/assets/lives_level.gd" id="1_pvx4k"]
+[ext_resource type="PackedScene" uid="uid://dj4rrne6fahsp" path="res://levels/Kellan/assets/game_over.tscn" id="2_a76dh"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_epypp"]
+[ext_resource type="PackedScene" uid="uid://cef8co67xf3ac" path="res://levels/Kellan/assets/game_ui.tscn" id="3_07i36"]
 [ext_resource type="PackedScene" uid="uid://ba1bslg6qjvu8" path="res://entities/background/background.tscn" id="4_0hol4"]
-[ext_resource type="PackedScene" uid="uid://c8agqtajbl4nv" path="res://entities/portal/moving_platform.tscn" id="5_d21ai"]
+[ext_resource type="PackedScene" uid="uid://c8agqtajbl4nv" path="res://entities/moving_platform/moving_platform.tscn" id="5_d21ai"]
 [ext_resource type="PackedScene" uid="uid://ddp0lyqdrcmq5" path="res://entities/falling_platform/falling_platform.tscn" id="6_rj586"]
 [ext_resource type="PackedScene" uid="uid://g6eor75ky7j0" path="res://entities/portal/portal.tscn" id="7_4d7sh"]
 
@@ -16,7 +18,10 @@ point_count = 3
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(43, -76)
-script = ExtResource("1_epypp")
+script = ExtResource("1_pvx4k")
+lives = 1
+game_over_menu = ExtResource("2_a76dh")
+game_ui_scene = ExtResource("3_07i36")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_0e48y")]
 position = Vector2(183, 244)
