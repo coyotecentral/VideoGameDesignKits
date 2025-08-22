@@ -1,8 +1,8 @@
 [gd_scene load_steps=19 format=4 uid="uid://cqcg77c6oms5k"]
 
-[ext_resource type="Script" uid="uid://7kbe4j8b35yq" path="res://levels/Ezra's level/other_stuff/max_death_level.gd" id="1_ng2yl"]
-[ext_resource type="PackedScene" uid="uid://bmc3al7dskbqj" path="res://levels/Ezra's level/other_stuff/game_over_screen.tscn" id="2_pnrvw"]
-[ext_resource type="PackedScene" uid="uid://bgtfvf2aqs4t6" path="res://levels/Ezra's level/other_stuff/game_ui_ezra_custom.tscn" id="3_f1utc"]
+[ext_resource type="Script" uid="uid://7kbe4j8b35yq" path="res://Ezra's level/other_stuff/max_death_level.gd" id="1_ng2yl"]
+[ext_resource type="PackedScene" uid="uid://bmc3al7dskbqj" path="res://Ezra's level/other_stuff/game_over_screen.tscn" id="2_pnrvw"]
+[ext_resource type="PackedScene" uid="uid://bgtfvf2aqs4t6" path="res://Ezra's level/other_stuff/game_ui_ezra_custom.tscn" id="3_f1utc"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="4_jaeee"]
 [ext_resource type="PackedScene" uid="uid://ba1bslg6qjvu8" path="res://entities/background/background.tscn" id="5_b8b7d"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="6_v0nrn"]

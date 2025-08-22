@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://be1iv6w542kgy" path="res://entities/portal/portal-frame.png" id="19_e8ecb"]
 [ext_resource type="Texture2D" uid="uid://bgqbkl54egkms" path="res://sprites/environment/props/key-block.png" id="20_nawyr"]
 [ext_resource type="Texture2D" uid="uid://8e8t3ffe2chi" path="res://sprites/environment/props/crank-down.png" id="21_whe0r"]
-[ext_resource type="PackedScene" uid="uid://c8agqtajbl4nv" path="res://entities/portal/moving_platform.tscn" id="22_h2j3s"]
+[ext_resource type="PackedScene" uid="uid://c8agqtajbl4nv" path="res://entities/moving_platform/moving_platform.tscn" id="22_h2j3s"]
 [ext_resource type="Texture2D" uid="uid://cykb1n0xmjdlc" path="res://sprites/environment/props/door-opened.png" id="23_4ktw4"]
 [ext_resource type="Texture2D" uid="uid://ckwlcaejmo7mn" path="res://sprites/environment/props/block.png" id="24_37wid"]
 [ext_resource type="Texture2D" uid="uid://dkp688l74hhoy" path="res://sprites/environment/props/crate.png" id="25_g4o6x"]

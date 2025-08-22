@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bafbs1f61x70e"]
+[gd_scene load_steps=26 format=4 uid="uid://4rfdaj7u8jht"]
 
 [ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_er1t7"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="2_chh6s"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c8agqtajbl4nv" path="res://entities/moving_platform/moving_platform.tscn" id="5_ajut5"]
 [ext_resource type="PackedScene" uid="uid://g6eor75ky7j0" path="res://entities/portal/portal.tscn" id="6_qnfqx"]
 [ext_resource type="PackedScene" uid="uid://cgop15wpyeere" path="res://entities/controllable_platform/controllable_platform.tscn" id="7_tsevg"]
-[ext_resource type="PackedScene" uid="uid://bke7y2vvy02l7" path="res://entities/portal/pressure_plate.tscn" id="8_4lfp4"]
+[ext_resource type="PackedScene" uid="uid://bke7y2vvy02l7" path="res://entities/pressure_plate/pressure_plate.tscn" id="8_4lfp4"]
 [ext_resource type="Texture2D" uid="uid://cje6mi7gynxji" path="res://entities/player/sprites/crouch/player-crouch-2.png" id="9_nqv3m"]
 [ext_resource type="Texture2D" uid="uid://bh5d5ysebmle3" path="res://entities/player/sprites/idle/player-idle-1.png" id="10_qnit5"]
 [ext_resource type="Texture2D" uid="uid://c4hk4mruvxgfg" path="res://sprites/environment/props/wooden-house.png" id="11_yduek"]
@@ -47,11 +47,10 @@ _data = {
 point_count = 18
 
 [node name="die foxy" type="Node2D"]
-position = Vector2(-50350, 6496)
 script = ExtResource("1_er1t7")
 
 [node name="foxy" parent="." instance=ExtResource("2_chh6s")]
-position = Vector2(7292, -1296)
+position = Vector2(19.5914, 207.826)
 
 [node name="foxy tv" type="Camera2D" parent="foxy"]
 position = Vector2(221, -29)
