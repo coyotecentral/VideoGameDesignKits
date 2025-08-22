@@ -1,0 +1,136 @@
+[gd_scene load_steps=6 format=3 uid="uid://cef8co67xf3ac"]
+
+[ext_resource type="Script" uid="uid://bplb3klqplqon" path="res://ui/game_ui/game_ui.gd" id="1_l752d"]
+[ext_resource type="Theme" uid="uid://cnabdh0mv7ar0" path="res://utils/ui_theme.tres" id="2_uxfg5"]
+[ext_resource type="PackedScene" uid="uid://bgoh0f486cmmu" path="res://entities/gem/gem_sprite.tscn" id="3_27ixq"]
+[ext_resource type="Texture2D" uid="uid://mqvrkww463qe" path="res://ui/game_ui/sprites/skull.png" id="4_gnjal"]
+[ext_resource type="Texture2D" uid="uid://cy0javun1cgie" path="res://sprites/environment/props/key.png" id="5_50gh3"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_l752d")
+metadata/_edit_vertical_guides_ = [15.0]
+metadata/_edit_horizontal_guides_ = [31.0, 57.0, 87.0]
+
+[node name="UI" type="MarginContainer" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Container" type="Control" parent="UI"]
+layout_mode = 2
+
+[node name="Timer" type="Control" parent="UI/Container"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -54.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="UI/Container/Timer"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -41.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme = ExtResource("2_uxfg5")
+theme_override_font_sizes/font_size = 32
+text = "00:00
+"
+vertical_alignment = 1
+
+[node name="GemCount" type="Control" parent="UI/Container"]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 68.0
+offset_bottom = 24.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Container/GemCount"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 69.0
+offset_bottom = 26.0
+theme_override_constants/separation = 6
+
+[node name="Control" type="Control" parent="UI/Container/GemCount/HBoxContainer"]
+custom_minimum_size = Vector2(20, 2.08165e-12)
+layout_mode = 2
+
+[node name="Gem" parent="UI/Container/GemCount/HBoxContainer/Control" instance=ExtResource("3_27ixq")]
+position = Vector2(10, 14)
+scale = Vector2(1.5, 1.5)
+
+[node name="Label" type="Label" parent="UI/Container/GemCount/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_uxfg5")
+theme_override_font_sizes/font_size = 24
+text = "x 999"
+
+[node name="DeathCount" type="Control" parent="UI/Container"]
+layout_mode = 1
+anchors_preset = 0
+offset_top = 26.0
+offset_right = 68.0
+offset_bottom = 50.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Container/DeathCount"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 69.0
+offset_bottom = 26.0
+theme_override_constants/separation = 6
+
+[node name="Control" type="Control" parent="UI/Container/DeathCount/HBoxContainer"]
+custom_minimum_size = Vector2(20, 2.08165e-12)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Container/DeathCount/HBoxContainer/Control"]
+position = Vector2(9, 15)
+texture = ExtResource("4_gnjal")
+
+[node name="Label" type="Label" parent="UI/Container/DeathCount/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_uxfg5")
+theme_override_font_sizes/font_size = 24
+text = "x 999"
+
+[node name="Label2" type="Label" parent="UI/Container/DeathCount/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_uxfg5")
+theme_override_font_sizes/font_size = 24
+text = "/ 10"
+
+[node name="KeyCount" type="Control" parent="UI/Container"]
+layout_mode = 1
+anchors_preset = 0
+offset_top = 26.0
+offset_right = 68.0
+offset_bottom = 50.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Container/KeyCount"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 30.0
+offset_right = 69.0
+offset_bottom = 56.0
+theme_override_constants/separation = 6
+
+[node name="Control" type="Control" parent="UI/Container/KeyCount/HBoxContainer"]
+custom_minimum_size = Vector2(20, 2.08165e-12)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Container/KeyCount/HBoxContainer/Control"]
+position = Vector2(9, 15)
+texture = ExtResource("5_50gh3")
+
+[node name="Label" type="Label" parent="UI/Container/KeyCount/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_uxfg5")
+theme_override_font_sizes/font_size = 24
+text = "x 999"

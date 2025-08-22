@@ -4,7 +4,8 @@ class_name Level
 @export var respawn_marker: Marker2D
 var timer: Timer
 
-var game_ui_scene = preload("res://ui/game_ui/game_ui.tscn")
+@export_group("DON'T TOUCH")
+@export var game_ui_scene = preload("res://ui/game_ui/game_ui.tscn")
 var win_ui_scene = preload("res://ui/win_screen/win_screen.tscn")
 var pause_ui_scene = preload("res://ui/pause_screen/pause_screen.tscn")
 
