@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://bafbs1f61x70e"]
+[gd_scene load_steps=26 format=4 uid="uid://bafbs1f61x70e"]
 
 [ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_er1t7"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="2_chh6s"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://y51vrd074ioj" path="res://sprites/environment/props/rock-2.png" id="18_cxxxk"]
 [ext_resource type="Texture2D" uid="uid://bm4ywy5rk5t3c" path="res://sprites/environment/props/pine.png" id="19_cxxxk"]
 [ext_resource type="Texture2D" uid="uid://crgh0tks8pg4k" path="res://sprites/environment/props/tree.png" id="20_26mvk"]
+[ext_resource type="Texture2D" uid="uid://be1iv6w542kgy" path="res://entities/portal/portal-frame.png" id="21_ipdsp"]
 
 [sub_resource type="Curve2D" id="Curve2D_kdubu"]
 _data = {
@@ -113,12 +114,6 @@ wait_time = 2.5
 position = Vector2(4096, -1316)
 curve = SubResource("Curve2D_4d7sh")
 
-[node name="Portal5" parent="." instance=ExtResource("6_qnfqx")]
-position = Vector2(7929, -1090)
-destination = "Scene"
-emit_only = false
-scene_path = "uid://ceh814liue27o"
-
 [node name="Player-crouch-2" type="Sprite2D" parent="."]
 position = Vector2(9434, -1037)
 texture = ExtResource("9_nqv3m")
@@ -207,6 +202,11 @@ position = Vector2(9290, -985)
 
 [node name="ControllablePlatform4" parent="." instance=ExtResource("7_tsevg")]
 position = Vector2(9288, -948)
+
+[node name="Portal-frame" type="Sprite2D" parent="."]
+position = Vector2(7933.5, -1092)
+scale = Vector2(1.59375, 1.87499)
+texture = ExtResource("21_ipdsp")
 
 [connection signal="pressed" from="PressurePlate" to="ControllablePlatform" method="unfreeze"]
 [connection signal="pressed" from="PressurePlate2" to="ControllablePlatform2" method="unfreeze"]
