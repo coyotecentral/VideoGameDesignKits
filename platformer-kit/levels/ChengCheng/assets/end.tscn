@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://c0xdlam47u1im"]
+[gd_scene load_steps=9 format=4 uid="uid://c0xdlam47u1im"]
 
+[ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_4gr3k"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="1_lt2ag"]
 [ext_resource type="Texture2D" uid="uid://b7fink1osmqcm" path="res://sprites/environment/background/back.png" id="2_75yvt"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="3_jclhh"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dqoglb6v75ks3" path="res://sprites/environment/props/straw-house.png" id="6_m3e5g"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_4gr3k")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_lt2ag")]
 position = Vector2(295, 199)

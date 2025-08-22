@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://d20lbbcmoadf0"]
+[gd_scene load_steps=13 format=4 uid="uid://d20lbbcmoadf0"]
 
+[ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_0o5vu"]
 [ext_resource type="PackedScene" uid="uid://g6eor75ky7j0" path="res://entities/portal/portal.tscn" id="1_mthjv"]
 [ext_resource type="PackedScene" uid="uid://cgadmi3sydqjh" path="res://entities/player/player.tscn" id="2_0o5vu"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="3_dj3xn"]
@@ -44,6 +45,7 @@ point_count = 5
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-159, -239)
+script = ExtResource("1_0o5vu")
 
 [node name="Portal" parent="." instance=ExtResource("1_mthjv")]
 position = Vector2(55, 266)
@@ -106,4 +108,6 @@ curve = SubResource("Curve2D_mthjv")
 
 [node name="Portal4" parent="." instance=ExtResource("1_mthjv")]
 position = Vector2(704, -238)
+destination = "Scene"
 emit_only = false
+scene_path = "uid://cb363wu3ovjs3"
