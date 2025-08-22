@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://clkf4deju43vc" path="res://lib/level.gd" id="1_epypp"]
 [ext_resource type="TileSet" uid="uid://cfbo1ll6fb523" path="res://utils/tileset.tres" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://b7fink1osmqcm" path="res://sprites/environment/background/back.png" id="4_0hol4"]
-[ext_resource type="PackedScene" uid="uid://c8agqtajbl4nv" path="res://entities/moving_platform/moving_platform.tscn" id="5_q6r6c"]
+[ext_resource type="PackedScene" uid="uid://c8agqtajbl4nv" path="res://entities/portal/moving_platform.tscn" id="5_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://bshmglkckkwow" path="res://entities/mushroom/mushroom.tscn" id="6_kdubu"]
 
 [sub_resource type="Curve2D" id="Curve2D_q6r6c"]
