@@ -27,7 +27,7 @@ should be kept as a "clean slate" branch. This will ensure that this code is
 easily resesttable after each and every class.
 
 Classes should create release branches for their work off of `main`. For example:
-`release/summer-2024-week-1`. I (Dytrich) do not currently have an idea of using
+`release/summer-2024-week-1`. I (Diane) do not currently have an idea of using
 the actual release feature in GitHub, so we will stick with this for now.
 
 ## Contributing to the kits
